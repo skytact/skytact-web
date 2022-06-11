@@ -3,8 +3,8 @@
 
 <svg
    width="251.29608"
-   height="251"
-   viewBox="0 0 66.488754 66.410413"
+   height="145.89726"
+   viewBox="0 0 66.488754 38.601982"
    version="1.1"
    id="svg5"
    sodipodi:docname="logoSky.svg"
@@ -24,15 +24,15 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:snap-center="true"
-     inkscape:zoom="1.3966663"
-     inkscape:cx="28.281631"
-     inkscape:cy="220.52512"
+     inkscape:zoom="1.03813"
+     inkscape:cx="162.31108"
+     inkscape:cy="253.34014"
      inkscape:window-width="1920"
      inkscape:window-height="1029"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g1105"
+     inkscape:current-layer="layer1"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
@@ -47,7 +47,7 @@
      transform="translate(-32.205625,-57.857681)">
     <g
        id="g1105"
-       transform="translate(0.63879665,12.08117)">
+       transform="translate(0.63879665,0.34714978)">
       <rect
          style="fill:#b7e9ff;fill-opacity:1;stroke:none;stroke-width:0.284366;stroke-opacity:1"
          id="rect980"
@@ -117,6 +117,10 @@
          style="fill:#0d0d0d;fill-opacity:1;stroke:none;stroke-width:0.24109;stroke-opacity:1"
          d="m 77.464543,82.536323 c -7.297354,0 -13.177546,4.8569 -13.228135,10.905608 h 26.456275 c -0.0506,-6.048705 -5.93079,-10.905608 -13.22814,-10.905608 z"
          transform="translate(-2.2784014,2.3907652)" />
+      <path
+         id="rect372236"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.211666;stroke-opacity:1"
+         d="m 52.27613,68.623029 v 4.233334 h 4.233334 v -4.233334 z m 5.291667,0 v 4.233334 h 4.233333 v -4.233334 z m -4.657082,0.634588 h 2.963643 v 2.963643 h -2.963643 z m 5.291667,0 h 2.963642 v 2.963643 h -2.963642 z m 0.975651,0.886767 v 1.058333 h 1.058333 v -1.058333 z m -5.329389,0.05478 v 1.058334 h 1.058334 V 70.199164 Z M 52.27613,73.9147 v 4.233333 h 4.233334 V 73.9147 Z m 5.291667,0 v 1.058333 H 58.62613 V 73.9147 Z m 1.058333,1.058333 v 1.058334 h 1.058334 v -1.058334 z m 1.058334,0 h 1.058333 v -1.058337 h -1.058333 z m 1.058333,0 v 1.058334 h 1.058333 v -1.058334 z m 0,1.058334 H 59.684464 V 77.0897 h 1.058333 z m 0,1.058333 v 1.058333 H 61.80113 V 77.0897 Z m -1.058333,0 H 58.62613 v 1.058333 h 1.058334 z m -1.058334,0 V 76.031367 H 57.567797 V 77.0897 Z m -5.715415,-2.540413 h 2.963643 v 2.963643 h -2.963643 z m 0.922425,0.934826 v 1.058333 h 1.058333 v -1.058333 z" />
     </g>
     <g
        id="g174152"

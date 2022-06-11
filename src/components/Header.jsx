@@ -14,7 +14,7 @@ function Header (props) {
 					<img src = {logo}/>
 				</div>
 			</Link>
-				<div><h1>skytacts</h1></div>
+				<div><h1>skytact</h1></div>
 		</header>
 	);
 }

@@ -33,7 +33,7 @@ function __H$ () {
 				<Link href="/m">Манифест</Link>
 			</div>
 			<div class={page_styles.Signature}>
-				created by <a href="http://skytact.online/c/republichenko">#republichenko</a>
+				created by <a href="http://skytact.netlify.app/c/republichenko">#republichenko</a>
 			</div>
 		</div>
 	);

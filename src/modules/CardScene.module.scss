@@ -1,0 +1,27 @@
+.CardScene {
+	box-sizing: border-box;
+	width: 720px;
+	margin: auto;
+	margin-top: 15px;
+	margin-bottom: 20px;
+	padding: 5px;
+	box-shadow: 0px 0px 14px #888888;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+}
+
+@media (max-width: 699px) {
+	.CardScene {
+		width: 94%;
+	}
+}
+
+@media (max-width: 499px) {
+	.CardScene {
+		overflow: hidden;
+		width: 100%;
+		border: none;
+		padding: 0;
+		margin: 0;
+	}
+}

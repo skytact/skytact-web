@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="24"
+   height="23.392302"
+   viewBox="0 0 6.35 6.1892129"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="qr.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:snap-center="true"
+     inkscape:zoom="0.61855818"
+     inkscape:cx="-497.12381"
+     inkscape:cy="-129.33302"
+     inkscape:window-width="1920"
+     inkscape:window-height="1029"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1105"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     units="px" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-130.77397,-181.19057)">
+    <g
+       id="g1105"
+       transform="translate(0.63879665,12.08117)">
+      <g
+         id="g60618"
+         transform="matrix(0.83177353,0,0,0.83177353,120.26903,146.41682)">
+        <rect
+           style="fill:#0d0d0d;fill-opacity:1;stroke:none;stroke-width:0.79375;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect60152"
+           width="3.175"
+           height="3.175"
+           x="11.882393"
+           y="27.30415" />
+        <rect
+           style="fill:#0d0d0d;fill-opacity:1;stroke:none;stroke-width:0.79375;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect60152-9"
+           width="3.175"
+           height="3.175"
+           x="16.299923"
+           y="27.282167" />
+        <rect
+           style="fill:#0d0d0d;fill-opacity:1;stroke:none;stroke-width:0.79375;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect60152-9-2"
+           width="3.175"
+           height="3.175"
+           x="11.861578"
+           y="31.53993" />
+        <rect
+           style="fill:#0d0d0d;fill-opacity:1;stroke:none;stroke-width:0.79375;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect60152-9-2-0"
+           width="1.0583333"
+           height="1.0583333"
+           x="16.320868"
+           y="31.548155" />
+        <rect
+           style="fill:#0d0d0d;fill-opacity:1;stroke:none;stroke-width:0.79375;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect60152-9-2-0-3"
+           width="1.0583333"
+           height="1.0583333"
+           x="18.437534"
+           y="33.664818" />
+        <rect
+           style="fill:#0d0d0d;fill-opacity:1;stroke:none;stroke-width:0.79375;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect60152-9-2-0-3-7"
+           width="1.0583333"
+           height="1.0583333"
+           x="18.437534"
+           y="31.548155" />
+        <rect
+           style="fill:#0d0d0d;fill-opacity:1;stroke:none;stroke-width:0.79375;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect60152-9-2-0-3-7-5"
+           width="1.0583333"
+           height="1.0583333"
+           x="16.320868"
+           y="33.664818" />
+        <rect
+           style="fill:#0d0d0d;fill-opacity:1;stroke:none;stroke-width:0.79375;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect60152-9-2-0-3-7-5-9"
+           width="1.0583333"
+           height="1.0583333"
+           x="17.3792"
+           y="32.606487" />
+      </g>
+    </g>
+    <g
+       id="g174152"
+       inkscape:export-filename="/home/eturbo/save_img/svg/dns-img.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       transform="translate(-2.2784014,2.3907652)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.76111px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono Bold';white-space:pre;inline-size:18.8866;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="77.936172"
+       y="90.078575"
+       id="text5981-9" />
+  </g>
+</svg>

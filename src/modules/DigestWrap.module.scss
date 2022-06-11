@@ -1,0 +1,26 @@
+.DigestWrap {
+	box-sizing: border-box;
+	width: 720px;
+	min-height: 480px;
+	margin: auto;
+	margin-top: 24px;
+	margin-bottom: 32px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px #b0b0b0;
+	background-color: #f9f9f9;
+}
+
+
+@media (max-width: 699px) {
+	.DigestWrap {
+		width: 95%;
+	}
+}
+
+@media (max-width: 499px) {
+	.DigestWrap {
+		width: 95%;
+		margin-top: 12px;
+		padding-top: 12px;
+	}
+}

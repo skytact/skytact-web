@@ -1,0 +1,118 @@
+.ErrorBlock {
+	box-sizing: border-box;
+	width: 100%;
+	height: 40px;
+	padding: 7px;
+	span {
+		color: red;
+		font-size: 1.2em;
+	}
+}
+
+.FormWrapper {
+	width: 480px;
+	margin: auto;
+	font-family: monospace;
+}
+
+.Heading {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 7px;
+	h1 {
+		margin: 0;
+		padding: 0;
+		font-size: 3em;
+		color: #2b98ecff;
+	}
+}
+
+.LineWrapper {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 7px;
+	textarea {
+		box-sizing: border-box;
+		resize: none;
+		display: block;
+		width: 100%;
+		height: 120px;
+		border: 1px solid #b0b0b0;
+		font-size: 18px;
+		padding: 7px;
+	}
+}
+
+.TextWrapper {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 7px;
+	input {
+		box-sizing: border-box;
+		display: block;
+		width: 100%;
+		height: 40px;
+		padding: 7px;
+		border: 1px solid #b0b0b0;
+		font-size: 18px;
+	}
+}
+
+.SubmitWrapper {
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.ButtonWrapper {
+	box-sizing: border-box;
+	display: inline-block;
+	width: 50%;
+	padding: 7px;
+	button {
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+		padding: 7px;
+		background-color: #f9f9f9;
+		border-radius: 5px;
+		border: 1px solid #2b98ecff;
+		img {
+			width: 24px;
+		}
+		span {
+			width: 100%;
+			height: 30px;
+			display: block;
+			padding: 3px;
+			color: blcak;
+		}
+	}
+}
+
+.Footer {
+	width: 200px;
+	margin: auto;
+	img{
+		display: block;
+		max-width: 100%;
+	}
+}
+
+
+@media (max-width: 499px) {
+	.FormWrapper {
+		width: 100%;
+	}
+
+	.LineWrapper {
+		textarea {
+			font-size: 14px;
+		}
+	}
+
+	.TextWrapper {
+		input {
+			font-size: 14px;
+		}
+	}
+}

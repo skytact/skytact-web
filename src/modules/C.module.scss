@@ -1,0 +1,88 @@
+.FormWrapper {
+	box-sizing: border-box;
+	width: 720px;
+	margin: auto;
+	padding: 10px;
+}
+
+.InputWrapper {
+	box-sizing: border-box;
+	width: 360px;
+	height: 100px;
+	label {
+		width: 500px;
+		margin: auto;
+		font-family: monospace;
+		font-size: 1.5em;
+		display: block;
+		font-weight: bold;
+		color: #B0B0B0;
+	}
+	input {
+		display: block;
+		font-family: sans-serif;
+		font-size: 1.5em;
+		font-weight: bold;
+		box-sizing: border-box;
+		width: 500px;
+		margin: auto;
+		height: 54px;
+		border: 2px solid #29A7D9;
+		border-radius: 5px;
+		padding: 5px 15px;
+	}
+}
+
+.ButtonWrapper {
+	width: 500px;
+	height: 100px;
+	button {
+		display: block;
+		font-family: monospace;
+		width: 40%;
+		margin: 0;
+		height: 54px;
+		padding: 10px;
+		border: none;
+		border-radius: 10px;
+		background-color: #29A7D9;
+		font-size: 2em;
+		color: #f0f0f2;
+	}
+}
+
+@media (max-width: 699px) {
+	.FormWrapper {
+		width: 100%;
+	}
+	.InputWrapper {
+		width: 100%;
+		label{
+			font-size: 1.4em;
+			margin: 0;
+			width: 360px;
+		}
+		input {
+			font-size: 1.4em;
+			margin: 0;
+			width: 360px;
+		}
+	}
+	.ButtonWrapper {
+		width: 360px;
+	}
+}
+
+@media (max-width: 499px) {
+	.InputWrapper {
+		label{
+			width: 100%;
+		}
+		input {
+			width: 100%;
+		}
+	}
+	.ButtonWrapper {
+		width: 100%;
+	}
+}

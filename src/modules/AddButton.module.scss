@@ -1,0 +1,73 @@
+
+
+.Registration {
+	width: 120px;
+	height: 40px;
+	padding-right: 7px;
+	margin-top: 10px;
+	text-align: center;
+	float: right;
+	color: #b0b0b0;
+	a {
+		font-size: 18px;
+		color: red;
+	}
+}
+
+.RegBall {
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	height: 20px;
+	div {
+		width: 14px;
+		height: 14px;
+		border-radius: 50%;
+		animation-name: regball;
+		animation-duration: 3s;
+		background-color: red;
+		animation-iteration-count: infinite;
+		animation-timing-function: cubic-bezier(0.3, 1, 0.9, 1);
+	}
+}
+
+.Contact {
+	box-sizing: border-box;
+	width: 180px;
+	height: 25px;
+	display: block;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #f9f9f9;
+	border: none;
+	color: #b0b0b0;	
+	font-size: 1.2em;
+	text-align: right;
+	padding: 0px 27px;	
+}
+
+.AddButtonWrapper {
+	box-sizing: border-box;
+	width: 50px;
+	height: 50px;
+	margin: auto;
+	position: relative;
+	button {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@keyframes regball {
+	0% {transform: translate(10px, 0);}
+	50% {transform: translate(100px, 0);}
+	100% {transform: translate(10px, 0); }
+}
+
+
+@media (max-width: 499px) {
+	.AddButtonWrapper {
+		width: 40px;
+	}
+}

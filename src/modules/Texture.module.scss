@@ -1,0 +1,58 @@
+.Texture {
+
+	box-sizing: border-box;
+	width: 720px;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 10px;
+	font-size: 1.2em;
+	font-family: sans-serif;
+
+	div {
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+	span {
+		display: inline-block;
+		padding: 0 3px;
+		margin: 0;
+		margin-top: 2px;
+		color: #0d0d0d;
+		border: 2px solid #6dccf2;
+		border-radius: 5px;
+	}
+
+	p {
+		padding-top: 5px;
+		margin: 0;
+		color: #b0b0b0;
+	}
+
+	a {
+		color: #29A7D9;
+	}
+	
+}
+
+@media (max-width: 699px) {
+	
+	.Texture {
+		width: 100%;
+		font-size: 1.0em;
+		span {
+			margin: 0;
+			margin-top: 2px;
+		}
+	}
+	
+}
+
+@media (max-width: 499px) {
+
+	.Texture {
+		font-size: 1.0em;
+	}
+	
+}

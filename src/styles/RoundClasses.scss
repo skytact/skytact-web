@@ -1,0 +1,13 @@
+
+.AnimationRound-1 {
+	animation-name: round-1;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes round-1 {
+	0% { width: 60px; height: 60px; }
+	50% { width: 80px; height: 80px; }
+	100% { width: 60px; height: 60px;}
+}

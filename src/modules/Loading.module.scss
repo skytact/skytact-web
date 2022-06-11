@@ -1,0 +1,24 @@
+.Loading {
+	box-sizing: border-box;
+	margin: auto;
+	margin-top: 240px;
+	width: 112px;
+	height: 112px;
+	padding: 8px;
+	img {
+		width: 96px;
+	}
+	animation-name: galaxy;
+	animation-duration: 16s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes galaxy {
+	from {
+		transform: rotate(359deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}

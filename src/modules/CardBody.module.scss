@@ -1,0 +1,341 @@
+.CardBody {
+	box-sizing: border-box;
+	width: 480px;
+	margin: auto;
+}
+
+.Avatar {
+	box-sizing: border-box;
+	width: 160px;
+	height: 160px;
+	margin: auto;
+	border-radius: 50%;
+	box-shadow: 0px 0px 5px #b0b0b0;
+	padding: 6px;
+	margin-top: 32px;
+	margin-bottom: 20px;
+	position: relative;
+	div {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+		//border: 1px solid black;
+		border-radius: 50%;
+		>img {
+			display: block;
+			box-sizing: border-box;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			max-height: 160px;
+		}
+	}
+	button {
+		display: block;
+		box-sizing: border-box;
+		border: none;
+		background-color: rgba(256, 256, 256, 0.9);
+		box-shadow: 0px 0px 3px #b0b0b0;
+		border-radius: 50%;
+		position: absolute;
+		width: 36px;
+		height: 36px;
+		right: 2px;
+		bottom: 2px;
+		padding: 6px;
+		div {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			img {
+				width: 24px;
+				height: 24px;
+			}
+			input {
+				opacity: 0;
+				position: absolute;
+				width: 24px;
+				height: 24px;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				cursor: pointer;
+			}
+		}
+		
+	}
+}
+
+.AddButton {
+	box-sizing: border-box;
+	width: 30%;
+	position: relative;
+}
+
+.ChangeFromButton {
+	color: red;
+	background-color: #f9f9f9;
+}
+
+.AddFromButton {
+	color: blue;
+	left: 5px;
+	text-decoration: none;
+	background-color: #f9f9f9;
+}
+
+.AddedButton {
+	color: #b0b0b0;
+	left: 5px;
+	text-decoration: none;
+	background-color: #f9f9f9;
+}
+
+.AddFromButton, .ChangeFromButton, .AddedButton {
+	width: 90px;
+	height: 23px;
+	box-sizing: border-box;
+	border: none;
+	left: 0;
+	bottom: 0;
+	position: absolute;
+	text-decoration: underline;
+	text-align: left;
+}
+
+.FullName {
+	word-break: break-all;
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	height: 36px;
+	padding: 7px 0 0 7px;
+	border: none;
+	border-bottom: 1px solid black;
+}
+
+.Fname {
+	overflow: hidden;
+	box-sizing: border-box;
+	display: block;
+	margin: 0;
+	padding: 0;
+	width: 80%;
+	height: 28px;
+	float: left;
+	font-size: 1.5em;
+	font-family: sans-serif;
+}
+
+.Views {
+	box-sizing: border-box;
+	display: block;
+	margin: 0;
+	padding: 3px;
+	width: 20%;
+	height: 100%;
+	float: left;
+	div {
+		width: 100%;
+		height: 100%;
+		img {
+			float: right;
+			display: block;
+			width: 20px;
+			padding: 0 3px 0 0;
+		}
+		span {
+			float: right;
+			display: block;
+			padding: 0 7px 0 0;
+			color: #b0b0b0;
+		}
+	}
+}
+
+.DefaultIntro {
+	box-sizing: border-box;
+	padding: 7px;
+	button {
+		box-sizing: border-box;
+		width: 100%;
+		height: 60px;
+		border: 1px solid #b0b0b0;
+		display: block;
+		background-color: #f9f9f9;
+	}
+	div {
+		box-sizing: border-box;
+		text-align: center;
+		padding: 20px 0;
+		padding: 0;
+		font-family: monospace;
+		font-size: 1.2em;
+		color: #b0b0b0;
+		text-decoration: none;
+	}
+}
+
+.Intro {
+	width: 100%;
+	height: 80px;
+	box-sizing: border-box;
+	padding: 14px 7px;
+}
+
+.IntroText {
+	box-sizing: border-box;
+	width: 80%;
+	height: 100%;
+	float: left;
+	word-wrap: break-word;
+	span {
+		display: block;
+		width: 100%;
+		text-align: left;
+		text-overflow: ellipsis;
+		font-family: monospace;
+		font-size: 1.3em;
+		color: #b0b0b0;
+	}
+}
+
+.IntroChange {
+	box-sizing: border-box;
+	width: 20%;
+	height: 100%;
+	padding: 0;
+	float: left;
+	button {
+		border: none;
+		background-color: #f9f9f9;
+		width: 100%;
+	}
+	img {
+		display: block;
+		width: 24px;
+		float: right;
+	}
+}
+
+.NoteWrapper {
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.IconBar {
+	box-sizing: border-box;
+	width: 100%;
+	height: 44px;
+	padding: 7px;
+	div{
+		height: 30px;
+		float: left;
+	}
+	
+	button {
+		width: 48px;
+		height: 30px;
+		padding: 0;
+		border: 0;
+		background-color: #f9f9f9;
+		img {
+			display: block;
+			width: 28px;
+		}
+	}
+
+	span {
+		box-sizing: border-box;
+		font-size: 20px;
+		color: #b0b0b0;
+	}
+}
+
+.Note {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0 7px 14px;
+	font-family: monospace;
+}
+
+.Line {
+	font-size: 1.5em;
+	color: black;
+	word-break: break-all;
+	a {
+		color: #2b98ec;
+	}
+}
+
+.Text {
+	margin: 3px  0 3px;
+	font-size: 1.4em;
+	color: #b0b0b0;
+}
+
+.AddNote {
+	box-sizing: border-box;
+	width: 100%;
+	margin-top: 32px;
+	padding: 7px;
+	height: 60px;
+	a {
+		display: block;
+		height: 40px;
+		width: 230px;
+		color: #2b98ec;
+		font-size: 1.5em;
+		div {
+			padding: 8px 7px 0px 12px;
+			font-family: monospace;
+			text-decoration: underline;
+			float: left;
+			height: 36px;
+		}
+		img {
+			float: left;
+			width: 36px;
+		}
+	}
+}
+
+@media (max-width: 499px) {
+	.CardBody {
+		width: 100%;
+	}
+
+	.DefaultIntro, .Intro, .FullName, .Note, .IconBar, .AddNote{
+		padding-left: 14px;
+	}
+
+	.NoteWrapper {
+		padding: 5px;
+	}
+}
+
+@media (max-width: 299px) {
+	.Fname {
+		font-size: 1.0em;
+	}
+
+	.Views {
+		div {
+			span {
+				padding: 0;
+			}
+		}
+	}
+}
+
+@keyframes float-word {
+	0% {
+		transform: translate(0%, 0%);
+	}
+	100% {
+		transform: translate(-50%, 0%);
+	}
+}

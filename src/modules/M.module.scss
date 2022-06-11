@@ -1,0 +1,42 @@
+.ImageWrapper {
+	box-sizing: border-box;
+	width: 720px;
+	margin: auto;
+	padding: 10px;
+	img {
+		width: 700px;
+	}
+}
+
+.Footer {
+	width: 100%;
+	height: 140px;
+	margin-top: 140px;
+	text-align: center;
+	padding: 20px;
+	box-sizing: border-box;
+	a {
+		font-size: 20px;
+		color: #29A7D9;
+	}
+}
+
+@media (max-width: 699px) {
+	.ImageWrapper {
+		width: 499px;
+		img {
+			display: block;
+			width: 499px;
+		}
+	}
+}
+
+@media (max-width: 499px) {
+	.ImageWrapper {
+		width: 100%;
+		img {
+			display: block;
+			max-width: 100%;
+		}
+	}
+}

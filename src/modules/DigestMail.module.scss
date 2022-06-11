@@ -1,0 +1,49 @@
+.DigestMail {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 7px;
+	position: relative;
+	input {
+		box-sizing: border-box;
+		display: block;
+		width: 100%;
+		height: 40px;
+		padding: 7px;
+		border: 1px solid #b0b0b0;
+		font-size: 18px;
+	}
+}
+
+.SendButton {
+	position: absolute;
+	box-sizing: border-box;
+	width: 90px;
+	height: 40px;
+	top: 7px;
+	right: 7px;
+	border: 1px solid #b0b0b0;
+	div {
+		box-sizing: border-box;
+		width: 100%;
+		height: 100%;
+		padding: 9px;
+		font-size: 16px;
+		color: #b0b0b0;
+		text-align: center;
+	}
+	button {
+		width: 100%;
+		height: 100%;
+		border: none;
+		background-color: #f9f9f9;
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 499px) {
+	.DigestMail {
+		input {
+			font-size: 14px;
+		}
+	}
+}

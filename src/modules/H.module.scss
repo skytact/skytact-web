@@ -1,0 +1,109 @@
+@font-face {
+	font-family: consoleFont;
+	src:("../fonts/clacon2.ttf");
+}
+
+@font-face {
+	font-family: defaultTextRegular;
+	src:("../fonts/Writer-Regular.ttf");
+}
+
+@font-face {
+	font-family: defaultTextBold;
+	src:("../fonts/Writer-Bold.ttf");
+}
+
+@font-face {
+	font-family: Regular3270;
+	src:("../fonts/3270-Regular.otf");
+}
+
+.HeadStone {
+	width: 100%;
+	height: 120px;
+	text-align: center;
+	div {
+		float: left;
+	}
+	h1 {
+		margin: 0;
+		padding-top: 30px;
+		font-size: 2em;
+		font-family: monospace;
+	}
+}
+
+//wrapped image styles
+.ImageWrap {
+	padding-left: 20px;
+	padding-right: 10px;
+	width: 80px;
+	margin: auto;
+	img {
+		width: 80px;
+	}
+}
+
+//title styles
+.Credo {
+	width: 80%;
+	margin: auto;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	text-align: center;
+	h1 {
+		padding: 0;
+		margin: 0;
+		font-size: 2em;
+		font-family: consoleFont !important;
+		color: #0d0d0dff;
+		a {
+			color: #29A7D9;
+			&:after {
+				color: #C1C9D9;
+			}
+		}
+	}
+}
+
+//link styles
+.LinkWrap {
+	padding: 10px;
+	margin-bottom: 30px;
+	text-align: center;
+	font-size: 1.5em;
+	font-family: monospace;
+	a {
+		color: #29A7D9;
+	}
+}
+
+//sign
+.Signature {
+	margin-top: 200px;
+	margin-bottom: 80px;
+	text-align: center;
+	padding: 10px;
+	font-size: 1.2em;
+	font-family: monospace;
+	a {
+		text-decoration: none;
+		color: #29A7D9;
+	}
+}
+
+@media (max-width: 800px) {
+	.ImageWrap {
+		padding: 10px;
+		img {
+			width: 60px;
+		}
+	}
+	.Credo {
+		margin-top: 20px;
+		width: 100%;
+		h1 {
+			font-size: 1.5em;
+		}
+	}
+}

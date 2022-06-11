@@ -1,0 +1,90 @@
+.Header {
+	width: 100%;
+	height: 80px;
+	box-sizing: border-box;
+	position: relative;
+	display: block;
+	padding-top: 10px;
+}
+
+.Left {
+	display: block;
+	position: relative;
+	height: 60px;
+	width: 10%;
+	float: left;
+}
+
+.Right {
+	display: block;
+	position: relative;
+	height: 60px;
+	width: 10%;
+	float: right;
+}
+
+.Nick {
+	font-size: 1.2em;
+	text-align: center;
+	float: left;
+	position: absolute;
+	width: 210px;
+	height: 30px;
+	left: 50%;
+	top: 24px;
+	transform: translate(-50%, 0%);
+}
+
+.QR {
+	box-sizing: border-box;
+	width: 15%;
+	height: 60px;
+	float: right;
+	padding: 13px;
+	cursor: pointer;
+	img {
+		display: block;
+		width: 24px;
+		margin: auto;
+	}
+}
+
+
+@media (max-width: 699px) {
+	.Left, .Right {
+		width: 12%;
+	}
+
+	.Nick {
+		font-size: 1.0em;
+	}
+}
+
+
+@media (max-width: 499px) {
+	.Header {
+		width: 105%;
+		margin-left: -3%;
+		height: 60px;
+		padding-top: 3px;
+	}
+
+	.Nick {
+		top: 57px;
+		font-size: 1.0em;
+	}
+	
+	.Left, .Right {
+		width: 25%;
+	}
+
+	.QR {
+		width: 25%;
+		padding: 16px;
+		img {
+			
+			width: 18px;
+		}
+	}
+}
+

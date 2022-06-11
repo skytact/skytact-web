@@ -1,0 +1,43 @@
+.List {
+	box-sizing: border-box;
+	width: 480px;
+	margin: auto;
+	padding-top: 27px;
+	font-family: monospace;
+}
+
+.HeadingList {
+	box-sizing: border-box;
+	width: 100%;
+	height: 40px;
+	padding: 7px;
+	h1 {
+		height: 30px;
+		float: left;
+		margin: 0;
+		padding: 0;
+		color: #b0b0b0;
+		font-size: 1.5em;
+	}
+}
+
+.ListNode {
+	display: inline-block;
+	height: 20px;
+	text-align: left;
+	padding: 7px;
+	color: black;
+	font-size: 1.3em;
+	a {
+		text-decoration: none;
+		color: #b0b0b0;
+	}
+}
+
+@media (max-width: 499px) {
+	.List {
+		width: 100%;
+		padding-left: 9px;
+	}
+
+}

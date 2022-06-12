@@ -90,15 +90,17 @@ function AddButton ({permission, host, nick, upcode, onList = f => f}) {
 	//<RegistrationLink host = {host} nick = {nick} upcode = {upcode} />
 	const onSignUp = e => {
 		e.preventDefault();
-		//
+		console.log(state());
 		if(!state())
 			useIsfree(host, upcode)
 				.then(res => {
+					console.log(res);
 					window.location.href = (res == true)
 						? `/r/${upcode}?n=${nick}&h=${host || ""}`
 						: `/l?u=${nick}&h=${host || ""}`
 				})
 				.catch(err => {
+					console.log(err);
 					setState(false);
 				});
 	}
@@ -108,7 +110,7 @@ function AddButton ({permission, host, nick, upcode, onList = f => f}) {
 		<AuthorZone fallback = {
 			permission != "owner" && 
 			<div id = "_statusButton" class = {page_styles.AddButtonWrapper }>
-				<BreezeButton color = {"#6dc"} state = {state} onSubmit = {onSignUp}>
+				<BreezeButton color = {"#6dccf2"} state = {state} onSubmit = {onSignUp}>
 					<div>👋</div>
 				</BreezeButton>
 			</div>

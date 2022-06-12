@@ -24,9 +24,9 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:snap-center="true"
-     inkscape:zoom="1.217321"
-     inkscape:cx="306.82129"
-     inkscape:cy="261.22937"
+     inkscape:zoom="0.47773482"
+     inkscape:cx="139.19856"
+     inkscape:cy="500.27753"
      inkscape:window-width="1920"
      inkscape:window-height="1029"
      inkscape:window-x="0"
@@ -39,7 +39,14 @@
      fit-margin-bottom="0"
      units="px" />
   <defs
-     id="defs2" />
+     id="defs2">
+    <rect
+       x="-69.709126"
+       y="145.6262"
+       width="265.10753"
+       height="424.89129"
+       id="rect14963" />
+  </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
@@ -136,6 +143,16 @@
          x="-35.931976"
          y="23.620087"
          ry="4.5778046" />
+      <g
+         id="lock"
+         transform="matrix(0.34541876,0,0,0.31020846,-25.817955,87.089054)">
+        <path
+           id="Path_108"
+           data-name="Path 108"
+           d="M 13.568,8.932 H 5.932 a 1.091,1.091 0 0 0 -1.091,1.091 v 5.455 a 1.091,1.091 0 0 0 1.091,1.091 h 7.636 a 1.091,1.091 0 0 0 1.091,-1.091 V 10.023 A 1.091,1.091 0 0 0 13.568,8.932 Z M 5.932,7.841 A 2.182,2.182 0 0 0 3.75,10.023 v 5.455 a 2.182,2.182 0 0 0 2.182,2.182 h 7.636 A 2.182,2.182 0 0 0 15.75,15.478 V 10.023 A 2.182,2.182 0 0 0 13.568,7.841 Z m 0,-3.273 a 3.818,3.818 0 1 1 7.636,0 V 7.841 H 12.477 V 4.568 a 2.7275,2.7275 0 1 0 -5.455,0 v 3.273 h -1.09 z"
+           fill="#f16550"
+           fill-rule="evenodd" />
+      </g>
       <rect
          style="fill:#0d0d0d;fill-opacity:1;stroke:none;stroke-width:0.09487"
          id="rect1234-6"
@@ -212,20 +229,6 @@
          height="2.6043098"
          x="-32.405399"
          y="97.150635" />
-      <rect
-         style="fill:#2793f2;fill-opacity:1;stroke:none;stroke-width:0.381646;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="rect1598-7-5-5-8"
-         width="14.55483"
-         height="1.9918922"
-         x="-32.837414"
-         y="52.723591" />
-      <rect
-         style="fill:#2793f2;fill-opacity:1;stroke:none;stroke-width:0.196752;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="rect1598-7-5-5-8-7"
-         width="14.55483"
-         height="0.52940047"
-         x="-32.825798"
-         y="55.346992" />
       <rect
          style="fill:#b0b0b0;fill-opacity:1;stroke:#b0b0b0;stroke-width:0.924212;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect1598-6"
@@ -319,15 +322,19 @@
          id="path60653-2" />
       <path
          style="fill:none;stroke:#000000;stroke-width:0.79375;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 3.9697414,105.92602 31.801355,93.747958"
+         id="path60653-2-5" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.79375;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="M -50.397521,95.054845 -32.274183,80.957898"
          id="path60653-2-2" />
       <path
          style="fill:none;stroke:#000000;stroke-width:0.79375;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m -50.255449,121.1069 18.123338,-14.09695"
+         d="M -50.352287,113.67544 -23.758188,93.627418"
          id="path60653-2-2-9" />
       <path
          style="fill:none;stroke:#000000;stroke-width:0.191985px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="m -50.255449,121.1069 -31.749537,-0.0766 v 0"
+         d="m -50.528737,113.85189 -31.749537,-0.0766 v 0"
          id="path60972" />
       <path
          style="fill:none;stroke:#000000;stroke-width:0.191985px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -388,10 +395,10 @@
          transform="translate(-0.1638763,-3.395888)"><tspan
            x="31.99297"
            y="38.753349"
-           id="tspan980">QR - для быстрого </tspan><tspan
+           id="tspan32054">QR - для быстрого </tspan><tspan
            x="31.99297"
            y="44.045012"
-           id="tspan982">знакомства</tspan></text>
+           id="tspan32056">знакомства</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;white-space:pre;inline-size:45.1384;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -401,18 +408,7 @@
          transform="translate(-0.30784884,32.762198)"><tspan
            x="31.99297"
            y="38.753349"
-           id="tspan984">любая фотография</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="-93.398682"
-         y="119.34344"
-         id="text63464-8"><tspan
-           sodipodi:role="line"
-           id="tspan63462-4"
-           style="font-size:4.23333px;stroke-width:0.264583"
-           x="-93.398682"
-           y="119.34344">знакомые и друзья</tspan></text>
+           id="tspan32058">любая фотография</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:monospace;-inkscape-font-specification:monospace;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -426,15 +422,46 @@
            y="93.486382">ссылки и контакты</tspan></text>
       <text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;line-height:1.25;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono Bold';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="-93.55983"
-         y="8.2499828"
-         id="text104175"><tspan
+         transform="matrix(0.26458333,0,0,0.26458333,-99.910646,-3.6859836)"
+         id="text14961"
+         style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;white-space:pre;shape-inside:url(#rect14963)" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="-94.426003"
+         y="14.574857"
+         id="text23441"><tspan
            sodipodi:role="line"
-           id="tspan104173"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono Bold';stroke-width:0.264583"
-           x="-93.55983"
-           y="8.2499828">Анатомия Гиперкарты</tspan></text>
+           id="tspan23439"
+           style="stroke-width:0.264583"
+           x="-94.426003"
+           y="14.574857">гиперкарта</tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.221197px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 74.085513,93.921254 -42.381274,-0.07618 v 0"
+         id="path60972-3" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="30.9415"
+         y="92.15802"
+         id="text63464-8-6"><tspan
+           sodipodi:role="line"
+           id="tspan63462-4-7"
+           style="font-size:4.23333px;stroke-width:0.264583"
+           x="30.9415"
+           y="92.15802">знакомые и друзья</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="-93.122353"
+         y="111.69787"
+         id="text26581"><tspan
+           sodipodi:role="line"
+           id="tspan26579"
+           style="font-size:4.23333px;stroke-width:0.264583"
+           x="-93.122353"
+           y="111.69787">только для друзей</tspan></text>
     </g>
     <g
        id="g174152"

@@ -10,13 +10,12 @@ const getIsfreeQuery = (upcode) => {
 }
 
 const getIsfree = async (h, upcode) => {
-	if (!h || !upcode) return Promise.reject("ошибка соединения с сервером!");
+	if (!upcode) return Promise.reject("ошибка соединения с сервером!");
 	const [host] = parseLink(h + "/default");
 	//
 	const query = getIsfreeQuery(upcode);
 	try {
 		const answ = await Fetching(host, query);
-		console.log(answ);
 		return answ.isfree;
 	} catch (err) {
 		console.log(err);

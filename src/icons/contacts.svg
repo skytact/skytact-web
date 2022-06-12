@@ -8,7 +8,7 @@
    y="0px"
    viewBox="0 0 24 24"
    xml:space="preserve"
-   sodipodi:docname="user.svg"
+   sodipodi:docname="contacts.svg"
    width="24"
    height="24"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
@@ -30,39 +30,20 @@
    fit-margin-right="0"
    fit-margin-bottom="0"
    inkscape:zoom="14.684214"
-   inkscape:cx="5.550178"
-   inkscape:cy="13.007166"
+   inkscape:cx="41.234757"
+   inkscape:cy="13.007165"
    inkscape:window-width="1920"
    inkscape:window-height="1029"
    inkscape:window-x="0"
    inkscape:window-y="27"
    inkscape:window-maximized="1"
    inkscape:current-layer="Layer_1" />
-<g
-   id="g16"
-   transform="matrix(0.8,0,0,0.8,-0.8,-0.8)">
-	<g
-   id="g4">
-		<path
-   d="M 16,31 C 7.7285156,31 1,24.270996 1,16 1,7.7290039 7.7285156,1 16,1 24.271484,1 31,7.7290039 31,16 31,24.270996 24.271484,31 16,31 Z M 16,3 C 8.8320313,3 3,8.831543 3,16 3,23.168457 8.8320313,29 16,29 23.167969,29 29,23.168457 29,16 29,8.831543 23.167969,3 16,3 Z"
-   id="path2" />
-	</g>
-	<g
-   id="g14">
-		<g
-   id="g8">
-			<circle
-   cx="16"
-   cy="15.133333"
-   r="4.2666669"
-   id="circle6" />
-		</g>
-		<g
-   id="g12">
-			<path
-   d="m 16,30 c 2.401123,0 4.660034,-0.606201 6.634888,-1.671265 C 22.210083,25.100037 19.455322,22.508301 16,22.508301 c -3.455322,0 -6.210083,2.591736 -6.6348877,5.820434 C 11.339966,29.393799 13.598877,30 16,30 Z"
-   id="path10" />
-		</g>
-	</g>
-</g>
-</svg>
+
+<rect
+   style="fill:#ffcc00;stroke-width:3.60001;stroke-linecap:round;stroke-linejoin:round"
+   id="rect850"
+   width="24"
+   height="24"
+   x="0.036078561"
+   y="0.086968876"
+   ry="12" /></svg>

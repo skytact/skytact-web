@@ -31,8 +31,8 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="10.732325"
-     inkscape:cx="9.9232921"
-     inkscape:cy="8.3858807"
+     inkscape:cx="9.9232925"
+     inkscape:cy="8.385881"
      inkscape:window-width="1920"
      inkscape:window-height="1029"
      inkscape:window-x="0"
@@ -42,9 +42,10 @@
   <title
      id="title2">Trade_Icons</title>
   <polygon
-     points="11.62,3.81 7.43,8 11.62,12.19 10.09,13.71 4.38,8 10.09,2.29 "
+     points="7.43,8 11.62,12.19 10.09,13.71 4.38,8 10.09,2.29 11.62,3.81 "
      id="polygon4"
-     transform="matrix(2.1015762,0,0,2.1015762,-4.8090869,-4.8026376)" />
+     transform="matrix(2.1015762,0,0,2.1015762,-7.5758828,-4.5815596)"
+     style="fill:#b0b0b0;fill-opacity:1" />
   <metadata
      id="metadata826">
     <rdf:RDF>

@@ -24,9 +24,9 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:snap-center="true"
-     inkscape:zoom="0.33917109"
-     inkscape:cx="314.00082"
-     inkscape:cy="548.3958"
+     inkscape:zoom="1.217321"
+     inkscape:cx="306.82129"
+     inkscape:cy="261.22937"
      inkscape:window-width="1920"
      inkscape:window-height="1029"
      inkscape:window-x="0"
@@ -49,7 +49,7 @@
        id="g1105"
        transform="translate(0.63879665,12.08117)">
       <rect
-         style="fill:none;fill-opacity:1;stroke:#b0b0b0;stroke-width:0.811449;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:0.811449, 2.43435;stroke-dashoffset:0;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;stroke:none;stroke-width:0.811449;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:0.811449, 2.43435;stroke-dashoffset:0;stroke-opacity:1"
          id="rect73287"
          width="186.58588"
          height="139.487"
@@ -388,10 +388,10 @@
          transform="translate(-0.1638763,-3.395888)"><tspan
            x="31.99297"
            y="38.753349"
-           id="tspan979">QR - для быстрого </tspan><tspan
+           id="tspan980">QR - для быстрого </tspan><tspan
            x="31.99297"
            y="44.045012"
-           id="tspan981">знакомства</tspan></text>
+           id="tspan982">знакомства</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;white-space:pre;inline-size:45.1384;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -401,7 +401,7 @@
          transform="translate(-0.30784884,32.762198)"><tspan
            x="31.99297"
            y="38.753349"
-           id="tspan983">любая фотография</tspan></text>
+           id="tspan984">любая фотография</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"

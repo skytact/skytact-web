@@ -15,7 +15,9 @@ import page_styles from "../modules/AddButton.module.scss";
 const useContact = async (host, nick) => {
 	try {
 		//required
+		console.log(host, nick);
 		const addr = await getGetAddr(host, nick);
+		console.log(addr);
 		//
 		const accs = "";
 		const [pubk, sign] = (addr) ? await getUpdSign(addr) : ["", ""];
@@ -33,6 +35,7 @@ const useIsfree = async (host, upc) => {
 	//
 	try {
 		const answ = await getIsfree(host, upc);
+		console.log(answ);
 		return typeof answ == "boolean" ? answ : Promise.reject("некорректные данные");
 	} catch (err) {
 		return Promise.reject("ошибка доступа к серверу!");
@@ -40,9 +43,9 @@ const useIsfree = async (host, upc) => {
 }
 //
 function RegistrationLink ({host, nick, upcode}) {
-	const h = host != "127.0.0.1";
+	const h = true;
 	const [signUpAccess, setSignUpAccess] = createSignal(false);
-	useIsfree(host || "127.0.0.1", upcode)
+	useIsfree(host, upcode)
 		.then(res => {
 			setSignUpAccess(res);
 		})
@@ -89,24 +92,23 @@ function AddButton ({permission, host, nick, upcode, onList = f => f}) {
 		e.preventDefault();
 		//
 		if(!state())
-			useIsfree(host || "127.0.0.1", upcode)
+			useIsfree(host, upcode)
 				.then(res => {
-					const h = host != "127.0.0.1";
 					window.location.href = (res == true)
-						? `/r/${upcode}?n=${nick}&h=${h ? host : ""}`
-						: `/l?u=${nick}&h=${h ? host : ""}`
+						? `/r/${upcode}?n=${nick}&h=${host || ""}`
+						: `/l?u=${nick}&h=${host || ""}`
 				})
 				.catch(err => {
-					console.log(err);
 					setState(false);
 				});
 	}
+	console.log('good');
 	//
 	return (
 		<AuthorZone fallback = {
 			permission != "owner" && 
 			<div id = "_statusButton" class = {page_styles.AddButtonWrapper }>
-				<BreezeButton color = {"#6dccf2"} state = {state} onSubmit = {onSignUp}>
+				<BreezeButton color = {"#6dc"} state = {state} onSubmit = {onSignUp}>
 					<div>👋</div>
 				</BreezeButton>
 			</div>

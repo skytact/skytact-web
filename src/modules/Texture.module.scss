@@ -1,13 +1,12 @@
 .Texture {
-
 	box-sizing: border-box;
 	width: 720px;
 	margin: auto;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-top: 0px;
+	margin-bottom: 0px;
 	padding: 10px;
-	font-size: 1.2em;
-	font-family: sans-serif;
+	font-size: 1.6em;
+	font-family: monospace;
 
 	div {
 		margin-top: 5px;
@@ -22,6 +21,7 @@
 		color: #0d0d0d;
 		border: 2px solid #6dccf2;
 		border-radius: 5px;
+		
 	}
 
 	p {
@@ -40,7 +40,7 @@
 	
 	.Texture {
 		width: 100%;
-		font-size: 1.0em;
+		font-size: 1.2em;
 		span {
 			margin: 0;
 			margin-top: 2px;
@@ -52,7 +52,7 @@
 @media (max-width: 499px) {
 
 	.Texture {
-		font-size: 1.0em;
+		font-size: 1.2em;
 	}
 	
 }

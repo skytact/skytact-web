@@ -16,8 +16,9 @@ function List ({list = () => []}) {
 						<span class= {page_styles.ListNode}>
 							<Link href= "#"
 								onClick = {e => {
+									const [host, name] = parseLink(user.ref);
 									e.preventDefault();
-									window.location.replace("/c/" + user.ref);
+									window.location.replace("/c/" + name);
 									//window.location.reload();
 								}}
 							>

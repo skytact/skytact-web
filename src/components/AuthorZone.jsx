@@ -24,6 +24,7 @@ function AuthorZone (props) {
 		.catch(err => {
 			console.log(err);
 		});
+	//
 	createEffect(() => {
 		if (authorized()) console.log(authorized());
 	})

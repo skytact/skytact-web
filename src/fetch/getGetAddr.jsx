@@ -15,7 +15,7 @@ const getGetAddr = async (h, name) => {
 	if (!host) return Promise.reject("parsing error: incorrect hostname or nick!");
 	const query = getGetAddrQuery(name);
 	try {
-		const answ = await Fetching(h, query);
+		const answ = await Fetching(host, query);
 		return answ.getaddr;
 	} catch (err) {
 		return Promise.reject(err);

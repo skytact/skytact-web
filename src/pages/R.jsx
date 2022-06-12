@@ -15,7 +15,7 @@ import frigthStep from "../icons/enterData.svg";
 import skytacts_icon from "../icons/logoSky.svg";
 
 function __R$ () {
-	const ru_heading = "Регистрация аккаунта в Skytacts";
+	const ru_heading = "Регистрация аккаунта в Skytact";
 	const en_heading = "Register an account with Skytacts";
 	//
 	return (

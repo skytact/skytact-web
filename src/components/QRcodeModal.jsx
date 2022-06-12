@@ -11,8 +11,8 @@ import view from "../icons/view.svg";
 
 import page_styles from "../modules/QRcodeModal.module.scss";
 
-function QRcodeModal({host = "127.0.0.1", nick = "republichenko"}) {
-	const refer = "https://skytacts.io/" + (host ? host+"/" : "" ) + nick;
+function QRcodeModal({host = "", nick = "republichenko"}) {
+	const refer = "https://skytact.online/" + (host ? host+"/" : "" ) + nick;
 	const qr = new QRcode({
 		content: refer,
 		join: true,

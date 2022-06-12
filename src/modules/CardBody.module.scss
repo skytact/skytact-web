@@ -104,6 +104,7 @@
 	position: absolute;
 	text-decoration: underline;
 	text-align: left;
+	padding: 0 0 5px;
 }
 
 .FullName {
@@ -127,7 +128,7 @@
 	height: 28px;
 	float: left;
 	font-size: 1.5em;
-	font-family: sans-serif;
+	//font-family: ;
 }
 
 .Views {
@@ -249,9 +250,13 @@
 	}
 
 	span {
+		display: block;
 		box-sizing: border-box;
-		font-size: 20px;
+		padding-top: 8px;
+		font-size: 14px;
 		color: #b0b0b0;
+		float: left;
+		font-family: monospace;
 	}
 }
 
@@ -263,7 +268,7 @@
 }
 
 .Line {
-	font-size: 1.5em;
+	font-size: 1.4em;
 	color: black;
 	word-break: break-all;
 	a {
@@ -273,22 +278,24 @@
 
 .Text {
 	margin: 3px  0 3px;
-	font-size: 1.4em;
+	font-size: 1.3em;
 	color: #b0b0b0;
 }
 
 .AddNote {
 	box-sizing: border-box;
 	width: 100%;
-	margin-top: 32px;
-	padding: 7px;
+	margin-top: 24px;
+	padding: 3px;
 	height: 60px;
 	a {
+		box-sizing: border-box;
 		display: block;
 		height: 40px;
-		width: 230px;
+		width: 100%;
 		color: #2b98ec;
-		font-size: 1.5em;
+		font-size: 1.4em;
+		padding: 5px;
 		div {
 			padding: 8px 7px 0px 12px;
 			font-family: monospace;
@@ -298,7 +305,7 @@
 		}
 		img {
 			float: left;
-			width: 36px;
+			width: 32px;
 		}
 	}
 }
@@ -310,6 +317,16 @@
 
 	.DefaultIntro, .Intro, .FullName, .Note, .IconBar, .AddNote{
 		padding-left: 14px;
+	}
+
+	
+
+	.IconBar {
+		button { 
+			img {
+				width: 21px;
+			}
+		}
 	}
 
 	.NoteWrapper {

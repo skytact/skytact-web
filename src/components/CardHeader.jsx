@@ -48,8 +48,14 @@ function CardHeader ({
 					<div class = {cardHeader_styles.Left}>
 						<CardHeaderButton linkPath = "/c" iconPath = {contacts} />
 					</div> 
+					<div class = { cardHeader_styles.NickEdit }>
+						#{nick}
+					</div>
 				</>
 			}>
+				<div class = { cardHeader_styles.Nick }>
+					#{nick}
+				</div>
 				<Show when = {permission == "owner"} fallback = {
 					<div class = {cardHeader_styles.Left}>
 						<CardHeaderButton linkPath = "/l" iconPath = {close} />
@@ -60,9 +66,6 @@ function CardHeader ({
 					</div> 
 				</Show>
 			</Show>
-			<div class = { cardHeader_styles.Nick }>
-				#{nick}
-			</div>
 			{ permission == "owner" &&
 			<div 
 				class = { cardHeader_styles.QR } 

@@ -59,7 +59,12 @@
 		font-weight: normal;
 		color: #0d0d0dff;
 		a {
+			box-sizing: border-box;
+			border: 2px solid #29A7D9;
+			border-radius: 5px;
+			padding: 3px 6px;
 			color: #29A7D9;
+			text-decoration: none;
 			&:after {
 				color: #C1C9D9;
 			}

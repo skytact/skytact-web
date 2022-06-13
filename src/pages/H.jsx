@@ -3,6 +3,7 @@ import { Link } from "solid-app-router";
 import { createSignal } from "solid-js";
 //components
 import Header from "../components/Header";
+import CloudBackground from "../components/CloudBackground";
 //styles
 //modules
 import page_styles from "../modules/H.module.scss";
@@ -16,25 +17,27 @@ function __H$ () {
 	//
 	return (
 		<div>
-			<Header />
-			<div class={page_styles.Credo}>
-				<h1><a href={networkingHref()}>Нетворкинг</a> - здесь!</h1>
-			</div>
-			<div class={page_styles.LinkWrap}>
-				<Link href="/r">Присоединиться</Link>
-			</div>
-			<div class={page_styles.LinkWrap}>
-				<Link href="/l">Уже есть аккаунт</Link>
-			</div>
-			<div class={page_styles.LinkWrap}>
-				<Link href="/c">Поиск аккаунта</Link>
-			</div>
-			<div class={page_styles.LinkWrap}>
-				<Link href="/m">Манифест</Link>
-			</div>
-			<div class={page_styles.Signature}>
-				created by <a href="https://skytact.online/c/republichenko">#republichenko</a>
-			</div>
+			<CloudBackground height = {800}>
+				<Header />
+				<div class={page_styles.Credo}>
+					<h1><a href={networkingHref()}>Нетворкинг</a> - здесь!</h1>
+				</div>
+				<div class={page_styles.LinkWrap}>
+					<Link href="/r">Присоединиться</Link>
+				</div>
+				<div class={page_styles.LinkWrap}>
+					<Link href="/l">Уже есть аккаунт</Link>
+				</div>
+				<div class={page_styles.LinkWrap}>
+					<Link href="/c">Поиск аккаунта</Link>
+				</div>
+				<div class={page_styles.LinkWrap}>
+					<Link href="/m">Манифест</Link>
+				</div>
+				<div class={page_styles.Signature}>
+					created by <a href="https://skytact.online/c/republichenko">#republichenko</a>
+				</div>
+			</CloudBackground>
 		</div>
 	);
 }

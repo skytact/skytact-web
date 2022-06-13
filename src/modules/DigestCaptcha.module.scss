@@ -11,7 +11,7 @@
 		height: 40px;
 		padding: 7px;
 		border: 1px solid #b0b0b0;
-		font-size: 18px;
+		font-size: 22px;
 	}
 }
 
@@ -52,13 +52,5 @@
 		border: none;
 		background-color: #f9f9f9;
 		font-size: 12px;
-	}
-}
-
-@media (max-width: 499px) {
-	.DigestMail {
-		input {
-			font-size: 14px;
-		}
 	}
 }

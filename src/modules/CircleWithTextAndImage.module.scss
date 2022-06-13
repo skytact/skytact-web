@@ -1,0 +1,50 @@
+.Scene {
+	max-width: 480px;
+	height: 230px;
+	margin: auto;
+	box-sizing: border-box;
+	padding: 21px 14px;
+	margin-bottom: 20px;
+}
+
+.Circle {
+	box-sizing: border-box;
+	display: block;
+	width: 216px;
+	height: 216px;
+	position: relative;
+	border-radius: 50%;
+	box-shadow: 0px 0px 14px #909090;
+	>div {
+		box-sizing: border-box;
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		padding: 5px;
+		top: 20%;
+		left: 50%;
+		transform: translate(-50%, 0);
+		img {
+			display: block;
+			width: 40px;
+		}
+	}
+
+	p {
+		box-sizing: border-box;
+		display: block;
+		margin: 60px;
+		width: 160px;
+		height: 80px;
+		margin: auto;
+		position: absolute;
+		top: 70%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 24px;
+		text-align: center;
+		font-family: 'Courier New';
+		font-weight: bold;
+		color: black;
+	}
+}

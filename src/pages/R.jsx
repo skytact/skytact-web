@@ -5,6 +5,7 @@ import { Link } from "solid-app-router";
 import Header from '../components/Header.jsx';
 import Heading from '../components/Heading.jsx';
 import BreezeButton from "../components/BreezeButton.jsx";
+import DigestWrap from "../components/DigestWrap.jsx";
 //styles
 //modules
 import page_styles from "../modules/R.module.scss";
@@ -38,15 +39,17 @@ function __R$ () {
 				<p style = "margin-top: 28px;">Для каждого аккаунта открыто <b>4&nbsp;приглашения</b>,
 				если приглашений не осталось, вместо регистрации откроется страница <b>входа&nbsp;в&nbsp;аккаунт</b>!</p>
 			</div>
-			<div class = {page_styles.WrapImageBlockLeft}>
-				<img src={firstStep}/>
-			</div>
-			<div class = {page_styles.WrapImageBlockRigth}>
-				<img src={secondStep}/>
-			</div>
-			<div class = {page_styles.WrapImageBlockLeft}>
-				<img src={frigthStep}/>
-			</div>
+			<DigestWrap>
+				<div class = {page_styles.WrapImageBlockLeft}>
+					<img src={firstStep}/>
+				</div>
+				<div class = {page_styles.WrapImageBlockRigth}>
+					<img src={secondStep}/>
+				</div>
+				<div class = {page_styles.WrapImageBlockLeft}>
+					<img src={frigthStep}/>
+				</div>
+			</DigestWrap>
 			<div class = {page_styles.Footer}>
 				<Link href="/">вернуться</Link>
 			</div>

@@ -26,7 +26,7 @@
      inkscape:snap-center="true"
      inkscape:zoom="0.47773482"
      inkscape:cx="139.19856"
-     inkscape:cy="500.27753"
+     inkscape:cy="500.27754"
      inkscape:window-width="1920"
      inkscape:window-height="1029"
      inkscape:window-x="0"
@@ -395,10 +395,10 @@
          transform="translate(-0.1638763,-3.395888)"><tspan
            x="31.99297"
            y="38.753349"
-           id="tspan32054">QR - для быстрого </tspan><tspan
+           id="tspan1051">QR - для быстрого </tspan><tspan
            x="31.99297"
            y="44.045012"
-           id="tspan32056">знакомства</tspan></text>
+           id="tspan1053">знакомства</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;white-space:pre;inline-size:45.1384;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -408,7 +408,7 @@
          transform="translate(-0.30784884,32.762198)"><tspan
            x="31.99297"
            y="38.753349"
-           id="tspan32058">любая фотография</tspan></text>
+           id="tspan1055">любая фотография</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:monospace;-inkscape-font-specification:monospace;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -425,17 +425,6 @@
          transform="matrix(0.26458333,0,0,0.26458333,-99.910646,-3.6859836)"
          id="text14961"
          style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;white-space:pre;shape-inside:url(#rect14963)" />
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="-94.426003"
-         y="14.574857"
-         id="text23441"><tspan
-           sodipodi:role="line"
-           id="tspan23439"
-           style="stroke-width:0.264583"
-           x="-94.426003"
-           y="14.574857">гиперкарта</tspan></text>
       <path
          style="fill:none;stroke:#000000;stroke-width:0.221197px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 74.085513,93.921254 -42.381274,-0.07618 v 0"

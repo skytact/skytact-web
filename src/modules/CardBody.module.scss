@@ -127,8 +127,8 @@
 	width: 80%;
 	height: 28px;
 	float: left;
-	font-size: 1.5em;
-	//font-family: ;
+	font-family: monospace;
+	font-size: 1.8em;
 }
 
 .Views {
@@ -198,8 +198,9 @@
 		width: 100%;
 		text-align: left;
 		text-overflow: ellipsis;
-		font-family: monospace;
-		font-size: 1.3em;
+		font-family: 'Courier New';
+		font-weight: normal;
+		font-size: 1.0em;
 		color: #b0b0b0;
 	}
 }
@@ -319,6 +320,24 @@
 		padding-left: 14px;
 	}
 
+	.Intro {
+		padding-bottom: 3px;
+	}
+	.IntroText {
+		span {
+			font-size: 0.9em;
+		}
+	}
+
+	.Note {
+		padding: 0 7px;
+	}
+	.Line {
+		font-size: 1.2em;
+	}
+	.Text {
+		font-size: 1.1em;
+	}
 	
 
 	.IconBar {

@@ -6,7 +6,7 @@ import page_styles from "../modules/FootCard.module.scss";
 function FootCard ({}) {
 	return (
 		<div class = {page_styles.FootCard}>
-			<Link href="/h">
+			<Link href="/">
 				<img src={logoSky} />
 			</Link>
 		</div>

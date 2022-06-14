@@ -89,6 +89,7 @@ const prepareImage = (base64) => new Promise((resolve, reject) => {
 
 function Avatar ({mode = "view", host = "skytact-api.space", photo = () => "", setPhoto = f => f}) {
 	const [error, setError] = createSignal("");
+	const [verticalImg, setVerticalImg] = createSignal(false);
 	//
 	const onChange = e => {
 		//
@@ -102,7 +103,6 @@ function Avatar ({mode = "view", host = "skytact-api.space", photo = () => "", s
 			prepareImage(original.src)
 				.then(res => uploadImage(res))
 				.then(res => {
-					console.log(res);
 					setPhoto(res);
 					window.location.reload();
 				})
@@ -112,6 +112,13 @@ function Avatar ({mode = "view", host = "skytact-api.space", photo = () => "", s
 				});
 		}
 		reader.readAsDataURL(file);
+	}
+	//
+	const onLoadAvatar = event => {
+		const w = event.target.naturalWidth || 240;
+		const h = event.target.naturalHeight || 240;
+		console.log()
+		setVerticalImg(w < h);
 	}
 	//
 	const onError = err => {
@@ -129,17 +136,12 @@ function Avatar ({mode = "view", host = "skytact-api.space", photo = () => "", s
 				{photo() && 
 					<img 
 						src = {'https://skytact-api.space:2728/view/' + photo()} 
+						style = {`${verticalImg() ? "max-width: 100%" : "max-height: 100%;"}`}
+						onload = { onLoadAvatar }
 						onerror = { onError }
 					/>
 				}
 				{(!photo() || photo() == "__default") && <img src= {default_img} />}
-				<div 
-					style = "display: inline-block; position: relative; z-index: -1; margin: 0 0 10px 24px;"
-				>
-				<BreezeButton width = {"30px"} height = {"30px"} color = {"#6dccf2"} state = {() => false}>
-					<div style = "font-size: 20px; margin-top: 10px;">👋</div>
-				</BreezeButton>
-				</div>
 			</div>
 			{mode == "edit" && 
 			<button>

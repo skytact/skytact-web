@@ -6,6 +6,7 @@ import Heading from "../components/Heading.jsx";
 import Texture from "../components/Texture.jsx";
 import DigestWrap from "../components/DigestWrap.jsx";
 import CircleWithTextAndImage from "../components/CircleWithTextAndImage.jsx";
+import CloudBackground from "../components/CloudBackground.jsx";
 //modules
 import page_styles from "../modules/M.module.scss";
 //content
@@ -43,7 +44,7 @@ function Manifest_2 () {
 //
 function __M$ () {
 	return (
-		<div>
+		<CloudBackground height = {800} >
 			<Header />
 			<Heading header="О проекте" />
 			
@@ -56,37 +57,22 @@ function __M$ () {
 				ты можешь поделиться своим цифровым профилем и рассказать о 
 				себе больше, чем можно просто увидеть.
 			</Texture>
+			<div class={page_styles.ImageWrapper}>
+				<img src={anatomy}/>
+			</div>
 			
-			<DigestWrap>
-				<Texture>
-					<p><a href = '#'>Гиперкарта</a> - это фотографии, телефоны, мессенджеры, 
-					соц сети, ссылки, криптокошельки - всё, на одной странице 
-					и в локаничном формате.</p>
-				</Texture>
-				<div class={page_styles.ImageWrapper}>
-					<img src={anatomy}/>
-				</div>
-				<CircleWithTextAndImage>
-					Через QR код
-				</CircleWithTextAndImage>
-				
-				<CircleWithTextAndImage left = {true} img = {lock} >
-					<span style = "color: red;">Данные защищены</span>
-				</CircleWithTextAndImage>
-	
-				<CircleWithTextAndImage img = {link}>
-					Собственная гиперссылка
-				</CircleWithTextAndImage>
-			</DigestWrap>
-
+			<Texture>
+				<p><a href = '#'>Гиперкарта</a> - это фотографии, телефоны, мессенджеры, 
+				соц сети, ссылки, криптокошельки - всё, на одной странице 
+				и в локаничном формате.</p>
+			</Texture>
 			<Texture>
 				<Manifest_2 />
 			</Texture>
-			
 			<div class={page_styles.Footer}>
 				<Link href="/">вернуться</Link>
 			</div>
-		</div>
+		</CloudBackground>
 	)
 }
 

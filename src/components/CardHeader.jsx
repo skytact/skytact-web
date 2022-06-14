@@ -58,7 +58,7 @@ function CardHeader ({
 				</div>
 				<Show when = {permission == "owner"} fallback = {
 					<div class = {cardHeader_styles.Left}>
-						<CardHeaderButton linkPath = "/l" iconPath = {close} />
+						{/*<CardHeaderButton linkPath = "/l" iconPath = {close} />*/}
 					</div> 
 				}>
 					<div class = {cardHeader_styles.Left}>

@@ -198,9 +198,9 @@
 		width: 100%;
 		text-align: left;
 		text-overflow: ellipsis;
-		font-family: 'Courier New';
+		font-family: monospace;
 		font-weight: normal;
-		font-size: 1.0em;
+		font-size: 1.4em;
 		color: #b0b0b0;
 	}
 }
@@ -226,6 +226,7 @@
 .NoteWrapper {
 	box-sizing: border-box;
 	width: 100%;
+	margin-bottom: 4px;
 }
 
 .IconBar {
@@ -264,8 +265,9 @@
 .Note {
 	box-sizing: border-box;
 	width: 100%;
-	padding: 0 7px 14px;
+	padding: 7px;
 	font-family: monospace;
+	border-radius: 10px;
 }
 
 .Line {
@@ -325,12 +327,12 @@
 	}
 	.IntroText {
 		span {
-			font-size: 0.9em;
+			font-size: 14px;
 		}
 	}
 
 	.Note {
-		padding: 0 7px;
+		padding: 0 16px;
 	}
 	.Line {
 		font-size: 1.2em;

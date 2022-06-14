@@ -4,6 +4,7 @@ import { Link } from "solid-app-router";
 import Modal from "./Modal";
 import ChangeNameModal from "./ChangeNameModal";
 import QRcodeModal from "./QRcodeModal";
+import BreezeButton from "./BreezeButton";
 
 import uploadImage from "../fetch/uploadImage";
 import getUpdnote from "../fetch/getUpdnote";
@@ -126,11 +127,19 @@ function Avatar ({mode = "view", host = "skytact-api.space", photo = () => "", s
 			</span>}
 			<div>
 				{photo() && 
-				<img 
-					src = {'https://skytact-api.space:2728/view/' + photo()} 
-					onerror = { onError }
-				/>}
+					<img 
+						src = {'https://skytact-api.space:2728/view/' + photo()} 
+						onerror = { onError }
+					/>
+				}
 				{(!photo() || photo() == "__default") && <img src= {default_img} />}
+				<div 
+					style = "display: inline-block; position: relative; z-index: -1; margin: 0 0 10px 24px;"
+				>
+				<BreezeButton width = {"30px"} height = {"30px"} color = {"#6dccf2"} state = {() => false}>
+					<div style = "font-size: 20px; margin-top: 10px;">👋</div>
+				</BreezeButton>
+				</div>
 			</div>
 			{mode == "edit" && 
 			<button>

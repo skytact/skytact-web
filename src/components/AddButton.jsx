@@ -11,6 +11,8 @@ import getContact from "../fetch/getContact";
 import getUpdSign from "../fetch/getUpdSign";
 import getIsfree from "../fetch/getIsfree";
 import page_styles from "../modules/AddButton.module.scss";
+
+import hello from "../icons/hello.svg";
 //
 const useContact = async (host, nick) => {
 	try {
@@ -111,14 +113,16 @@ function AddButton ({permission, host, nick, upcode, onList = f => f}) {
 			permission != "owner" && 
 			<div id = "_statusButton" class = {page_styles.AddButtonWrapper }>
 				<BreezeButton color = {"#6dccf2"} state = {state} onSubmit = {onSignUp}>
-					<div>👋</div>
+					{/* <div>👋</div> */}
+					<img src = {hello} />
 				</BreezeButton>
 			</div>
 		}>
 			{ permission != "owner" && 
 			<div id = "_statusButton" class = {page_styles.AddButtonWrapper }>
 				<BreezeButton color = {"#6dccf2"} state = {state} onSubmit = {onSubmit}>
-					<div>👋</div>
+					{/* <div>👋</div> */}
+					<img src = {hello} />
 				</BreezeButton>
 			</div>}
 		</AuthorZone>

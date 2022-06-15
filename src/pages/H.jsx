@@ -3,6 +3,7 @@ import { Link } from "solid-app-router";
 import { createSignal } from "solid-js";
 //components
 import Header from "../components/Header";
+import Heading from "../components/Heading";
 import CloudBackground from "../components/CloudBackground";
 //styles
 //modules
@@ -20,7 +21,7 @@ function __H$ () {
 			<CloudBackground height = {800}>
 				<Header />
 				<div class={page_styles.Credo}>
-					<h1><a href={networkingHref()}>Нетворкинг</a> - здесь!</h1>
+					<h1><p><a href={networkingHref()}>Нетворкинг</a></p><p>здесь!</p></h1>
 				</div>
 				<div class={page_styles.LinkWrap}>
 					<Link href="/r">Присоединиться</Link>

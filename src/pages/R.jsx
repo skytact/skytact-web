@@ -25,9 +25,9 @@ function __R$ () {
 			<Heading header={ru_heading}/>
 			<div class={page_styles.Texture}> 
 				<div><span>Для регистрации</span> нужно сделать следующее:</div>
-				<div><span>@</span> Найти пользователя, у которого есть <span>приглашение</span></div>
-				<div><span>@</span> Через QR или ссылку откройте его профиль</div>
-				<div><span>@</span> Сразу заметите: 
+				<div><span>раз:</span> Найти пользователя, у которого есть <b>приглашение</b></div>
+				<div><span>два:</span> Через QR или ссылку откройте его профиль</div>
+				<div><span>три:</span> Сразу заметите: 
 					<div 
 						style = "display: inline-block; position: relative; z-index: 10; margin: 0 0 10px 24px;"
 					>
@@ -39,7 +39,7 @@ function __R$ () {
 				<p style = "margin-top: 28px;">Для каждого аккаунта открыто <b>4&nbsp;приглашения</b>,
 				если приглашений не осталось, вместо регистрации откроется страница <b>входа&nbsp;в&nbsp;аккаунт</b>!</p>
 			</div>
-			<div class = {page_styles.WrapImageBlockLeft}>
+			{/*<div class = {page_styles.WrapImageBlockLeft}>
 				<img src={firstStep}/>
 			</div>
 			<div class = {page_styles.WrapImageBlockRigth}>
@@ -47,9 +47,9 @@ function __R$ () {
 			</div>
 			<div class = {page_styles.WrapImageBlockLeft}>
 				<img src={frigthStep}/>
-			</div>
+			</div>*/}
 			<div class = {page_styles.Footer}>
-				<Link href="/">вернуться</Link>
+				<Link href="/h">вернуться</Link>
 			</div>
 		</CloudBackground>
 	);

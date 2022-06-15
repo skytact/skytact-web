@@ -38,6 +38,9 @@
 }
 
 @media (max-width: 499px) {
+	.CloudBlock {
+		width: 480px;
+	}
 	.CloudAnimation {
 		animation-name: cloud-min;
 	}
@@ -46,49 +49,49 @@
 @keyframes cloud {
 	0% {
 		opacity: 0;
-		transform: translate(-100px, 0);
+		transform: translate(-200px, 0);
 	}
 	5% {
 		opacity: 1;
-		transform: translate(-100px, 0);
+		transform: translate(-200px, 0);
 	}
 	33% {
-		transform: translate(820px, 0);
+		transform: translate(720px, 0);
 	}
 	66% {
-		transform: translate(-100px, 0);
+		transform: translate(-200px, 0);
 	}
 	97% {
 		opacity: 1;
-		transform: translate(820px, 0);
+		transform: translate(720px, 0);
 	}
 	100% {
 		opacity: 0;
-		transform: translate(820px, 0);
+		transform: translate(720px, 0);
 	}
 }
 
 @keyframes cloud-min {
 	0% {
 		opacity: 0;
-		transform: translate(-60px, 0);
+		transform: translate(-200px, 0);
 	}
 	5% {
 		opacity: 1;
-		transform: translate(-60px, 0);
+		transform: translate(-200px, 0);
 	}
 	33% {
-		transform: translate(560px, 0);
+		transform: translate(480px, 0);
 	}
 	66% {
-		transform: translate(-60px, 0);
+		transform: translate(-200px, 0);
 	}
 	97% {
 		opacity: 1;
-		transform: translate(560px, 0);
+		transform: translate(480px, 0);
 	}
 	100% {
 		opacity: 0;
-		transform: translate(560px, 0);
+		transform: translate(480px, 0);
 	}
 }

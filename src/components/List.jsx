@@ -7,10 +7,10 @@ function List ({list = () => []}) {
 	//
 	return (
 		<div class={page_styles.List}>
-			<div class={page_styles.HeadingList}>
-				<h1>знакомства {list().length}</h1>
-			</div>
-			<For each = {list()} fallback= {<div style = "color: #b0b0b0;" class= {page_styles.ListNode}>{"пока пусто :)"}</div>}>
+			{/*<div class={page_styles.HeadingList}>
+				{/*<h1>отметились ({list().length})</h1>}
+			</div>*/}
+			<For each = {list()} fallback= {<div style = "color: #b0b0b0;" class= {page_styles.ListNode}>{"нет отметок :)"}</div>}>
 				{
 					(user) => (
 						<span class= {page_styles.ListNode}>

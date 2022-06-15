@@ -36,10 +36,10 @@ function QRcodeModal({host = "", nick = "republichenko"}) {
 					<img src={close} />
 				</button>
 			</div>
-			<h2 class = {page_styles.Heading}>#{ nick }</h2>
+			<p class = {page_styles.Heading}>#{ nick }</p>
 			<div class = {page_styles.QR} innerHTML = {qr_img} />
 			<div class = {page_styles.AutorLink}>QR by <a href="https://www.npmjs.com/package/qrcode-svg">qrcode-svg</a></div>
-			<h2 class = {page_styles.Heading}> OR </h2>
+			<p class = {page_styles.Heading}> OR </p>
 			<div class = {page_styles.Copy} 
 				onClick = {e => {
 					e.preventDefault();

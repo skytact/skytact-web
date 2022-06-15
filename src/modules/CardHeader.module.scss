@@ -24,15 +24,17 @@
 }
 
 .NickEdit, .Nick {
-	font-size: 1.2em;
 	text-align: center;
 	float: left;
 	position: absolute;
 	width: 210px;
 	height: 30px;
 	left: 50%;
-	top: 30px;
+	top: 20px;
 	transform: translate(-50%, 0%);
+
+	font-family: 'Caveat';
+	font-size: 1.4em;
 }
 
 .QR {
@@ -56,7 +58,7 @@
 	}
 
 	.Nick {
-		font-size: 1.0em;
+		font-size: 1.4em;
 	}
 }
 
@@ -74,7 +76,7 @@
 	}
 
 	.Nick {
-		top: 22px;
+		top: 13px;
 		overflow: hidden;
 	}
 	

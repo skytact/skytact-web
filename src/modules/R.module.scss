@@ -6,7 +6,6 @@
 	margin-bottom: 20px;
 	padding: 10px;
 	font-size: 1.2em;
-	font-family: sans-serif;
 
 	div {
 		margin-top: 5px;
@@ -17,6 +16,8 @@
 		display: inline-block;
 		padding: 0 3px;
 		margin: 0;
+		font-family: 'Press Start 2P';
+		font-size: 12px;
 		margin-top: 2px;
 		color: #0d0d0d;
 		border: 2px solid #6dccf2;
@@ -64,7 +65,7 @@
 	padding: 20px;
 	box-sizing: border-box;
 	a {
-		font-size: 20px;
+		font-size: 18px;
 		color: #29A7D9;
 	}
 }
@@ -82,7 +83,6 @@
 	}
 	
 	.Texture {
-		width: 100%;
 		font-size: 1.0em;
 		span {
 			margin: 0;
@@ -90,7 +90,7 @@
 		}
 	}
 
-	.WrapImageBlockLeft, .WrapImageBlockRigth {
+	.WrapImageBlockLeft, .WrapImageBlockRigth, .Texture {
 		width: 100%;
 	}
 }

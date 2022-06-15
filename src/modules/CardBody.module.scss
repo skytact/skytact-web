@@ -12,8 +12,8 @@
 	border-radius: 50%;
 	box-shadow: 0px 0px 5px #b0b0b0;
 	padding: 6px;
-	margin-top: 32px;
-	margin-bottom: 20px;
+	margin-top: 10px;
+	margin-bottom: 32px;
 	position: relative;
 	div {
 		width: 100%;
@@ -36,7 +36,7 @@
 		display: block;
 		box-sizing: border-box;
 		border: none;
-		background-color: rgba(256, 256, 256, 0.9);
+		background-color: rgba(256, 256, 256, 0.99);
 		box-shadow: 0px 0px 3px #b0b0b0;
 		border-radius: 50%;
 		position: absolute;
@@ -112,8 +112,8 @@
 	box-sizing: border-box;
 	display: block;
 	width: 100%;
-	height: 42px;
-	padding: 7px 0 0 7px;
+	height: 37px;
+	padding: 0 0 0 7px;
 	border: none;
 	border-bottom: 3px dotted #b0b0b0;
 }
@@ -124,11 +124,12 @@
 	display: inline-block;
 	margin: 0;
 	padding: 0;
+	padding-top: 0px;
 	width: 75%;
-	height: 28px;
+	height: 34px;
 	//float: left;
-	font-family: monospace;
-	font-size: 1.8em;
+	font-family: 'Montserrat';
+	font-size: 26px;
 }
 
 .Views {
@@ -174,7 +175,6 @@
 		text-align: center;
 		padding: 20px 0;
 		padding: 0;
-		font-family: monospace;
 		font-size: 1.2em;
 		color: #b0b0b0;
 		text-decoration: none;
@@ -199,9 +199,9 @@
 		width: 100%;
 		text-align: left;
 		text-overflow: ellipsis;
-		font-family: monospace;
+		//font-family: 'Amatic SC';
 		font-weight: normal;
-		font-size: 1.4em;
+		font-size: 1.1em;
 		color: #b0b0b0;
 	}
 }
@@ -259,20 +259,18 @@
 		font-size: 14px;
 		color: #b0b0b0;
 		float: left;
-		font-family: monospace;
 	}
 }
 
 .Note {
 	box-sizing: border-box;
 	width: 100%;
-	padding: 7px;
-	font-family: monospace;
+	padding: 3px 7px 7px;
 	border-radius: 10px;
 }
 
 .Line {
-	font-size: 1.4em;
+	font-size: 1.2em;
 	color: black;
 	word-break: break-all;
 	a {
@@ -282,7 +280,7 @@
 
 .Text {
 	margin: 3px  0 3px;
-	font-size: 1.3em;
+	font-size: 1.2em;
 	color: #b0b0b0;
 }
 
@@ -298,11 +296,10 @@
 		height: 40px;
 		width: 100%;
 		color: #2b98ec;
-		font-size: 1.4em;
+		font-size: 1.2em;
 		padding: 5px;
 		div {
-			padding: 8px 7px 0px 12px;
-			font-family: monospace;
+			padding: 2px 7px 0px 12px;
 			text-decoration: underline;
 			float: left;
 			height: 36px;
@@ -327,22 +324,22 @@
 		padding-top: 10px;
 		padding-bottom: 3px;
 	}
+	
 	.IntroText {
 		span {
-			font-size: 14px;
+			font-size: 16px;
 		}
 	}
 
 	.Note {
-		padding: 0 16px;
+		padding: 0 12px;
 	}
 	.Line {
-		font-size: 1.2em;
+		font-size: 1.1em;
 	}
 	.Text {
 		font-size: 1.1em;
 	}
-	
 
 	.IconBar {
 		button { 
@@ -355,13 +352,14 @@
 	.NoteWrapper {
 		padding: 5px;
 	}
+
+	.Fname {
+		padding-top: 0px;
+		font-size: 24px;
+	}
 }
 
 @media (max-width: 299px) {
-	.Fname {
-		padding-top: 3px;
-		font-size: 1.5em;
-	}
 
 	.Views {
 		div {

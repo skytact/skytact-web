@@ -9,6 +9,7 @@ import DigestSubmit from "../components/DigestSubmit";
 import DigestButton from "../components/DigestButton";
 
 import useData from "../libs/useData";
+import parseLink from "../libs/parseLink";
 
 import page_styles from "../modules/SettingForm.module.scss";
 
@@ -96,7 +97,8 @@ function SettingForm ({
 						<DigestButton
 							onSet = {e=>{
 								e.preventDefault;
-								window.location.href = "/c/" + link;
+								const [host, name] = parseLink(link);
+								window.location.href = "/c/" + name;
 							}}
 						>
 							Перейти					

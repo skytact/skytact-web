@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Play&display=swap');
+
 body {
   margin: 0;
-  font-family: Consolas, 'Courier New', monospace;
+  font-family: 'Manrope', Monaco, Consolas, 'Courier New', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -13,4 +18,8 @@ body > div#root {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1,h2,h3 {
+	font-family: 'Press Start 2P', 'Courier New', monospace;
 }

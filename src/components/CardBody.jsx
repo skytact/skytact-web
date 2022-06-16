@@ -78,7 +78,6 @@ const prepareImage = (base64) => new Promise((resolve, reject) => {
 		canvas.height = h;
 		const ctx = canvas.getContext("2d");
 		ctx.drawImage(img, 0, 0, w, h);
-		console.log(base64);
 		resolve(canvas.toDataURL('image/jpeg', scalar));
 	}
 	img.onerror = (err) => {
@@ -117,7 +116,6 @@ function Avatar ({mode = "view", host = "skytact-api.space", photo = () => "", s
 	const onLoadAvatar = event => {
 		const w = event.target.naturalWidth || 240;
 		const h = event.target.naturalHeight || 240;
-		console.log()
 		setVerticalImg(w < h);
 	}
 	//
@@ -141,7 +139,7 @@ function Avatar ({mode = "view", host = "skytact-api.space", photo = () => "", s
 						onerror = { onError }
 					/>
 				}
-				{(!photo() || photo() == "__default") && <img src= {default_img} />}
+				{(!photo() || photo() == "__default") && <img src= {default_img} style = {"max-width: 100%;"} />}
 			</div>
 			{mode == "edit" && 
 			<button>

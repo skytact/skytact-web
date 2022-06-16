@@ -33,8 +33,8 @@ function App() {
 		  		<Route path="/i" element= {<I_page />} /> //income
 		  		<Route path="/n" element= {<N_page />} /> //add note form
 		  		<Route path="/c" element= {<C_page />} /> //search card
-		  		<Route path="/c/:nick" element= {<CU_page />} /> //card data
-		  		<Route path="/c/:host/:nick" element = {<CU_page />} />// card data from remote host
+		  		<Route path="/:nick" element= {<CU_page />} /> //card data
+		  		{/*}<Route path="/:host/:nick" element = {<CU_page />} />*/}// card data from remote host
 		  		<Route path="/v" element= {<V_page />} /> //recovery password
 		  		<Route path="/m" element= {<M_page />} /> //manifest of project
 		  	</Routes>

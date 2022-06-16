@@ -10,7 +10,7 @@ function List ({list = () => []}) {
 			{/*<div class={page_styles.HeadingList}>
 				{/*<h1>отметились ({list().length})</h1>}
 			</div>*/}
-			<For each = {list()} fallback= {<div style = "color: #b0b0b0;" class= {page_styles.ListNode}>{"нет отметок :)"}</div>}>
+			<For each = {list()} fallback= {<div style = "color: #b0b0b0;" class= {page_styles.ListNode}>{"пока нет отметок"}</div>}>
 				{
 					(user) => (
 						<span class= {page_styles.ListNode}>
@@ -18,8 +18,7 @@ function List ({list = () => []}) {
 								onClick = {e => {
 									const [host, name] = parseLink(user.ref);
 									e.preventDefault();
-									window.location.replace("/c/" + name);
-									//window.location.reload();
+									window.location.replace("/" + name);
 								}}
 							>
 								#{parseLink(user.ref)[1]}

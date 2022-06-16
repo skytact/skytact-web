@@ -36,7 +36,7 @@ function __H$ () {
 					<Link href="/m">Манифест</Link>
 				</div>
 				<div class={page_styles.Signature}>
-					created by <a href="https://skytact.online/c/republichenko">#republichenko</a>
+					created by <a href="https://skytact.online/republichenko">#republichenko</a>
 				</div>
 			</CloudBackground>
 		</div>

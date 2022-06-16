@@ -78,7 +78,6 @@ function SettingForm ({
 						placeholder = "здесь повтори пароль" 
 						defaultValue = { data.cpwd.trim() }
 						onText = {e => {
-							console.log(data.pwd);
 							onPassword(data.pwd, data.npwd, e.target.value);
 						}}
 					/>
@@ -98,7 +97,7 @@ function SettingForm ({
 							onSet = {e=>{
 								e.preventDefault;
 								const [host, name] = parseLink(link);
-								window.location.href = "/c/" + name;
+								window.location.href = "/" + name;
 							}}
 						>
 							Перейти					

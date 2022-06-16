@@ -29,7 +29,7 @@ function __C$ ({}) {
 			.then(res => {
 				console.log(res);
 				if(res) {
-					window.location.href = `/c/${name}`;
+					window.location.href = `/${name}`;
 				}
 				else {
 					setError("такого имени не существует");

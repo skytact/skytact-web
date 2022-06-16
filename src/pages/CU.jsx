@@ -52,7 +52,7 @@ const useGetcard = async (host, nick) => {
 function __CU$ ({}) {
 	//params
 	const params = useParams();
-	const host = params.host || "127.0.0.1";
+	const host = params.host || "";
 	const nick = params.nick || "";
 	//signals
 	const [error, setError] = createSignal(false);

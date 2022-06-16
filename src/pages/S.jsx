@@ -58,7 +58,6 @@ function __S$ () {
 		if (!error())
 			useUpdmail(email.mail, email.code)
 				.then(res => {
-					console.log('успешно');
 					try {
 						const [name, addr] = res.split('@');
 						const hideName = name.length > 2 

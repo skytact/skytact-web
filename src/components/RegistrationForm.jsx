@@ -8,6 +8,7 @@ import DigestPassword from "./DigestPassword";
 import DigestSubmit from "./DigestSubmit";
 import DigestButton from "./DigestButton";
 import DigestCaptcha from "./DigestCaptcha";
+import MarketingText from "./MarketingText";
 
 import useContactData from "../libs/useContactData";
 

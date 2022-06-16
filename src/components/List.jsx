@@ -12,19 +12,21 @@ function List ({list = () => []}) {
 			</div>*/}
 			<For each = {list()} fallback= {<div style = "color: #b0b0b0;" class= {page_styles.ListNode}>{"пока нет отметок"}</div>}>
 				{
-					(user) => (
-						<span class= {page_styles.ListNode}>
-							<Link href= "#"
-								onClick = {e => {
-									const [host, name] = parseLink(user.ref);
-									e.preventDefault();
-									window.location.replace("/" + name);
-								}}
-							>
-								#{parseLink(user.ref)[1]}
-							</Link>
-						</span>
-					) 
+					(user) => {
+						const [host, name] = parseLink(user.ref);
+						return (
+							<span class= {page_styles.ListNode}>
+								<Link href= {"/" + name}
+									onClick = {e => {
+										e.preventDefault();
+										window.location.replace("/" + name);
+									}}
+								>
+									#{name}
+								</Link>
+							</span>
+						) 
+					}
 				}
 			</For>
 		</div>

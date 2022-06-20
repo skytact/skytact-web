@@ -8,6 +8,7 @@ function CloudBackground (props) {
 		Math.floor(Math.random() * 40 + 30);
 	return (
 		<>
+			<div class = { page_styles.Noise }></div>
 			<div class = { page_styles.CloudBackground } style = {`height: ${props.height || "600"}px`}>
 				<CloudImg top = "20px" startPosition = {startPos() + 5} />
 				<CloudImg top = "140px" startPosition = {startPos() + 5} reverse = {true} />

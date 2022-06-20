@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="205.92513"
+   height="205.40767"
+   viewBox="0 0 54.484356 54.347446"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   sodipodi:docname="background.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     units="px"
+     inkscape:zoom="1.8869158"
+     inkscape:cx="29.943043"
+     inkscape:cy="153.68996"
+     inkscape:window-width="1920"
+     inkscape:window-height="1029"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient1499"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#f9f9f9;stop-opacity:1;"
+         offset="0"
+         id="stop1497" />
+    </linearGradient>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter876"
+       inkscape:label="turbulence"
+       x="-3.4694469519536142e-18"
+       y="0"
+       width="1"
+       height="1"
+       inkscape:auto-region="false">
+      <feTurbulence
+         id="feTurbulence878"
+         baseFrequency="1"
+         numOctaves="1"
+         seed="0"
+         type="turbulence"
+         result="result1" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter1557"
+       inkscape:label="filter1"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feSpecularLighting
+         id="feSpecularLighting1559" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-12.472255,-21.646598)">
+    <rect
+       style="opacity:0.10004173;fill:#f9f9f9;fill-opacity:1;stroke:none;stroke-width:2.64609;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter876)"
+       id="rect846"
+       width="52.916668"
+       height="52.916668"
+       x="32.960381"
+       y="21.787214"
+       transform="matrix(1.071294,0,0,1.0911393,-23.86652,-3.4822654)" />
+  </g>
+</svg>

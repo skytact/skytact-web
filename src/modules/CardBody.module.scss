@@ -15,6 +15,7 @@
 	margin-top: 10px;
 	margin-bottom: 32px;
 	position: relative;
+	background-color: #f9f9f9;
 	div {
 		width: 100%;
 		height: 100%;
@@ -36,7 +37,7 @@
 		display: block;
 		box-sizing: border-box;
 		border: none;
-		background-color: rgba(256, 256, 256, 0.99);
+		background-color: rgba(256, 256, 256, 0.7);
 		box-shadow: 0px 0px 3px #b0b0b0;
 		border-radius: 50%;
 		position: absolute;
@@ -77,7 +78,7 @@
 
 .ChangeFromButton {
 	color: red;
-	background-color: #f9f9f9;
+	background-color: rgba(256, 256, 256, 0);
 }
 
 .AddFromButton {
@@ -226,15 +227,18 @@
 
 .NoteWrapper {
 	box-sizing: border-box;
+	box-shadow: 0 0 3px #b0b0b0;
+	border-radius: 7px;
+	background-color: rgba(250, 250, 250, 0.9);
 	width: 100%;
-	margin-bottom: 4px;
+	padding: 14px;
+	margin: 7px 0 21px;
 }
 
 .IconBar {
 	box-sizing: border-box;
 	width: 100%;
-	height: 44px;
-	padding: 7px;
+	height: 36px;
 	div{
 		height: 30px;
 		float: left;
@@ -245,7 +249,7 @@
 		height: 30px;
 		padding: 0;
 		border: 0;
-		background-color: #f9f9f9;
+		background-color: rgba(256, 256, 256, 0);
 		img {
 			display: block;
 			width: 28px;
@@ -265,7 +269,6 @@
 .Note {
 	box-sizing: border-box;
 	width: 100%;
-	padding: 3px 7px 7px;
 	border-radius: 10px;
 }
 
@@ -335,10 +338,10 @@
 		padding: 0 12px;
 	}
 	.Line {
-		font-size: 1.1em;
+		font-size: 1.0em;
 	}
 	.Text {
-		font-size: 1.1em;
+		font-size: 1.0em;
 	}
 
 	.IconBar {
@@ -350,7 +353,9 @@
 	}
 
 	.NoteWrapper {
-		padding: 5px;
+		padding: 7px 0;
+		width: 90%;
+		margin: 7px 14px 14px;
 	}
 
 	.Fname {

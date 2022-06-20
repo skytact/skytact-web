@@ -99,6 +99,7 @@ function Avatar ({mode = "view", host = "skytact-api.space", photo = () => "", s
 			//
 			const original = new Image();
 			original.src = event.target.result;
+		//	console.log(original.src);
 			prepareImage(original.src)
 				.then(res => uploadImage(res))
 				.then(res => {

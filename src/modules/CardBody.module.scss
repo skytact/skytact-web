@@ -116,7 +116,7 @@
 	height: 37px;
 	padding: 0 0 0 7px;
 	border: none;
-	border-bottom: 3px dotted #b0b0b0;
+	//border-bottom: 1px dotted #b0b0b0;
 }
 
 .Fname {
@@ -130,6 +130,7 @@
 	height: 34px;
 	//float: left;
 	font-family: 'Montserrat';
+	color: #29A7D9;
 	font-size: 26px;
 }
 
@@ -186,7 +187,7 @@
 	width: 100%;
 	height: 80px;
 	box-sizing: border-box;
-	padding: 14px 7px;
+	padding: 7px;
 }
 
 .IntroText {
@@ -227,7 +228,7 @@
 
 .NoteWrapper {
 	box-sizing: border-box;
-	box-shadow: 0 0 3px #b0b0b0;
+	box-shadow: 0 2px 3px #b0b0b0bb;
 	border-radius: 7px;
 	background-color: rgba(250, 250, 250, 0.9);
 	width: 100%;
@@ -324,7 +325,7 @@
 	}
 
 	.Intro {
-		padding-top: 10px;
+		padding-top: 3px;
 		padding-bottom: 3px;
 	}
 	

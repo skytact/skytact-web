@@ -10,7 +10,7 @@
 	height: 200px;
 	div {
 		z-index: -3;
-		display: block;
+		display: none;
 		box-sizing: border-box;
 		margin: 0;
 		width: 100%;
@@ -79,12 +79,6 @@
 	}
 	5% {
 		opacity: 1;
-		transform: translate(-200px, 0);
-	}
-	33% {
-		transform: translate(480px, 0);
-	}
-	66% {
 		transform: translate(-200px, 0);
 	}
 	97% {

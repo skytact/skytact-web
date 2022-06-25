@@ -29,7 +29,7 @@ function __M$ () {
 	return (
 		<CloudBackground height = {800} >
 			<Header />
-			<Heading header = {"Пролог"}/>
+			<Heading header = {"Skytact?"}/>
 			{/*}<Texture>
 			    <div>
 				    Войдя в <span>постковидный мир</span>, мы с досадой обнаружили:
@@ -45,9 +45,8 @@ function __M$ () {
 			    </div>
 			</Texture>*/}
 			<Texture>
-			    <div>
-   					<a href = "https://skytact.online/">Skytact</a>
-   					- это решение, позволяющее создать свою цифровую визитку.
+			    <div class = {page_styles.MarketBlock}>
+   					это решение, позволяющее создать свою цифровую визитку.
    				</div>
    				<div>
    					<span>Если есть:</span> инста, вк, телега, эл.почта, рабочая почта, ссылка на соц сеть,
@@ -58,19 +57,19 @@ function __M$ () {
    					- <b>всё это,</b> легко можно разместить
    					на своей цифровой визитке. А потом идти и показывать её новым знакомым!
    				</div>
-   				<div>
-   					<span>@&nbsp;Удиви&nbsp;новой прогрессивной&nbsp;визиткой!</span>
-   				</div>
-   				<div>
-   					<span>@&nbsp;Реактивный&nbsp;доступ через&nbsp;QR&nbsp;code!</span>
-   				</div>
-   				<div>
-   					<span>@&nbsp;Твоя&nbsp;ссылка: skytact.online/your-name
-   					</span>
-   				</div>
-   				<div>
-   					<span>@&nbsp;Защищенный&nbsp;доступ через&nbsp;ssl&nbsp;протокол</span>
-   				</div>
+   				<div class = {page_styles.MarketBlock}>
+	 				<h3>Удиви новой прогрессивной визиткой!</h3>
+				</div>
+				<div class = {page_styles.MarketBlock}>
+					<h3>Реактивный доступ через QR&nbsp;code!</h3>
+				</div>
+				<div class = {page_styles.MarketBlock}>
+					<h3>Твоя личная ссылка:</h3>
+					<span>skytact.online/your-name</span>
+				</div>
+				<div class = {page_styles.MarketBlock}>
+					<h3>Защищенный&nbsp;доступ через&nbsp;ssl&nbsp;протокол!</h3>
+				</div>
 			</Texture>
 			<Texture>
 				<b style = {"color: red;"}>Как зарегистрироваться?</b>

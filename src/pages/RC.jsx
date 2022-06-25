@@ -85,9 +85,18 @@ function __RC$ () {
 			setError("пароли не совпадают!");
 			return false;
 		}
+		const regexpStart = new RegExp(`^[a-zA-Z]{1}`);
 		const regexpName = new RegExp(`^[a-zA-Z]{1}[a-zA-Z0-9_]{3,31}$`);
+		if (name.length > 32) {
+			setError("имя длиннее 32 символов!");
+			return false;
+		}
+		if (!regexpStart.test(name)) {
+			setError("имя должно начинаться с буквы!");
+			return false;
+		}
 		if (!regexpName.test(name)) {
-			setError("имя должно состоять минимум из 1 латинской буквы и цифр!");
+			setError("некорректное имя!");
 			return false;
 		}
 		return true;

@@ -8,7 +8,7 @@ function List ({list = () => []}) {
 	return (
 		<div class={page_styles.List}>
 			<div class={page_styles.HeadingList}>
-				<h1>отметились ({list().length})</h1>
+				<h1>#отметились ({list().length})</h1>
 			</div>
 			<For each = {list()} fallback= {<div class= {page_styles.ListNode}>{"пока нет отметок"}</div>}>
 				{

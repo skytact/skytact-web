@@ -10,7 +10,7 @@ function List ({list = () => []}) {
 			<div class={page_styles.HeadingList}>
 				<h1>отметились ({list().length})</h1>
 			</div>
-			<For each = {list()} fallback= {<div style = "color: #b0b0b0;" class= {page_styles.ListNode}>{"пока нет отметок"}</div>}>
+			<For each = {list()} fallback= {<div class= {page_styles.ListNode}>{"пока нет отметок"}</div>}>
 				{
 					(user) => {
 						const [host, name] = parseLink(user.ref);

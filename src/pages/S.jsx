@@ -64,10 +64,6 @@ function __S$ () {
 							? name.substr(0, 2) + '*'.repeat(name.length - 2)
 							: '*'.repeat(name.length - 2);
 						//
-						setEmail({
-							mail: "",
-							code: "",
-						});
 						setSuccess("Почта изменена на: " + hideName + '@' + addr);
 					} catch (err) {
 						setSuccess("Почта изменена");
@@ -100,11 +96,6 @@ function __S$ () {
 				.then(res => {
 					setSuccess("Пароль изменён успешно!");
 					//
-					setData({
-						pwd: "",
-						npwd: "",
-						cpwd: "",
-					});
 					//window.location.href = "/e";
 				})
 				.catch(err => {

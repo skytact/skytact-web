@@ -25,12 +25,10 @@ function __R$ () {
 			<Header />
 			<Heading header= {"Для Регистрации:"}/>
 			<Texture> 
-				<span>раз</span>
 				<div class = {page_styles.MarketBlock}>Найти пользователя, у которого есть <b style="color: red">приглашение</b></div>
-				<span>два</span>
 				<div class = {page_styles.MarketBlock}>Через QR или ссылку откройте его профиль</div>
-				<span>три</span>
-				<div class = {page_styles.MarketBlock}>Сразу заметите: 
+				<div class = {page_styles.MarketBlock}>
+					Сразу встретите это:
 					<div 
 						style = "display: inline-block; position: relative; z-index: 10; margin: 0 0 10px 24px;"
 					>

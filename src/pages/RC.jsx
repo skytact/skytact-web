@@ -103,14 +103,6 @@ function __RC$ () {
 					window.location.href = "/e";
 				})
 				.catch(err => {
-					setData({
-						link: "",
-						passwd: "",
-						conf: "",
-						text: "",
-						hash: ""
-					});
-					console.log(err);
 					//
 					if (err == 'wrong captcha' || err == 'wrong data') {
 						//

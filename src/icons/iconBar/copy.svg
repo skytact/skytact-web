@@ -21,15 +21,15 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="3.8445622"
-     inkscape:cx="-25.360495"
-     inkscape:cy="19.768181"
+     inkscape:zoom="10.369004"
+     inkscape:cx="-2.4592527"
+     inkscape:cy="23.724555"
      inkscape:window-width="1920"
      inkscape:window-height="1029"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="iPhone_12_12_Pro_24"
+     inkscape:current-layer="copy-3"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
@@ -66,19 +66,19 @@
     <g
        id="copy-3"
        data-name="copy"
-       transform="matrix(1.19982,0,0,1.19982,65.599685,498.59969)">
+       transform="matrix(0.84863773,0,0,0.85118514,64.985116,504.96332)">
       <path
          id="Path_187-3"
          data-name="Path 187"
-         d="m 23.886,10.489 v 13.4 h -13.4 v -13.4 h 13.4 m 0,-1.489 h -13.4 A 1.489,1.489 0 0 0 9,10.489 v 13.4 a 1.489,1.489 0 0 0 1.489,1.489 h 13.4 a 1.489,1.489 0 0 0 1.489,-1.489 v -13.4 A 1.489,1.489 0 0 0 23.886,9 Z"
-         transform="translate(-7.125,-7.125)"
+         d="M 20.738316,-1.5184172 V 11.881583 H 7.3383155 V -1.5184172 H 20.738316 m 0,-1.489 H 7.3383155 a 1.489,1.489 0 0 0 -1.486,1.489 V 11.881583 a 1.489,1.489 0 0 0 1.489,1.489 H 20.741316 a 1.489,1.489 0 0 0 1.489,-1.489 V -1.5184172 a 1.489,1.489 0 0 0 -1.492,-1.489 z"
          fill="#b1b1ac" />
       <path
          id="Path_188-3"
          data-name="Path 188"
-         d="M 4.5,20.25 H 2.25 V 4.5 A 2.25,2.25 0 0 1 4.5,2.25 H 20.25 V 4.5 H 4.5 Z"
-         transform="translate(-4,-4)"
-         fill="#b1b1ac" />
+         d="M 4.9558392,11.850635 3.58078,11.871585 V -3.1629952 c 0,-1.1861956 0.9592967,-2.1477971 2.1426491,-2.1477971 H 20.721973 l 0.0039,1.3775238 -15.7088671,0.061921 z"
+         fill="#b1b1ac"
+         sodipodi:nodetypes="ccsscccc"
+         style="stroke-width:0.953432;stroke:none;stroke-opacity:1" />
     </g>
   </g>
 </svg>

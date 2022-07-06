@@ -265,8 +265,8 @@ function Notes ({ mode = "view", notes = () => [], onChangeNotes = f => f}) {
 function Note ({ note = {}}) {
 	return (
 		<div class = {page_styles.Note}>
-			<Line line= {note.line} />
 			<Text text= {note.text} />
+			<Line line= {note.line} />
 		</div>
 	)
 }

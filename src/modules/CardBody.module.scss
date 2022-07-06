@@ -228,12 +228,11 @@
 
 .NoteWrapper {
 	box-sizing: border-box;
-	box-shadow: 0 2px 4px #b0b0b0bb;
-	border-radius: 7px;
-	//background-color: rgba(250, 250, 250, 0.9);
+	box-shadow: 0 2px 4px #03030310, 0 2px 6px #03030303;
+	border-radius: 14px;
 	background: #F9F9F9C0;
 	width: 100%;
-	padding: 14px;
+	padding: 21px 14px;
 	margin: 7px 0 21px;
 }
 //#FFF587C0
@@ -241,6 +240,7 @@
 
 .IconBar {
 	box-sizing: border-box;
+	display: none;
 	width: 100%;
 	height: 36px;
 	div{
@@ -357,7 +357,7 @@
 	}
 
 	.NoteWrapper {
-		padding: 7px 0;
+		padding: 14px 0;
 		width: 90%;
 		margin: 7px 14px 14px;
 	}

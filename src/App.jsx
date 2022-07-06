@@ -14,6 +14,7 @@ import N_page from "./pages/N";
 import C_page from "./pages/C";
 import CU_page from "./pages/CU";
 import V_page from "./pages/V";
+import TEST_page from "./pages/Test";
 //TODO
 //styles
 import styles from "./App.module.css";
@@ -37,6 +38,7 @@ function App() {
 		  		{/*}<Route path="/:host/:nick" element = {<CU_page />} />*/}// card data from remote host
 		  		<Route path="/v" element= {<V_page />} /> //recovery password
 		  		<Route path="/m" element= {<M_page />} /> //manifest of project
+		  		<Route path="/test" element= {<TEST_page /> } />
 		  	</Routes>
 	  	</>
 	);

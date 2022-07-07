@@ -16,6 +16,8 @@ function HyperCard ({ userPermission = "guest", initialMode = "view", initialCar
 	//create store from initial object
 	const [card, setCard] = createStore(initialCard);
 	//
+	const [move, setMove] = createSignal(false);
+	//
 	const changeCard = card => {
 		setCard(card);
 	}
@@ -25,7 +27,13 @@ function HyperCard ({ userPermission = "guest", initialMode = "view", initialCar
 	//
 	//
 	return (
-		<HyperCardWrapper card = { card } >
+		<HyperCardWrapper 
+			permission = {permission} 
+			displayMode = { mode }
+			card = { card } 
+			move = { move }
+			onChangeCard = { changeCard }
+		>
 			<HyperCardTop 
 				permission = { permission } 
 				displayMode = { mode }
@@ -36,6 +44,8 @@ function HyperCard ({ userPermission = "guest", initialMode = "view", initialCar
 				permission = { permission }
 				displayMode = { mode }
 				card = { card }
+				move = { move }
+				setMoving = { setMove }
 			/>
 			<HyperCardList
 				permission = { permission }

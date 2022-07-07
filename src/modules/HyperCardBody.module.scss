@@ -15,7 +15,7 @@
 .AddNoteForm {
 	box-sizing: border-box;
 	margin: 14px 0px;
-	padding: 14px;
+	padding: 7px 14px;
 	background-color: #00000020;
 	
 	animation-name: entry;
@@ -26,13 +26,14 @@
 	left: 0;
 
 	width: 100%;
-	min-height: 130px;
+	height: 130px;
 	border-radius: 20px;
 
-	color: #DE7A81;
+	color: #FFFFFFA0;
 
 	span {
 		width: 100%;
+		font-size: 12px;
 		display: block;
 		margin-bottom: 7px;
 	}
@@ -45,9 +46,9 @@
 		height: 34px;
 		background: none;
 		border: none;
-		border-bottom: 2px solid #DE7A81;
+		border-bottom: 2px solid #FFFFFF60;
 		padding: 0;
-		color: #DE7A81;
+		color: #00000060;
 		font-size: 16px;
 		line-height: 14px;
 		margin-bottom: 7px;
@@ -58,7 +59,7 @@
 		}
 
 		&::placeholder {
-			color: #DE7A81;
+			color: #00000080;
 			font-size: 14px;
 			line-height: 12px;
 		}
@@ -99,7 +100,8 @@
 	}
 }
 
-.RmNote {
+
+.DeleteZone {
 	box-sizing: border-box;
 	padding: 14px;
 
@@ -163,43 +165,98 @@
 	}
 }
 
-.NoteText {
-	
+.NotesList {
+	position: relative;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
 }
 
-.NoteRocket {
-	width: 100%;
-	margin: auto;
-	opacity: 0;
-	height: 120px;
+.NoteItem {
+	box-sizing: border-box;
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-color: #00000020;
 	
-	animation-name: rocket;
-	animation-duration: 0.6s;
+	width: 100%;
+	height: 110px;
 
-	border-radius: 20px;
+	padding: 14px 0;
+
+	background-color: #00000000;
+	transition: transform .6s, top .2s;
 }
 
+.NoteBox {
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 80px;
+	max-height: 100%;
+	padding: 7px 14px;
+	border-radius: 20px;
+	background-color: #00000020;
+	pointer-events: none;
+}
+
+.NoteDescription {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	color: #FFFFFFA0;
+	font-size: 12px;
+	overflow: hidden;
+}
+
+.NoteLink {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	color: #f9f9f9;
+	font-size: 18px;
+	word-wrap: break-word;
+	overflow: hidden;
+}
+
+.Rocket {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 80px;
+	max-height: 100%;
+	padding: 7px 14px;
+	border-radius: 20px;
+	background-color: #00000020;
+	//pointer-events: none;
+
+	color: #f9f9f9;
+	font-size: 18px;
+
+	animation-name: rocket;
+	animation-duration: 1s;
+}
 
 @media (max-width: 499px) {
 	.HyperCardBody {
-		width: 96%;
-		
+		width: 90%;
 	}
 }
 
+
 @keyframes rocket {
 	0% {
-		top: 0;
-		opacity: 0.8;
-		transform: scale(0.3);
+		opacity: 0.6;
+		top: 130px;
 	}
 	100% {
-		top: 100%;
 		opacity: 1;
-		transform: scale(1.0);
+		top: 100%;
 	}
 }

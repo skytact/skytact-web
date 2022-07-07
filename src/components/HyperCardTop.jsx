@@ -2,8 +2,10 @@ import { createSignal } from "solid-js";
 
 import page_style from "../modules/HyperCardTop.module.scss";
 
+import QRcode from "../libs/qrcode-svg";
+
 import defaultImage from "../icons/default.svg";
-import qr from "../icons/qr.svg";
+import qrcode from "../icons/qr.svg";
 import more from "../icons/more.svg";
 
 //
@@ -118,9 +120,28 @@ function HyperCardTop ({
 				console.log(err);
 			});
 	}
+
+	//enable qr 
+	const [qropen, setQRopen] = createSignal(false);
+	const refer = "https://skytact.online/" + (card.head.host ? card.head.host+"/" : "" ) + card.data.nick;
+	const qr = new QRcode({
+		content: refer,
+		join: true,
+		container: "svg-viewbox",
+		padding: 0,
+		width: 228,
+		height: 228,
+		color: "#090909",
+		background: "#fff",
+	});
+	const qr_img = qr.svg();
+
+	console.log('https://skytact-api.space:2728/view/' + card.data.photo );
 	//
 	return (
-		<div class = { page_style.HyperCardTop }>
+		<div 
+			class = { page_style.HyperCardTop } 
+		>
 			<div class = {page_style.MoreButtonBlock}>
 				<button>
 					<img src = {more} />
@@ -137,15 +158,35 @@ function HyperCardTop ({
 					<input 
 						type = "file"
 						accept = "image/png, image/jpeg, image/jpg, image/svg+xml"
-						onchange = {onChangePhoto}
+						onchange = { onChangePhoto }
 					/>
 				</button>
 			</div>
 			<div class = {page_style.ButtonBlock}>
-				<button>
-					<img src = {qr} />
+				<button
+					onclick = {e => {
+						setQRopen(!qropen());
+						console.log(qropen());
+					}}
+				>
+					<img src = {qrcode} />
 				</button>
-			</div>
+			</div> 
+			{qropen() &&
+			<button 
+				class = {page_style.QRmodal}
+				onclick = {e => {
+					setQRopen(!qropen());
+					console.log(qropen());
+				}}
+				style = {qropen() ? "opacity: 1;" : "display: none;"}
+			>
+				<div class = {page_style.QRbox}>
+					<h1>#{card.data.nick}</h1>
+					<div class = {page_style.QR} innerHTML = {qr_img} />
+					<div>QR by <a href="https://www.npmjs.com/package/qrcode-svg">qrcode-svg</a></div>
+				</div>
+			</button>}
 			<div class = {page_style.MessageBlock}>
 				<textarea
 					rows="3"

@@ -1,0 +1,80 @@
+.List {
+	box-sizing: border-box;
+	width: 480px;
+	margin: auto;
+	padding-top: 7px;
+	font-family: monospace;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	position: relative;
+	top: 0;
+	left: 0;
+
+
+	>div {
+		box-sizing: border-box;
+		width: auto;
+		border-radius: 20px;
+		//background-color: #00000020;
+		padding: 14px;
+		
+	}
+}
+
+.ListHeading {
+	display: block;
+	margin: 0;
+	margin-bottom: 16px;
+	font-size: 18px;
+	font-weight: normal;
+	font-family: 'Monsterrat';
+	color: #00000060;
+}
+
+.ListImage {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	overflow: hidden;
+	display: inline-block;
+	margin-right: -20px;
+	border: 1px solid #00000020;
+	img {
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(1.2);
+		width: 70px;
+		background: #f9f9f9;
+		
+	}
+
+	opacity: 0;
+	animation-name: loadimg;
+	animation-duration: .6s;
+	animation-delay: .1s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+}
+
+@media (max-width: 499px) {
+	.List {
+		width: 90%;
+	}
+
+}
+
+@keyframes loadimg {
+	0% {
+		opacity: 0.8;
+		transform: scale(0.1);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1.0);
+	}
+}

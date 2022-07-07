@@ -10,10 +10,53 @@
 	min-height: 350px;
 	margin: auto;
 	margin-top: 15px;
+	background: none;
 	animation-name: invite;
-	animation-duration: 2.3s;
+	animation-duration: 1.0s;
 }
 
+.BgBox {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: none;
+	z-index: -1;
+}
+
+.BgRound {
+	position: absolute;
+	display: block;
+	background-color: #f9f9f9;
+	border-radius: 50%;
+	top: 0;
+	left: 0;
+	width: 10px;
+	height: 10px;
+
+	transform: translate(-50%, -50%);
+	animation-name: bground;
+	animation-duration: 0.8s;
+	z-index: -3;
+}
+
+.FootPhrase {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 7px;
+	text-align: center;
+	margin-bottom: 21px;
+	pointer-events: none;
+	p {
+		padding: 0;
+		margin: 0;
+		color: #00000080;
+		font-size: 14px;
+		font-family: 'Montserrat';
+	}
+}
 @media (max-width: 720px) {
 	.Child {
 		width: 96%;
@@ -27,5 +70,17 @@
 	}
 	100% {
 		opacity: 1;
+	}
+}
+
+
+@keyframes bground {
+	0% {
+		width: 10px;
+		height: 10px;
+	}
+	100% {
+		width: 300%;
+		height: 300%;
 	}
 }

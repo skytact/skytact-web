@@ -5,26 +5,37 @@ import getAddnote from "../fetch/getAddnote";
 
 import page_styles from "../modules/HyperCardBody.module.scss";
 
+//hypercard body
 function HyperCardBody ({
 	permission = "guest",
 	displayMode = () => "view",
 	card = {},
-	changeCard = (card) => ({})
+	changeCard = (card) => ({}),
+	move = f => f,
+	setMoving = f => f
 }) {
+	const commonHeightOfNote = 110;
 
+	//form data
 	const [formInput, setFormInput] = createSignal({
 		line: "",
 		text: ""
 	});
-	const [dragCell, setDragCell] = createSignal(false);
-	const [swapCell, setSwapCell] = createSignal(false);
+	//notes list
 	const [notes, setNotes] = createSignal(card.data.notes);
-	const [overRemove, setOverRemove] = createSignal(false);
-	const [rocket, setRocket] = createSignal(false);
+	//moving mode
+	//const [moving, setMoving] = createSignal(false);
+	//draggable element
+	const [position, setPosition] = createSignal(0);
+	const [drag, setDraggable] = createSignal(false);
+	const [dragIndex, setDragIndex] = createSignal(false);
+	const [swapIndex, setSwapIndex] = createSignal(false);
 
-	let currentNote = notes();
+	//rocket animation
+	const [rocket, setRocket] = createSignal(false);
+	const [lastNotePhrase, setLastNotePhrase] = createSignal(false);
 	
-	//
+	//update note fetch query
 	const useUpdNote = async (item, act) => {
 		try {
 			const answ = await getUpdnote(item, act);
@@ -35,7 +46,7 @@ function HyperCardBody ({
 		}
 	}
 
-	//
+	//add note fetch query
 	const useAddnote = async (note) => {
 		try {
 			const answ = await getAddnote(note);
@@ -45,8 +56,9 @@ function HyperCardBody ({
 		}
 	}
 
-	const SwappingNotes = async (drag, swap) => {
-		console.log(drag, swap);
+	//swapping notes
+	const swappingNotes = async (drag, swap, noteArr) => {
+		//console.log(drag, swap);
 		//
 		if (drag == swap || (swap < 0 || drag < 0)) return;
 		//
@@ -54,14 +66,12 @@ function HyperCardBody ({
 		let start = drag;
 		let finit = swap;
 		let inc = start > finit ? -1 : 1; 
-		let cNotes = notes();
+		let cNotes = noteArr;
 		//
 		for (let i = start; i != finit; i = i*1 + inc*1 ) {
 			cNotes = await useUpdNote(cNotes[i].item, action);
-			console.log(cNotes);
+			//console.log(cNotes);
 		}
-		//
-		setNotes([...cNotes]);
 	}
  
 	//
@@ -77,90 +87,8 @@ function HyperCardBody ({
 			})
 	}
 
-	function onInput (text, line) {
-		setFormInput({
-			text,
-			line
-		});
-	}
-
-	function onDragStart (e) {
-		e.dataTransfer.setData('text/plain', e.target.id);
-		setDragCell(e.target.id.substr(5));
-		setTimeout(() => {
-			//set style after drag object
-	        e.target.style.opacity = '0';
-	    }, 0);
-	}
-
-	function onDragEnd (e) {
-		const draggableID = e.dataTransfer.getData('text/plain');
-		const draggable = document.getElementById(draggableID);
-		//restore styles of elem
-		draggable.style.opacity = '1';
-		const height = draggable.offsetHeight;
-		//console
-
-		const drag = dragCell() - 1;
-		const swap = swapCell() - 1;
-
-		
-		//const topElem = overRemove() ? ((swap - drag)*height) : '0';
-		const topElem =  overRemove() 
-			? (-1*(notes().length)*height)
-			: (drag < 0 || swap < 0)
-				? '0px' : (swap - drag) * height;
-		
-		console.log(drag, swap, topElem);
-		draggable.style.top = topElem + 'px';
-	
-		setTimeout(() => {
-			setDragCell(false);
-			setSwapCell(false);
-		}, 600);
-		
-		if (!overRemove()) SwappingNotes(drag, swap);
-		
-		//
-		setOverRemove(false);
-	}
-
-	function onDragLeave (e) {
-		e.preventDefault();
-	}
-
-	function onDragEnter (e) {
-		e.preventDefault();
-		const swapID = e.target.id.substr(5);
-		if (dragCell() != swapID) 
-			setSwapCell(swapID);
-		
-		if (e.target.style.top) {
-			//
-			e.target.style.top = '';
-		} else {
-			//
-			const height = e.target.offsetHeight;
-			//
-			if (dragCell() != swapCell()) {
-				//
-				e.target.style.top = dragCell() < swapCell() ? (-1*height + 'px') : (height + 'px');
-			}
-		}
-	}
-
-	function onDragOver (e) {
-		e.preventDefault();
-	}
-
-	function onDrop (e) {
-		e.preventDefault();
-		const draggableID = e.dataTransfer.getData('text/plain');
-		const draggable = document.getElementById(draggableID);
-		e.target.style.transform = 'scale(1.0)';
-	}
-
-	function isLink (line) {
+	//check for link pattern
+	const  isLink = (line) => {
 		const parseLine = line;
 		const patternLink = 
 		/(ftp|ssh|http|https):\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)/;
@@ -169,125 +97,259 @@ function HyperCardBody ({
 		return parseLine.match(patternLink);
 	}
 
+	const updateStyles = el => {
+		if (el.style.zIndex == '7') {
+			//set default
+			el.style.transition = 'transform .6s, top .2s';
+			el.style.zIndex = '1';
+			el.style.transform = 'scale(1.0)';
+		}
+		else {
+			//set draggable style
+			el.style.transition = 'transform .6s';
+			el.style.zIndex = '7';
+			el.style.transform = 'scale(1.1)';
+		}
+	}
+
+	function StartMove (e) {
+		e.preventDefault();
+		//inform user
+		console.log('start');
+		//set moving mode
+		setMoving(true);
+		//get position
+		const posY = e.clientY || e.touches[0].clientY;
+		setPosition(posY);
+		//create dragging element
+		updateStyles(e.target);
+		setDraggable(e.target);
+
+		//set indexes
+		const index = Math.floor(e.target.offsetTop/commonHeightOfNote);
+		setDragIndex(index);
+		setSwapIndex(index);
+
+		//set events
+		document.onmouseup = StopMove;
+		document.ontouchend = StopMove;
+		document.onmousemove = OnMove;	
+		document.ontouchmove = OnMove;
+	}
+
+	function OnMove (e) {
+		e.preventDefault();
+		//get coordinates
+
+		//
+		console.log('moving');
+
+		//change element position
+		const draggable = drag();
+
+		//calc diff of position
+		const posY = e.clientY || e.changedTouches[0].clientY;
+		const dy = position() - posY;
+		setPosition(posY);
+		//get top of draggable element
+		const top = draggable.offsetTop - dy;
+		draggable.style.top = top + "px";
+
+		//notes list
+		const total = notes().length;
+		
+		//get current index
+		const currentIndex = Math.floor((top + commonHeightOfNote/2)/commonHeightOfNote);
+		//remove zone
+		if (top < -80 && top > -180) {
+			draggable.style.transform = 'scale(0.8)';
+			console.log(top);
+			setSwapIndex(-1);
+			return;
+		} else {
+			draggable.style.transform = 'scale(1.0)';
+		}
+
+		//check current Index
+		if (currentIndex != swapIndex() && currentIndex >= 0 && currentIndex < total) {
+			//get list of notes
+			const notesList = draggable.parentElement.children;
+			//chenge indexes
+			for (let i = 0; i < total; ++i) {
+				//get offset top
+				const tempTop = notesList[i].offsetTop;
+				//get position-index of element
+				const tempIndex = Math.floor((tempTop + commonHeightOfNote/2)/commonHeightOfNote);
+				if (tempIndex == currentIndex && i != dragIndex()) {
+					notesList[i].style.top = (currentIndex > swapIndex())
+						? (tempTop - commonHeightOfNote) + "px"
+						: (tempTop + commonHeightOfNote) + "px";
+				}
+			}
+			//chenge swap index
+			setSwapIndex(currentIndex);
+		}
+	}
+
+	function StopMove (e) {
+		e.preventDefault();
+		//
+		console.log('stop');
+		//remove draggable
+		const draggable = drag();
+
+		//remove event
+		if (swapIndex() === -1) {
+			draggable.style.transform = 'scale(0.1)';
+			setDraggable(false);
+			onChangeNotes(notes()[dragIndex()].item, "remove");
+			//const cNotes = notes().filter((n, i) => i != dragIndex());
+			//setNotes([...cNotes]);
+			//clear data
+			setTimeout(() => {setMoving(false);}, 500);
+			document.onmouseup = null;
+			document.ontouchend = null;
+			document.onmousemove = null;
+			document.ontouchmove = null;
+			return;
+		}
+
+		//update style
+		updateStyles(draggable);
+		setDraggable(false);
+		
+		//update notes
+		const iDrag = dragIndex();
+		const iSwap = swapIndex();
+		//
+		//
+		const cNotes = JSON.parse(JSON.stringify(notes()));
+		if (iDrag != iSwap) {
+			//delete draggable element from array
+			const fNotes = cNotes.filter((n, i) => i != iDrag);
+			fNotes.splice(iSwap, 0, cNotes[iDrag]);
+			setNotes([...fNotes]);
+			swappingNotes(iDrag, iSwap, cNotes);
+		} else {
+			setNotes([...cNotes]);
+		}
+		//clear data
+		setMoving(false);
+		document.onmouseup = null;
+		document.ontouchend = null;
+		document.onmousemove = null;
+		document.ontouchmove = null;
+	}
 	
 	return (
-		<div class={page_styles.HyperCardBody}>
-			{rocket() && <div class = {page_styles.NoteRocket}></div>}
-			{displayMode() == "edit" && 
-			<Show when = {!dragCell()} fallback = {
-				<div 
-					class = {page_styles.RmNote}
-					ondragenter = {e => {
-						e.preventDefault();
-						e.target.style.transform = 'scale(1.1)';
-						setOverRemove(true);
-					}}
-					ondragleave = {e => {
-						e.preventDefault();
-						e.target.style.transform = 'scale(1.0)';
-						setOverRemove(false);
-					}}
-					ondragover = {e => {
-						e.preventDefault();
-					}}
-					ondrop = {e => {
-						e.preventDefault();
-						//
-						const draggableID = e.dataTransfer.getData('text/plain');
-						const draggable = document.getElementById(draggableID);
-						draggable.style.opacity = '1';
-						draggable.style.transform = 'scale(0.1)';
-						const removeItem = notes()[dragCell() - 1].item;
-						onChangeNotes(removeItem, "remove");
-					}}
+		<div class = {page_styles.HyperCardBody}>
+			{ (rocket() && notes()) && 
+			<div class = {page_styles.Rocket}>
+				{lastNotePhrase()}
+			</div> }
+			<Show when = { !move() } fallback = {
+				<div
+					class = { page_styles.DeleteZone }
 				>
-					удалить запись
+					<span>удаление</span>
 				</div>
 			}>
-				<div class = {page_styles.AddNoteForm}>
-					<form>
-						<span>добавить запись</span>
+				<div
+					class = { page_styles.AddNoteForm }
+				>
+					<form onsubmit = {e => {e.preventDefault()}}>
+						<span> добавьте запись </span>
 						<input 
-							type="text" 
-							placeholder="заголовок"
-							oninput = {e => onInput(e.target.value, formInput().line)}
-							value = {formInput().text}
+							placeholder = "здесь подпись"
+							oninput = {e => {
+								setFormInput({
+									text: e.target.value,
+									line: formInput().line
+								});
+							}}
+							value = { formInput().text }
 						/>
 						<input 
-							style ="color: #f9f9f9"
-							type="text" 
-							placeholder="ссылка, телефон, почта, ..."
-							oninput = {e => onInput(formInput().text, e.target.value)}
-							value = {formInput().line}
+							placeholder = "ссылка, почта, телефон..."
+							style = {{"color": "#f9f9f9", "font-size": "16px"}}
+							oninput = {e => {
+								setFormInput({
+									line: e.target.value,
+									text: formInput().text
+								});						
+							}}
+							value = { formInput().line }
 						/>
 						<div 
-							style = {formInput().text ? "height: 100%; opacity: 1;" : "height: 0%; opacity: 0;"}
-							class = {page_styles.AddNoteButton}
-						>
-							<button
-								type = "submit"
-								onclick = {e => {
-									e.preventDefault();
-									if (!formInput().text) return;
-									if (formInput().text.length > 70) return;
-									if (formInput().line.length > 90) return;
+							class = { page_styles.AddNoteButton }
+							style = { formInput().text && formInput().line ? "height: 100%; opacity: 1;" : "height: 0px; opacity: 0;"}
+							onclick = {e => {
+								e.preventDefault();
+								const myText = formInput().text;
+								const myLine = formInput().line;
 
-									const new_note = {
-										icon: "info",
-										text: formInput().text,
-										line: formInput().line,
-									}
+								setFormInput({text: "", line: ""});
+
+								//create note
+								const myNote = {
+									icon: "info",
+									text: myText,
+									line: myLine,
+									lock: false,
+								}
+
+								//add new note
+								if (myText && myLine) useAddnote(myNote)
+									.then(res => {
+										//
+										myNote.item = res;
 									
-									useAddnote(new_note)
-										.then(res => {
-											console.log(res);
-											new_note.item = res;
-											setNotes([...notes(), new_note]);
-											setFormInput({text: "", line: ""});
-
-											//add rocket effect of new note
-											setRocket(true);
-											setTimeout(() => {
-												setRocket(false);
-											}, 600);
-										})
-										.catch(err => {
-											console.log(err);
-										});
-								}}
-							>
-								<div></div>
-							</button>
+										//start rocket animation
+										setRocket(true);
+										setLastNotePhrase(myLine);
+										
+										//
+										setTimeout(() => { 
+											setNotes([...notes(), myNote]);	
+											setRocket(false) 
+										}, 900);
+									})
+									.catch(err => {
+										console.log(err);
+									});
+							}}
+						>
+							<button><div></div></button>
 						</div>
 					</form>
 				</div>
-			</Show>}
-			<div class = {page_styles.ListPlace}>
-				<For each = {notes()} fallback= {<div></div>}>
+			</Show>
+			<div 
+				style = { "height: " + (notes().length * commonHeightOfNote)*1 + "px" }
+				class = { page_styles.NotesList }
+			>
+				<For each = { notes() } fallback= { <div></div> }>
 					{
 						
 						(note, index) => (
-							<div
-								id = {"note_" + (index()+1)*1}
-								class = { page_styles.NoteBlock }
-								draggable = { displayMode() == "edit" ? "true" : "false" }
-								ondragstart = { onDragStart }
-								ondragend = { onDragEnd }
-								ondragleave = { onDragLeave }
-								ondragenter = { onDragEnter }
-								onClick = {e => {
-									if(isLink(note.line)) {
-										window.location.href = note.line;
-									}
-								}}
+							<div 
+								style = { 
+									"top: " + (index() * commonHeightOfNote)*1 + "px;" +
+									"height: " + commonHeightOfNote + "px;"
+								}
+								class = { page_styles.NoteItem }							
+								onmousedown = { StartMove }
+								ontouchstart = { StartMove }
 							>
-								<div>
-									<p>{note.text}</p>
-									<p class = {page_styles.NoteLine}>
-										{ (isLink(note.line))
-											? (<a href = {note.line}>{note.line}</a>)
-											: note.line
-										}
+								<div class = { page_styles.NoteBox }>
+									<p class = { page_styles.NoteDescription }>
+										{note.text}
+									</p>
+									<p 
+										style = { isLink(note.line) ? "text-decoration: underline;" : "text-decoration: none" }
+										class = { page_styles.NoteLink }
+									>
+										{note.line}
 									</p>
 								</div>
 							</div>

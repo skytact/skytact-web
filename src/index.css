@@ -12,6 +12,7 @@ body {
 }
 
 body > div#root {
+	overscroll-behavior: contain;
 	overflow-x: hidden;
 }
 

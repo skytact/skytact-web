@@ -11,6 +11,8 @@
 	margin-bottom: 14px;
 
 	transition: margin-bottom 1s;
+	touch-action: manipulation;
+	overscroll-behavior: contain;
 }
 
 
@@ -129,6 +131,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
+	
 }
 
 .NoteBlock {
@@ -176,6 +179,7 @@
 
 	width: 100%;
 	height: 100%;
+	overscroll-behavior: contain;
 }
 
 .NoteItem {
@@ -191,6 +195,7 @@
 
 	background-color: #00000000;
 	transition: transform .6s, top .2s;
+	overscroll-behavior: contain;
 }
 
 .NoteBox {

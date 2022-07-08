@@ -8,13 +8,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   background-color: #fff;
-  overscroll-behavior: contain;
+  overscroll-behavior: none;
   touch-action: manipulation;
 }
 
 body > div#root {
 	overflow-x: hidden;
 	touch-action: manipulation;
+}
+
+* {
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	user-select: none;
 }
 
 code {

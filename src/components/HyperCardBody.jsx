@@ -160,7 +160,7 @@ function HyperCardBody ({
 			document.ontouchend = StopMove;
 			document.onmousemove = OnMove;	
 			document.ontouchmove = OnMove;
-		}, 300);
+		}, 500);
 	}
 
 	function OverMove (e) {

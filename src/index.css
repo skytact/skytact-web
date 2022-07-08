@@ -9,10 +9,12 @@ body {
   overflow-x: hidden;
   background-color: #fff;
   overscroll-behavior: contain;
+  touch-action: manipulation;
 }
 
 body > div#root {
 	overflow-x: hidden;
+	touch-action: manipulation;
 }
 
 code {

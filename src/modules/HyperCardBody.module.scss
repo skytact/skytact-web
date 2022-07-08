@@ -216,6 +216,8 @@
 	color: #FFFFFFA0;
 	font-size: 12px;
 	overflow: hidden;
+
+	touch-action: none;
 }
 
 .NoteLink {
@@ -227,6 +229,8 @@
 	font-size: 18px;
 	word-wrap: break-word;
 	overflow: hidden;
+
+	touch-action: none;
 }
 
 .Rocket {

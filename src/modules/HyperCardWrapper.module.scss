@@ -20,6 +20,8 @@
 	position: relative;
 	top: 0;
 	left: 0;
+
+	touch-action: manipulation;
 }
 
 .BgBox {
@@ -31,6 +33,7 @@
 	overflow: hidden;
 	background: none;
 	z-index: -1;
+	
 	touch-action: manipulation;
 	overscroll-behavior-y: contain;
 }

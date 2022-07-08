@@ -25,7 +25,6 @@ function HyperCard ({ userPermission = "guest", initialMode = "view", initialCar
 	const onChangeMode = () => 
 		mode == "view" ? "edit" : "view"
 	//
-	//
 	return (
 		<HyperCardWrapper 
 			permission = {permission} 

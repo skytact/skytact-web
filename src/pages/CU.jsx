@@ -1,7 +1,7 @@
 import {Show, createSignal} from "solid-js";
 import {createStore} from "solid-js/store";
 import {useParams} from "solid-app-router";
-import CardScene from "../components/CardScene";
+import HyperCard from "../components/HyperCard";
 import Loading from "../components/Loading";
 
 import getAuthorized from "../fetch/getAuthorized";
@@ -70,10 +70,10 @@ function __CU$ ({}) {
 	//
 	return (
 		<Show when = {data.card} fallback = {<Loading />}>
-			<CardScene 
-				permission = { data.card.pack[0] } 
-				mode = {"view"} 
-				card = {data.card} 
+			<HyperCard 
+				userPermission = { data.card.pack[0] }
+				initialMode = { "view" }
+				initialCard = { data.card }
 			/>
 		</Show>
 	);

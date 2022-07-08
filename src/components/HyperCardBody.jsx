@@ -113,16 +113,21 @@ function HyperCardBody ({
 	}
 
 	function StartMove (e) {
+		//check display mode
+		if (displayMode() != "edit") return;
 		e.preventDefault();
+		
 		//get start position
 		const positionStart = e.clientY || e.touches[0].clientY;
 		setPosition(positionStart);
+		
 		//set control of moving
 		document.onmouseup = OverStop;
 		document.ontouchend = OverStop;
 		document.onmousemove = OverMove;	
 		document.ontouchmove = OverMove;
 		
+		//set timeout for mousedown
 		setTimeout(() => {
 			if (!position()) return;
 			//get position
@@ -245,8 +250,6 @@ function HyperCardBody ({
 			draggable.style.transform = 'scale(0.1)';
 			setDraggable(false);
 			onChangeNotes(notes()[dragIndex()].item, "remove");
-			//const cNotes = notes().filter((n, i) => i != dragIndex());
-			//setNotes([...cNotes]);
 			//clear data
 			setTimeout(() => {setMoving(false);}, 500);
 			setPosition(false);
@@ -295,6 +298,7 @@ function HyperCardBody ({
 			<div class = {page_styles.Rocket}>
 				{lastNotePhrase()}
 			</div> }
+			{ displayMode() == "edit" &&
 			<Show when = { !move() } fallback = {
 				<div
 					class = { page_styles.DeleteZone }
@@ -372,6 +376,7 @@ function HyperCardBody ({
 					</form>
 				</div>
 			</Show>
+			}
 			<div 
 				style = { "height: " + (notes().length * commonHeightOfNote)*1 + "px" }
 				class = { page_styles.NotesList }
@@ -389,15 +394,22 @@ function HyperCardBody ({
 								onmousedown = { StartMove }
 								ontouchstart = { StartMove }
 							>
-								<div class = { page_styles.NoteBox }>
+								<div style = {displayMode() == "view" && "pointer-events: auto;"} class = { page_styles.NoteBox }>
 									<p class = { page_styles.NoteDescription }>
 										{note.text}
 									</p>
 									<p 
-										style = { isLink(note.line) ? "text-decoration: underline;" : "text-decoration: none" }
+										style = { displayMode() == "view" && "moz-user-select: text; -webkit-user-select: text; user-select: text;"}
 										class = { page_styles.NoteLink }
+										onclick = {e => {
+											isLink(note.line) ?	window.location.href = note.line : false;						
+										}}
 									>
-										{note.line}
+										<span 
+											style = { isLink(note.line) ? "text-decoration: underline;" : "text-decoration: none;" }
+										>
+											{note.line}
+										</span>
 									</p>
 								</div>
 							</div>

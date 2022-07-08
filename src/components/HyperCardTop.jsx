@@ -1,4 +1,4 @@
-import { createSignal } from "solid-js";
+import { Show, createSignal } from "solid-js";
 
 import page_style from "../modules/HyperCardTop.module.scss";
 
@@ -72,6 +72,27 @@ function HyperCardTop ({
 	card = {},
 	onChangeCard = (card) => ({})
 }) {
+
+	//VALUES
+	//src of image
+	const imageSrc = card.data.photo != "__default" 
+		? ('https://skytact-api.space:2728/view/' + card.data.photo)  
+		: (defaultImage)
+	//display value
+	const displayNone = 
+		(displayMode() != "edit" && (card.data.intro == "__default" || !card.data.intro)) 
+			? {"display" : "none"} 
+			: {"display": "block"};
+	//get placeholder
+	const placeholderValue =  displayMode() == "edit" ? "пару слов о себе" : "";
+	//textarea disabled value
+	const disabledValue =  displayMode() == "edit" ? false : true;
+	//
+	const cardIntro = card.data.intro == "__default" ?  "" : card.data.intro;
+	console.log(card.data.intro);
+	console.log(disabledValue);
+
+	//ACTIONS
 	//avatar
 	const [verticalImg, setVerticalImg] = createSignal(false);
 	const onChangePhoto = (e) => {
@@ -135,23 +156,19 @@ function HyperCardTop ({
 		background: "#fff",
 	});
 	const qr_img = qr.svg();
-
-	console.log('https://skytact-api.space:2728/view/' + card.data.photo );
-	//
+	
+	//JSX OBJECT
 	return (
-		<div 
-			class = { page_style.HyperCardTop } 
-		>
+		<div class = { page_style.HyperCardTop }>
 			<div class = {page_style.MoreButtonBlock}>
-				<button>
+				<button onclick = {e => window.location.href = '/s'}>
 					<img src = {more} />
 				</button>
 			</div>
 			<div class = {page_style.ImageBlock}>
 				<button>
-					<span>Нажмите, чтобы добавить новое фото</span>
 					<img 
-						src = {'https://skytact-api.space:2728/view/' + card.data.photo } 
+						src = { imageSrc } 
 						style = {`${verticalImg() ? "width: 180px;" : "height: 180px"}`}
 						onload = { onLoadAvatar }
 					/>
@@ -187,14 +204,16 @@ function HyperCardTop ({
 					<div>QR by <a href="https://www.npmjs.com/package/qrcode-svg">qrcode-svg</a></div>
 				</div>
 			</button>}
-			<div class = {page_style.MessageBlock}>
+			<div class = {page_style.MessageBlock} style = { displayNone }>
 				<textarea
 					rows="3"
 					maxlength="60"
-					onfocus = {e => ({})}
-					onfocusout = {focusOut}
+					onfocus = { e => ({}) }
+					onfocusout = { focusOut }
+					placeholder = { placeholderValue }
+					disabled = { disabledValue }
 				>
-					{card.data.intro || "нажми, чтобы изменить"}
+					{ cardIntro }
 				</textarea>
 			</div>
 		</div>

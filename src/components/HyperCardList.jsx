@@ -13,19 +13,6 @@ function HyperCardList ({
 	card = {}
 }) {
 	const [list, setList] = createSignal(card.list);
-	
-	const link1 = card.list.length > 0 
-		? 'https://skytact-api.space:2728/view/' + card.list[0].key + '.jpeg'
-		: false;
-	const link2 = card.list.length > 1 
-		? 'https://skytact-api.space:2728/view/' + card.list[1].key + '.jpeg'
-		: false;
-	const link3 = card.list.length > 2
-		? 'https://skytact-api.space:2728/view/' + card.list[2].key + '.jpeg'
-		: false;
-	const link4 = card.list.length > 3
-		? 'https://skytact-api.space:2728/view/' + card.list[3].key + '.jpeg'
-		: false;
 	//
 	const onError = (e) => {
 		e.target.src = cloud;
@@ -53,7 +40,7 @@ function HyperCardList ({
 							const nameLink = card.list.length >= i()
 									? 'https://skytact-api.space:2728/view/' + user.key + '.jpeg'
 									: false;
-							
+							console.log(nameLink);
 							//
 							return (
 								<Show when = {total - i() < 5} fallback = {<div></div>}>

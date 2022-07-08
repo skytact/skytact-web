@@ -28,6 +28,7 @@ const getGetcardQuery = (name, pubk = "", code = "", accs = "") => {
 				}
 				list {
 					ref
+					key
 				}
 				pack
 			}

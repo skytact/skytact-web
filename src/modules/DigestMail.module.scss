@@ -9,8 +9,22 @@
 		width: 100%;
 		height: 40px;
 		padding: 7px;
-		border: 1px solid #b0b0b0;
+		border: none;
+		background: #00000020;
 		font-size: 18px;
+		border-radius: 10px;
+		color: #00000080;
+
+		&:focus {
+			outline: none;
+			border-bottom: 2px solid #F9F9F9;
+		}
+
+		&::placeholder {
+			color: #00000080;
+			font-size: 14px;
+			line-height: 12px;
+		}
 	}
 }
 
@@ -21,21 +35,24 @@
 	height: 40px;
 	top: 7px;
 	right: 7px;
-	border: 1px solid #b0b0b0;
+	border: none;
 	div {
 		box-sizing: border-box;
 		width: 100%;
 		height: 100%;
 		padding: 9px;
 		font-size: 16px;
-		color: #b0b0b0;
+		color: #00000080;
 		text-align: center;
 	}
 	button {
 		width: 100%;
 		height: 100%;
 		border: none;
-		background-color: #f9f9f9;
+		background: none;
 		font-size: 12px;
+		border-radius: 10px;
+		color: #00000080;
+		border: 1px solid #00000080;
 	}
 }

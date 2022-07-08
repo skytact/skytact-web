@@ -2,7 +2,7 @@ import { Show, createSignal, createEffect } from "solid-js";
 import { createStore } from "solid-js/store";
 import { Link, Navigate } from "solid-app-router";
 //components
-import CardScene from "../components/CardScene";
+import HyperCard from "../components/HyperCard";
 import ErrorPlace from "../components/ErrorPlace";
 //style
 import page_styles from "../modules/E.module.scss";
@@ -35,7 +35,11 @@ function __E$ () {
 		});
 	return (
 		<Show when = {data.card} fallback = {<ErrorPlace error = {error} />}>
-			<CardScene permission = {data.card.pack[0]} mode = {"edit"} card = {data.card} />
+			<HyperCard 
+				userPermission = { data.card.pack[0] }
+				initialMode = { "edit" }
+				initialCard = { data.card }
+			/>
 		</Show>
 	);
 }

@@ -5,9 +5,12 @@
 	top: 0;
 	left: 0;
 	width: 480px;
-	min-height: 240px;
+	min-height: 150px;
 
 	margin: auto;
+	margin-bottom: 14px;
+
+	transition: margin-bottom 1s;
 }
 
 
@@ -47,6 +50,7 @@
 		background: none;
 		border: none;
 		border-bottom: 2px solid #FFFFFF60;
+		border-radius: 0px;
 		padding: 0;
 		color: #00000060;
 		font-size: 16px;
@@ -253,10 +257,10 @@
 @keyframes rocket {
 	0% {
 		opacity: 0.6;
-		top: 130px;
+		top: 100px;
 	}
 	100% {
 		opacity: 1;
-		top: 100%;
+		top: calc(100% + 14px);
 	}
 }

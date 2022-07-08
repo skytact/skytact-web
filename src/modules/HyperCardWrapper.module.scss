@@ -6,13 +6,18 @@
 }
 
 .Child {
+	box-sizing: border-box;
 	width: 720px;
-	min-height: 350px;
+	min-height: 100%;
 	margin: auto;
-	margin-top: 15px;
+	padding-top: 15px;
+	padding-bottom: 60px;
 	background: none;
 	animation-name: invite;
 	animation-duration: 1.0s;
+	position: relative;
+	top: 0;
+	left: 0;
 }
 
 .BgBox {
@@ -47,7 +52,7 @@
 	width: 100%;
 	padding: 7px;
 	text-align: center;
-	margin-bottom: 21px;
+	padding-bottom: 21px;
 	pointer-events: none;
 	p {
 		padding: 0;
@@ -55,6 +60,36 @@
 		color: #00000080;
 		font-size: 14px;
 		font-family: 'Montserrat';
+	}
+}
+
+.FootCopyright {
+	box-sizing: border-box;
+	width: 104%;
+	max-width: 480px;
+	height: 60px;
+	padding: 7px 21px;
+	text-align: center;
+	background-color: #00000020;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+	bottom: 0px;
+	//box-shadow: 0px 0px 6px #00000060;
+	border-radius: 3px;
+
+	img {
+		display: inline-block;
+		width: 46px;
+		float: left;
+	}
+
+	span {
+		display: inline;
+		float: left;
+		padding: 14px;
+		color: #f9f9f9;
+		font-size: 12px;
 	}
 }
 @media (max-width: 720px) {

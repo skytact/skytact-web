@@ -2,6 +2,8 @@ import {children, createSignal} from "solid-js";
 
 import page_style from "../modules/HyperCardWrapper.module.scss";
 
+import logoSky from "../icons/logoSky.svg";
+
 //return function
 function HyperCardWrapper (props) {
 
@@ -38,6 +40,7 @@ function HyperCardWrapper (props) {
 		//e.preventDefault();
 		//
 		if (afterClick()) {
+			e.preventDefault();
 			props.displayMode() == "edit" ?	changeBg(e) : addToFriend();
 			setAfterClick(false);
 		} else {
@@ -81,6 +84,9 @@ function HyperCardWrapper (props) {
 						? (<p>чтобы отправить <span style="color: #000">👋</span> ПРИВЕТ!</p>)
 						: (<p>чтобы поменять ТЕМУ!</p>)
 					}
+				</div>
+				<div class = {page_style.FootCopyright}>
+					<a href = '/'><img src = {logoSky} /></a> <span>skytact.online &#169; 2022</span>
 				</div>
 			</div>
 		</div>	

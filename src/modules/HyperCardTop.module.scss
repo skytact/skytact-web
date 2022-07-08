@@ -186,6 +186,9 @@
 	>h1 {
 		font-family: 'Montserrat';
 		font-size: 24px;
+		color: #000;
+		animation-name: qrhead;
+		animation-duration: .6s;
 	}
 }
 
@@ -193,6 +196,7 @@
 	width: 80%;
 	margin: auto;
 	margin-bottom: 14px;
+	background-color: #f9f9f9;
 }
 
 @media (max-width: 499px) {
@@ -223,7 +227,7 @@
 	0% {
 		top: 15px;
 		left: 110px;
-		width: 15px;
+		width: 40px;
 		transform: scale(0.1);
 		opacity: 0;
 	}
@@ -233,5 +237,14 @@
 		width: calc(100% - 30px);
 		transform: scale(1.0);
 		opacity: 1;
+	}
+}
+
+@keyframes qrhead {
+	0% {
+		font-size: 12px;
+	}
+	100% {
+		font-size: 24px;
 	}
 }

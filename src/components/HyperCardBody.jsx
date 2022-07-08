@@ -26,7 +26,7 @@ function HyperCardBody ({
 	//moving mode
 	//const [moving, setMoving] = createSignal(false);
 	//draggable element
-	const [position, setPosition] = createSignal(0);
+	const [position, setPosition] = createSignal(false);
 	const [drag, setDraggable] = createSignal(false);
 	const [dragIndex, setDragIndex] = createSignal(false);
 	const [swapIndex, setSwapIndex] = createSignal(false);
@@ -114,27 +114,68 @@ function HyperCardBody ({
 
 	function StartMove (e) {
 		e.preventDefault();
-		//inform user
-		console.log('start');
-		//set moving mode
-		setMoving(true);
-		//get position
-		const posY = e.clientY || e.touches[0].clientY;
+		//get start position
+		const positionStart = e.clientY || e.touches[0].clientY;
+		setPosition(positionStart);
+		//set control of moving
+		document.onmouseup = OverStop;
+		document.ontouchend = OverStop;
+		document.onmousemove = OverMove;	
+		document.ontouchmove = OverMove;
+		
+		setTimeout(() => {
+			if (!position()) return;
+			//get position
+			const posY = position();
+			
+			//check position diff
+			const diff = Math.abs(positionStart - posY);
+			//return if scrolling
+			if (diff > 23) {
+				setPosition(false);
+				document.onmousemove = null;	
+				document.ontouchmove = null;
+				return;
+			}
+
+			//set position
+			setPosition(posY);
+
+			//inform user
+			console.log('start');
+			//set moving mode
+			setMoving(true);
+
+			//create dragging element
+			updateStyles(e.target);
+			setDraggable(e.target);
+	
+			//set indexes
+			const index = Math.floor(e.target.offsetTop/commonHeightOfNote);
+			setDragIndex(index);
+			setSwapIndex(index);
+	
+			//set events
+			document.onmouseup = StopMove;
+			document.ontouchend = StopMove;
+			document.onmousemove = OnMove;	
+			document.ontouchmove = OnMove;
+		}, 300);
+	}
+
+	function OverMove (e) {
+		const posY = e.clientY || e.changedTouches[0].clientY;
 		setPosition(posY);
-		//create dragging element
-		updateStyles(e.target);
-		setDraggable(e.target);
+	}
 
-		//set indexes
-		const index = Math.floor(e.target.offsetTop/commonHeightOfNote);
-		setDragIndex(index);
-		setSwapIndex(index);
-
-		//set events
-		document.onmouseup = StopMove;
-		document.ontouchend = StopMove;
-		document.onmousemove = OnMove;	
-		document.ontouchmove = OnMove;
+	function OverStop (e) {
+		//null
+		setMoving(false);
+		setPosition(false);
+		document.onmouseup = null;
+		document.ontouchend = null;
+		document.onmousemove = null;
+		document.ontouchmove = null;
 	}
 
 	function OnMove (e) {
@@ -167,7 +208,7 @@ function HyperCardBody ({
 			setSwapIndex(-1);
 			return;
 		} else {
-			draggable.style.transform = 'scale(1.0)';
+			draggable.style.transform = 'scale(1.1)';
 		}
 
 		//check current Index
@@ -207,6 +248,7 @@ function HyperCardBody ({
 			//setNotes([...cNotes]);
 			//clear data
 			setTimeout(() => {setMoving(false);}, 500);
+			setPosition(false);
 			document.onmouseup = null;
 			document.ontouchend = null;
 			document.onmousemove = null;
@@ -242,7 +284,12 @@ function HyperCardBody ({
 	}
 	
 	return (
-		<div class = {page_styles.HyperCardBody}>
+		<div 
+			class = {page_styles.HyperCardBody} 
+			style = { rocket() 
+				? "margin-bottom: 120px; transition: margin-bottom 1s;" 
+				: "margin-bottom: 14px; transition: none;"}
+		>
 			{ (rocket() && notes()) && 
 			<div class = {page_styles.Rocket}>
 				{lastNotePhrase()}

@@ -204,7 +204,6 @@ function HyperCardBody ({
 		//remove zone
 		if (top < -80 && top > -180) {
 			draggable.style.transform = 'scale(0.8)';
-			console.log(top);
 			setSwapIndex(-1);
 			return;
 		} else {

@@ -133,6 +133,7 @@ function HyperCardBody ({
 			//return if scrolling
 			if (diff > 23) {
 				setPosition(false);
+				setMoving(false);
 				document.onmousemove = null;	
 				document.ontouchmove = null;
 				return;
@@ -141,10 +142,11 @@ function HyperCardBody ({
 			//set position
 			setPosition(posY);
 
-			//inform user
-			console.log('start');
 			//set moving mode
 			setMoving(true);
+
+			//inform user
+			console.log('start');
 
 			//create dragging element
 			updateStyles(e.target);

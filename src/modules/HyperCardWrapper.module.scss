@@ -3,8 +3,8 @@
 	width: 100%;
 	height: 100%;
 	overflow-y: scroll;
-	overscroll-behavior: none;
 	touch-action: manipulation;
+	overscroll-behavior-y: contain;
 }
 
 .Child {
@@ -18,7 +18,6 @@
 	animation-name: invite;
 	animation-duration: 1.0s;
 	position: relative;
-	overscroll-behavior: none;
 	top: 0;
 	left: 0;
 }
@@ -32,6 +31,8 @@
 	overflow: hidden;
 	background: none;
 	z-index: -1;
+	touch-action: manipulation;
+	overscroll-behavior-y: contain;
 }
 
 .BgRound {

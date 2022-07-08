@@ -54,7 +54,8 @@ function HyperCardWrapper (props) {
 			class = {page_style.HyperCardWrapper} 
 			style = {{
 				"background-color": colorList[bgColor()],
-				"overflow-Y": props.move() ? "scroll" : "scroll"
+				"overflow-Y": props.move() ? "hidden" : "scroll",
+				"touch-action": props.move() ? "none" : "manipulation"
 			}}
 			onclick = {dbClick}
 		>

@@ -8,11 +8,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   background-color: #fff;
-  overscroll-behavior-y: none;
+  overscroll-behavior: contain;
 }
 
 body > div#root {
-	overscroll-behavior-y: none;
 	overflow-x: hidden;
 }
 

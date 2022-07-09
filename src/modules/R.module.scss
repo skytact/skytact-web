@@ -6,6 +6,7 @@
 	margin-bottom: 20px;
 	padding: 10px;
 	font-size: 1.2em;
+	color: #F28B0C;
 
 	div {
 		margin-top: 5px;
@@ -16,28 +17,24 @@
 		display: inline-block;
 		padding: 0 3px;
 		margin: 0;
-		font-family: 'Press Start 2P';
 		font-size: 12px;
 		margin-top: 2px;
-		color: #0d0d0d;
+		color: #F28B0C;
 		border: 2px solid #6dccf2;
 		border-radius: 5px;
 	}
 
 	p {
-		padding-top: 5px;
 		margin: 0;
-		color: #b0b0b0;
+		color: #F28B0C;
 	}
 }
 
 .MarketBlock {
 	box-sizing: border-box;
 	max-width: 720px;
-	padding: 14px;
 	margin: auto;
 	margin-bottom: 14px;
-	background: linear-gradient(to left, #f9f9f900, #29A7D9C0);
 	border-radius: 14px;
 	color: black;
 	h3 {
@@ -49,12 +46,11 @@
 		display: inline-block;
 		margin: 7px 0px 0px;
 		background-color: #f9f9f9C0;
-		padding: 7px 14px;
 		border: 3px solid #29A7D9;
 		border-radius: 20px;
 		font-size: 18px;
 		text-decoration: underline;
-		color: #29A7D9;
+		color: #F28B0C;
 		font-family: 'Monserrat';
 	}
 }

@@ -32,9 +32,9 @@ function __H$ () {
 				<div class={page_styles.LinkWrap}>
 					<Link href="/c">Поиск аккаунта</Link>
 				</div>
-				<div class={page_styles.LinkWrap}>
+				{/*}<div class={page_styles.LinkWrap}>
 					<Link href="/m">Манифест</Link>
-				</div>
+				</div>*/}				
 				<div class={page_styles.Signature}>
 					created by <a href="https://skytact.online/republichenko">#republichenko</a>
 				</div>

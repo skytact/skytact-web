@@ -18,21 +18,23 @@ function DigestScene (props) {
 	//
 	return (
 		<DigestWrap>
-			<div class = {page_styles.Header}>
-				<button onClick = {onClick}>
-					<img src={back} />
-					{props.profil && 
-					<span>
-						{props.profil}
-					</span>}
-				</button>
-			</div>
-			<div class = {page_styles.Block}>
-				<div class={page_styles.Heading}>
-					<h1>{props.heading}</h1>
+				<div class = {page_styles.Place}>
+					<div class={page_styles.Heading}>
+						<h1>{props.heading}</h1>
+					</div>
+					<div class = {page_styles.Header}>
+						<button onClick = {onClick}>
+							<img src={back} />
+							{props.profil && 
+							<span>
+								{props.profil}
+							</span>}
+						</button>
+					</div>
 				</div>
-				{ resolved() }
-			</div>
+				<div class = {page_styles.Block}>
+					{ resolved() }
+				</div>
 		</DigestWrap>
 	)
 }

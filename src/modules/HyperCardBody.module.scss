@@ -310,11 +310,24 @@
 	}
 }
 
+.NoteFaviIcon {
+	box-sizing: border-box;
+	position: absolute;
+	top: 9px;
+	right: 16px;
+	img {
+		border: 2px solid #00000020;
+		border-radius: 50%;
+		width: 16px;
+		height: 16px;
+	}
+}
+
 .NoteLockIcon {
 	box-sizing: border-box;
 	position: absolute;
-	top: 7px;
-	right: 14px;
+	bottom: 7px;
+	right: 20px;
 	img {
 		width: 12px;
 	}
@@ -330,7 +343,7 @@
 	width: 100%;
 	min-height: 80px;
 	max-height: 100%;
-	padding: 7px 14px;
+	padding: 21px 14px;
 	border-radius: 20px;
 	background-color: #00000020;
 	//pointer-events: none;

@@ -6,6 +6,7 @@ import DigestPassword from "./DigestPassword";
 import DigestSubmit from "./DigestSubmit";
 import DigestButton from "./DigestButton";
 import DigestLine from "./DigestLine";
+import DigestSpec from "./DigestSpec";
 
 function LoginForm ({error, data, onInputData, onSubmit}) {
 	return (
@@ -16,37 +17,39 @@ function LoginForm ({error, data, onInputData, onSubmit}) {
 			heading = "Вход в аккаунт"
 			onSubmit = {onSubmit}
 		>
-			<DigestInput 
-				maxLen = "32" 
-				defaultValue = {data.link}
-				placeholder = "здесь #имя_пользователя"
-				onText = {(e) => {
-					onInputData(e.target.value, data.passwd);
-				}}
-			/>
-			<DigestPassword
-				defaultValue = {data.passwd}
-				placeholder = "здесь пароль"
-				onText = {(e) => {
-					onInputData(data.link, e.target.value);
-				}}
-			/>
-			<DigestSubmit>
-				<DigestButton
-				>
-					Войти
-				</DigestButton>
-				<DigestButton style = "border: none;" 
-					onSet = { e => {	
-							e.preventDefault();
-							window.location.href = "/v";
-				}}>
-					<Link href = "/v">не помню</Link>
-				</DigestButton>
-			</DigestSubmit>
-			<DigestLine>
-				<Link href = "/r">как зарегистрироваться?</Link>
-			</DigestLine>
+			<DigestSpec>
+				<DigestInput 
+					maxLen = "32" 
+					defaultValue = {data.link}
+					placeholder = "здесь #имя_пользователя"
+					onText = {(e) => {
+						onInputData(e.target.value, data.passwd);
+					}}
+				/>
+				<DigestPassword
+					defaultValue = {data.passwd}
+					placeholder = "здесь пароль"
+					onText = {(e) => {
+						onInputData(data.link, e.target.value);
+					}}
+				/>
+				<DigestSubmit>
+					<DigestButton
+					>
+						Войти
+					</DigestButton>
+					<DigestButton style = "border: none;" 
+						onSet = { e => {	
+								e.preventDefault();
+								window.location.href = "/v";
+					}}>
+						<Link href = "/v">не помню</Link>
+					</DigestButton>
+				</DigestSubmit>
+				<DigestLine>
+					<Link href = "/r">как зарегистрироваться?</Link>
+				</DigestLine>
+			</DigestSpec>
 		</DigestForm>
 	)
 }

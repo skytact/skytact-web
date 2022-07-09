@@ -7,12 +7,9 @@ import page_styles from "../modules/DigestWrap.module.scss";
 function DigestWrap (props) {
 	const resolved = children(() => props.children);
 	return (
-		<CloudBackground>
-			<div class = {page_styles.DigestWrap}>
-				{resolved() }
-				<FootCard />
-			</div>
-		</CloudBackground>
+		<div class = {page_styles.DigestWrap}>
+			{resolved() }
+		</div>
 	)
 }
 

@@ -4,24 +4,23 @@
 	margin: auto;
 	margin-top: 5px;
 	margin-bottom: 20px;
-	padding: 10px 0px;
-	font-size: 14px;
-	color: #b0b0b0;
-	font-family: 'Press Start 2P';
+	//padding: 10px 0px;
+	font-size: 18px;
+	color: #00000080;
 
 	>div {
 		margin-top: 15px;
 		margin-bottom: 15px;
-		padding: 10px 10px;
+		color: #00000080;
 	}
 
 	span {
 		display: inline-block;
 		padding: 5px;
 		margin: 0;
-		font-size: 14px;
+		font-size: 16px;
 		margin-top: 2px;
-		color: #29A7D9;
+		color: #F28B0C;
 		border: 2px solid #29A7D9;
 		border-radius: 5px;
 	}
@@ -29,7 +28,7 @@
 	p {
 		padding-top: 5px;
 		margin: 0;
-		color: #b0b0b0;
+		color: #00000080;
 	}
 
 	a {
@@ -46,9 +45,9 @@
 	
 	.Texture {
 		width: 95%;
-		font-size: 1.0em;
+		font-size: 1.2em;
 		span {
-			font-size: 0.8em;
+			font-size: 1.0em;
 		}
 	}
 	
@@ -57,7 +56,7 @@
 @media (max-width: 499px) {
 
 	.Texture {
-		font-size: 10px;
+		font-size: 16px;
 	}
 	
 }

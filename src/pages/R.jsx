@@ -7,6 +7,7 @@ import Heading from '../components/Heading.jsx';
 import Texture from "../components/Texture.jsx";
 import BreezeButton from "../components/BreezeButton.jsx";
 import CloudBackground from "../components/CloudBackground.jsx";
+import DigestSpec from "../components/DigestSpec";
 //styles
 //modules
 import page_styles from "../modules/R.module.scss";
@@ -23,22 +24,12 @@ function __R$ () {
 	return (
 		<CloudBackground height = {800}>
 			<Header />
+			<DigestSpec>
 			<Heading header= {"Для Регистрации:"}/>
 			<Texture> 
-				<div class = {page_styles.MarketBlock}>Найти пользователя, у которого есть <b style="color: red">приглашение</b></div>
-				<div class = {page_styles.MarketBlock}>Через QR или ссылку откройте его профиль</div>
-				<div class = {page_styles.MarketBlock}>
-					Сразу встретите это:
-					<div 
-						style = "display: inline-block; position: relative; z-index: 10; margin: 0 0 10px 24px;"
-					>
-					<BreezeButton width = {"30px"} height = {"30px"} color = {"#6dccf2"} state = {() => false}>
-						<div style = "font-size: 20px; margin-top: 10px;">👋</div>
-					</BreezeButton>
-					</div>
-				</div>
-				<p style = "margin-top: 28px;">Для каждого аккаунта открыто 4&nbsp;приглашения,
-				если приглашений не осталось, вместо регистрации откроется страница <b>входа&nbsp;в&nbsp;аккаунт</b>!</p>
+				<div class = {page_styles.MarketBlock}>Найдите <b style="color: red">приглашение</b></div>
+				<div class = {page_styles.MarketBlock}>Это ссылка, которую может вам дать любой, <b style="color: red">уже зарегистрированный</b>, пользователь</div>
+				<div class = {page_styles.MarketBlock}>Тогда, Вы сможете создать свой аккаунт</div>
 			</Texture>
 			{/*<div class = {page_styles.WrapImageBlockLeft}>
 				<img src={firstStep}/>
@@ -52,6 +43,7 @@ function __R$ () {
 			<div class = {page_styles.Footer}>
 				<Link href="/h">вернуться</Link>
 			</div>
+			</DigestSpec>
 		</CloudBackground>
 	);
 }

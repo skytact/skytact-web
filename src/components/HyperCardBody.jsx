@@ -7,6 +7,7 @@ import page_styles from "../modules/HyperCardBody.module.scss";
 
 import addnote from "../icons/addnote.svg";
 import lock from "../icons/lock.svg";
+import global_link from "../icons/link.svg";
 
 //hypercard body
 function HyperCardBody ({
@@ -296,7 +297,12 @@ function HyperCardBody ({
 		document.onmousemove = null;
 		document.ontouchmove = null;
 	}
-
+	//
+	const faviconSrc = link => {
+		const url = new URL(link);
+		return 'http://www.google.com/s2/favicons?domain=' + url.hostname;
+	}
+	
 	//notes().length && console.log('notes' + notes()[1].lock);
 	return (
 		<div 
@@ -441,7 +447,7 @@ function HyperCardBody ({
 										style = { displayMode() == "view" && "moz-user-select: text; -webkit-user-select: text; user-select: text;"}
 										class = { page_styles.NoteLink }
 										onclick = {e => {
-											isLink(note.line) ?	window.location.href = note.line : false;						
+											isLink(note.line) ?	window.open(note.line, '_blank') : false;						
 										}}
 									>
 										<span 
@@ -455,6 +461,13 @@ function HyperCardBody ({
 											{note.line}
 										</span>
 									</p>
+									{isLink(note.line) && 
+									<div class = {page_styles.NoteFaviIcon}> 
+										<img 
+											src = {faviconSrc(note.line)} 
+											onerror = {e => { e.target.src = global_link; }}
+										/>
+									</div>}
 									{displayMode() == "edit" && note.lock &&
 									<div class = {page_styles.NoteLockIcon}>
 										<img src = {lock} />

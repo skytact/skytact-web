@@ -161,11 +161,13 @@ function HyperCardTop ({
 	//JSX OBJECT
 	return (
 		<div class = { page_style.HyperCardTop }>
+			{displayMode() == "edit" && 
 			<div class = {page_style.MoreButtonBlock}>
 				<button onclick = {e => window.location.href = '/s'}>
 					<img src = {more} />
 				</button>
 			</div>
+			}
 			<div class = {page_style.ImageBlock}>
 				<button>
 					<img 

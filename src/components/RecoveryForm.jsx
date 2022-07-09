@@ -27,6 +27,7 @@ function RecoveryForm ({
 			href = "/"
 			onSubmit = { onSubmit }
 		>
+			<DigestSpec>
 			<DigestInput 
 				maxLen = "32"
 				placeholder = "здесь #имя аккаунта"
@@ -53,6 +54,7 @@ function RecoveryForm ({
 					onInput(data.link, data.pass, data.conf, data.mail, e.target.value);
 				}}
 			/>
+			</DigestSpec>
 			<DigestSpec>
 				<span>Новый пароль</span>
 				<DigestPassword 

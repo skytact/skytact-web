@@ -340,7 +340,7 @@ function HyperCardBody ({
 										lock: !formInput().lock
 									});
 								}}
-								checked
+								checked = { !formInput().lock }
 							/>
 							<label>
 							</label>
@@ -387,8 +387,6 @@ function HyperCardBody ({
 									line: myLine,
 									lock: myLock,
 								}
-
-								console.log('note ' + formInput().lock);
 
 								//add new note
 								if (myText && myLine) useAddnote(myNote)

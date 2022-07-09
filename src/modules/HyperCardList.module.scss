@@ -15,7 +15,7 @@
 		box-sizing: border-box;
 		width: auto;
 		border-radius: 20px;
-		//background-color: #00000020;
+		//background-color: #00000040;
 		padding: 14px;
 		touch-action: manipulation;
 		
@@ -27,8 +27,8 @@
 .ListHeading {
 	display: block;
 	margin: 0;
-	margin-bottom: 16px;
-	font-size: 18px;
+	margin-bottom: 8px;
+	font-size: 16px;
 	font-weight: normal;
 	font-family: 'Montserrat';
 	color: #00000060;
@@ -38,20 +38,21 @@
 	position: relative;
 	top: 0;
 	left: 0;
-	width: 60px;
-	height: 60px;
+	width: 54px;
+	height: 54px;
 	border-radius: 50%;
 	overflow: hidden;
 	display: inline-block;
-	margin-right: -20px;
+	margin-right: -25px;
 	border: 1px solid #00000020;
+	
 	img {
 		display: block;
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%) scale(1.2);
-		width: 70px;
+		width: 60px;
 		background: #f9f9f9;
 		
 	}

@@ -12,7 +12,11 @@ function HyperCardList ({
 	displayMode = "view",
 	card = {}
 }) {
+	//create list and set reverse list array
 	const [list, setList] = createSignal(card.list);
+	setList(JSON.parse(JSON.stringify(card.list)).reverse());
+	//get length of array
+	let total = card.list.length;
 	//
 	const onError = (e) => {
 		e.target.src = cloud;
@@ -22,17 +26,20 @@ function HyperCardList ({
 		e.preventDefault();
 		window.location.replace("/" + name);
 	}
-
-	let total = card.list.length;
+	
 	createEffect(() => {
-		if(card) total = card.list.length;
-	})
+		if(card) {
+			//change values of array
+			total = card.list.length;
+			setList(JSON.parse(JSON.stringify(card.list)).reverse());
+		}
+	});
 	//
 	return (
 		<div class={page_styles.List}>
 			<div>
 				<h3 class = {page_styles.ListHeading}>здесь были</h3>
-				<For each = {card.list} fallback = {<div></div>}>
+				<For each = {list()} fallback = {<div></div>}>
 					{
 						(user, i) => {	
 							console.log(user);
@@ -40,7 +47,6 @@ function HyperCardList ({
 							const nameLink = card.list.length >= i()
 									? 'https://skytact-api.space:2728/view/' + user.key + '.jpeg'
 									: false;
-							console.log(nameLink);
 							//
 							return (
 								<Show when = {total - i() < 5} fallback = {<div></div>}>
@@ -50,7 +56,7 @@ function HyperCardList ({
 											e.preventDefault();
 											window.location.replace("/" + name);
 										}}
-										style = { (i() > total - 1) ? "animation-play-state: running;" : "opacity: 1;"}
+										style = { (i() >= total - 1) ? "animation-play-state: running;" : "opacity: 1;"}
 									>
 										<img src = {nameLink} onerror = { onError }/>
 									</div>

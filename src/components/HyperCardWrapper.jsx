@@ -1,10 +1,35 @@
 import {children, createSignal} from "solid-js";
 
 import page_style from "../modules/HyperCardWrapper.module.scss";
-
+//
+import useData from "../libs/useData";
+import parseLink from "../libs/parseLink";
+//
+import getGetAddr from "../fetch/getGetAddr";
+import getContact from "../fetch/getContact";
+import getUpdSign from "../fetch/getUpdSign";
+import getIsfree from "../fetch/getIsfree";
 import getUpdcard from "../fetch/getUpdcard";
 
 import logoSky from "../icons/logoSky.svg";
+
+//
+const useContact = async (host, nick) => {
+	try {
+		//required
+		const addr = await getGetAddr(host, nick);
+		//
+		const accs = "";
+		const [pubk, sign] = (addr) ? await getUpdSign(addr) : ["", ""];
+		const answ = (nick && pubk && sign)
+			? await getContact(host, nick, pubk, sign)
+			: false;
+		if (!answ) return Promise.reject("act canceled!")
+		return answ;
+	} catch (err) {
+		return Promise.reject(err);
+	}
+}
 
 //
 const useUpdcard = async (text) => {
@@ -25,7 +50,7 @@ function HyperCardWrapper (props) {
 		? "чтобы изменить ТЕМУ"
 		: props.permission == "guest" 
 			? "чтобы отправить <span style='color: #000'>👋</span> Привет!"
-			: "чтобы ВЫЙТИ"
+			: "чтобы ВЫЙТИ";
 		
 	//VALUE
 	//array of bg colors
@@ -45,7 +70,6 @@ function HyperCardWrapper (props) {
 		const posX = event.clientX || event.touches[0].clientX;
 		const posY = event.clientY || event.touches[0].clientY;
 
-		console.log(posX, posY);
 		setBgRound({x: posX, y: posY});
 		setTimeout(() => { 
 			const selectColor = colorList[(bgColor() + 1)%5];
@@ -62,11 +86,21 @@ function HyperCardWrapper (props) {
 
 	const addToFriend = () => {
 		const list = JSON.parse(JSON.stringify(props.card.list));
-		console.log('yes');
-		list.push({key: 'none', ref: 'null'});
-		props.onChangeCard({...props.card, list});
-		console.log(props.card.list);
-		console.log(list);
+		const host = props.card.head.host;
+		const nick = props.card.data.nick;
+		const [link] = useData();
+		useContact(host, nick)
+			.then(res => {
+				const [myhost, mynick] = parseLink(link);
+				return getGetAddr(myhost, mynick);
+			})
+			.then(res => {
+				list.unshift({key: res, ref: link});
+				props.onChangeCard({...props.card, list});
+			})
+			.catch(err => {
+				console.log(err);
+			});
 	}
 
 	const exitFromGuest = () => {

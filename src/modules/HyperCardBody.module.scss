@@ -313,13 +313,18 @@
 .NoteFaviIcon {
 	box-sizing: border-box;
 	position: absolute;
-	top: 9px;
+	top: 7px;
 	right: 16px;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: #F9F9F960;
 	img {
-		border: 2px solid #00000020;
+		display: block;
 		border-radius: 50%;
-		width: 16px;
-		height: 16px;
+		margin: 2px;
+		width: 12px;
+		height: 12px;
 	}
 }
 

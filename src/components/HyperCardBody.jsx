@@ -5,12 +5,15 @@ import getAddnote from "../fetch/getAddnote";
 
 import page_styles from "../modules/HyperCardBody.module.scss";
 
+import addnote from "../icons/addnote.svg";
+import lock from "../icons/lock.svg";
+
 //hypercard body
 function HyperCardBody ({
 	permission = "guest",
 	displayMode = () => "view",
 	card = {},
-	changeCard = (card) => ({}),
+	onChangeCard = (card) => ({}),
 	move = f => f,
 	setMoving = f => f
 }) {
@@ -19,10 +22,16 @@ function HyperCardBody ({
 	//form data
 	const [formInput, setFormInput] = createSignal({
 		line: "",
-		text: ""
+		text: "",
+		lock: false
 	});
 	//notes list
 	const [notes, setNotes] = createSignal(card.data.notes);
+	const changeNotes = (card, notes) => {
+		const data = JSON.parse(JSON.stringify(card.data));
+		data.notes = notes;
+		onChangeCard({...card, data})
+	}
 	//moving mode
 	//const [moving, setMoving] = createSignal(false);
 	//draggable element
@@ -34,6 +43,7 @@ function HyperCardBody ({
 	//rocket animation
 	const [rocket, setRocket] = createSignal(false);
 	const [lastNotePhrase, setLastNotePhrase] = createSignal(false);
+	const [rocketIsLock, setRocketIsLock] = createSignal(false);
 	
 	//update note fetch query
 	const useUpdNote = async (item, act) => {
@@ -70,8 +80,8 @@ function HyperCardBody ({
 		//
 		for (let i = start; i != finit; i = i*1 + inc*1 ) {
 			cNotes = await useUpdNote(cNotes[i].item, action);
-			//console.log(cNotes);
 		}
+		setNotes([...cNotes]);
 	}
  
 	//
@@ -286,7 +296,8 @@ function HyperCardBody ({
 		document.onmousemove = null;
 		document.ontouchmove = null;
 	}
-	
+
+	//notes().length && console.log('notes' + notes()[1].lock);
 	return (
 		<div 
 			class = {page_styles.HyperCardBody} 
@@ -297,6 +308,11 @@ function HyperCardBody ({
 			{ (rocket() && notes()) && 
 			<div class = {page_styles.Rocket}>
 				{lastNotePhrase()}
+				{displayMode() == "edit" && rocketIsLock() &&
+				<div class = {page_styles.NoteLockIcon}>
+					<img src = {lock} />
+				</div>
+				}
 			</div> }
 			{ displayMode() == "edit" &&
 			<Show when = { !move() } fallback = {
@@ -311,23 +327,45 @@ function HyperCardBody ({
 				>
 					<form onsubmit = {e => {e.preventDefault()}}>
 						<span> добавьте запись </span>
+						<div class = {page_styles.AddNoteSecurity}>
+							<span> видно всем </span>
+							<input 
+								type = "checkbox" 
+								name = "security" 
+								onchange = {e => {
+									console.log(e.target.value);
+									setFormInput({
+										line: formInput().line,
+										text: formInput().text,
+										lock: !formInput().lock
+									});
+								}}
+								checked
+							/>
+							<label>
+							</label>
+						</div>
 						<input 
+							type = "text"
 							placeholder = "здесь подпись"
 							oninput = {e => {
 								setFormInput({
 									text: e.target.value,
-									line: formInput().line
+									line: formInput().line,
+									lock: formInput().lock
 								});
 							}}
 							value = { formInput().text }
 						/>
 						<input 
+							type = "text"
 							placeholder = "ссылка, почта, телефон..."
 							style = {{"color": "#f9f9f9", "font-size": "16px"}}
 							oninput = {e => {
 								setFormInput({
 									line: e.target.value,
-									text: formInput().text
+									text: formInput().text,
+									lock: formInput().lock
 								});						
 							}}
 							value = { formInput().line }
@@ -339,16 +377,18 @@ function HyperCardBody ({
 								e.preventDefault();
 								const myText = formInput().text;
 								const myLine = formInput().line;
-
-								setFormInput({text: "", line: ""});
+								const myLock = formInput().lock;
+								setFormInput({text: "", line: "", lock: formInput().lock});
 
 								//create note
 								const myNote = {
 									icon: "info",
 									text: myText,
 									line: myLine,
-									lock: false,
+									lock: myLock,
 								}
+
+								console.log('note ' + formInput().lock);
 
 								//add new note
 								if (myText && myLine) useAddnote(myNote)
@@ -359,6 +399,7 @@ function HyperCardBody ({
 										//start rocket animation
 										setRocket(true);
 										setLastNotePhrase(myLine);
+										setRocketIsLock(myLock);
 										
 										//
 										setTimeout(() => { 
@@ -371,7 +412,7 @@ function HyperCardBody ({
 									});
 							}}
 						>
-							<button><div></div></button>
+							<button><img src={addnote} /></button>
 						</div>
 					</form>
 				</div>
@@ -406,11 +447,21 @@ function HyperCardBody ({
 										}}
 									>
 										<span 
-											style = { isLink(note.line) ? "text-decoration: underline;" : "text-decoration: none;" }
+											style = {{
+												"text-decoration": isLink(note.line) ? "underline" : "none",
+												"user-select": displayMode() == "view" ? "text" : "none",
+												"-moz-user-select": displayMode() == "view" ? "text" : "none",
+												"-webkit-user-select": displayMode() == "view" ? "text" : "none"
+											}}
 										>
 											{note.line}
 										</span>
 									</p>
+									{displayMode() == "edit" && note.lock &&
+									<div class = {page_styles.NoteLockIcon}>
+										<img src = {lock} />
+									</div>
+									}
 								</div>
 							</div>
 						)

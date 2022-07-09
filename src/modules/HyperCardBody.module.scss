@@ -42,7 +42,7 @@
 		margin-bottom: 7px;
 	}
 
-	input {
+	input[type="text"] {
 		display: block;
 		box-sizing: border-box;
 		width: 80%;
@@ -69,6 +69,68 @@
 			line-height: 12px;
 		}
 	}
+
+	
+}
+
+.AddNoteSecurity {
+	box-sizing: border-box;
+	position: absolute;
+	width: 110px;
+	height: 30px;
+	top: 0;
+	right: 0;
+	padding: 7px 7px;
+	>span {
+		display: inline-block;
+		position: relative;
+		top: -4px;
+		line-height: 10px;
+		width: auto;
+		padding-right: 5px;
+		font-size: 12px;
+		color: #FFFFFFA0;
+		margin: 0;
+	}
+
+	>input {
+		margin: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		z-index: 2;
+	}
+
+	input:checked ~ label {
+		&::after {
+			content: "";
+			background-color: #F9f9f9;
+			position: absolute;
+			top: 3px;
+			left: 3px;
+			display: block;
+			width: 10px;
+			height: 10px;
+			color: white;
+			border-radius: 50%;
+		}
+	}
+	
+	label {
+		box-sizing: border-box;
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		border-radius: 8px;
+		background-color: #00000020;
+		position: relative;
+		top: 0;
+		left: 0;
+	}
+	
 }
 
 .AddNoteButton {
@@ -91,15 +153,16 @@
 		left: 0;
 		
 		background: none;
-		div {
-			width: 5px;
-			height: 60%;
-			background-color: #f9f9f9;
+		
+		img {
+			display: block;
+			width: 10px;
+			height: 70%;
 			border-radius: 3px;
 			position: absolute;
 			
-			top: 50%;
-			left: 50%;
+			top: 55%;
+			left: calc(100% - 25px);
 			transform: translate(-50%, -50%);
 		}
 	}
@@ -206,6 +269,9 @@
 	padding: 7px 14px;
 	border-radius: 20px;
 	background-color: #00000020;
+	position: relative;
+	top: 0;
+	left: 0;
 	pointer-events: none;
 
 	p {
@@ -241,6 +307,16 @@
 		width: 100%;
 		display: inline-block;
 		word-wrap: break-word;
+	}
+}
+
+.NoteLockIcon {
+	box-sizing: border-box;
+	position: absolute;
+	top: 7px;
+	right: 14px;
+	img {
+		width: 12px;
 	}
 }
 

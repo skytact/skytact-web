@@ -122,6 +122,7 @@ function HyperCardTop ({
 		const h = event.target.naturalHeight || 240;
 		setVerticalImg(w < h);
 	}
+	
 	//textarea
 	const focusIn = (e) => {
 		e.preventDefault();
@@ -172,11 +173,13 @@ function HyperCardTop ({
 						style = {`${verticalImg() ? "width: 180px;" : "height: 180px"}`}
 						onload = { onLoadAvatar }
 					/>
+					{displayMode() == "edit" && 
 					<input 
 						type = "file"
 						accept = "image/png, image/jpeg, image/jpg, image/svg+xml"
 						onchange = { onChangePhoto }
 					/>
+					}
 				</button>
 			</div>
 			<div class = {page_style.ButtonBlock}>
@@ -205,16 +208,22 @@ function HyperCardTop ({
 				</div>
 			</button>}
 			<div class = {page_style.MessageBlock} style = { displayNone }>
-				<textarea
-					rows="3"
-					maxlength="60"
-					onfocus = { e => ({}) }
-					onfocusout = { focusOut }
-					placeholder = { placeholderValue }
-					disabled = { disabledValue }
-				>
-					{ cardIntro }
-				</textarea>
+				<Show when = {displayMode() == "edit"} fallback = {
+					<div class = {page_style.MessageBox}>
+						{ cardIntro }
+					</div>
+				}>
+					<textarea
+						class = {page_style.MessageBox}
+						rows="3"
+						maxlength="60"
+						onfocus = { e => ({}) }
+						onfocusout = { focusOut }
+						placeholder = { placeholderValue }
+					>
+						{ cardIntro }
+					</textarea>
+				</Show>
 			</div>
 		</div>
 	)

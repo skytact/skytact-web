@@ -9,7 +9,7 @@ import DigestSubmit from "./DigestSubmit";
 import DigestButton from "./DigestButton";
 import DigestCaptcha from "./DigestCaptcha";
 import MarketingText from "./MarketingText";
-
+import DigestSpec from "./DigestSpec";
 import useContactData from "../libs/useContactData";
 
 //import getAddcard from "../fetch/getAddcard";
@@ -21,9 +21,10 @@ function RegistrationForm ({error, data, onInput, onOverlap, onSubmit = f => f})
 			profil = "отмена"
 			href = "/"
 			error = {error}
-			heading = "Регистрация"
+			heading = "Создание гиперкарты"
 			onSubmit = { onSubmit }
 		>
+			<DigestSpec>
 			<DigestInput 
 				maxLen = "32" 
 				placeholder = "придумай новое имя"
@@ -63,7 +64,7 @@ function RegistrationForm ({error, data, onInput, onOverlap, onSubmit = f => f})
 					создать
 				</DigestButton>
 				<DigestButton 
-					style = "border: none; text-decoration: underline; color: #2b98ec;" 
+					style = "border: none;" 
 					onSet = { e => {
 							const [host, nick] = useContactData()	
 							e.preventDefault();
@@ -73,6 +74,7 @@ function RegistrationForm ({error, data, onInput, onOverlap, onSubmit = f => f})
 					уже есть аккаунт
 				</DigestButton>
 			</DigestSubmit>
+			</DigestSpec>
 		</DigestForm>
 	);
 }

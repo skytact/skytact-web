@@ -1,10 +1,11 @@
-import {children, createSignal} from "solid-js";
+import {children, createSignal, Show, createEffect} from "solid-js";
 
 import page_style from "../modules/HyperCardWrapper.module.scss";
 //
 import useData from "../libs/useData";
 import parseLink from "../libs/parseLink";
 //
+import getAuthorized from "../fetch/getAuthorized";
 import getGetAddr from "../fetch/getGetAddr";
 import getContact from "../fetch/getContact";
 import getUpdSign from "../fetch/getUpdSign";
@@ -12,6 +13,17 @@ import getIsfree from "../fetch/getIsfree";
 import getUpdcard from "../fetch/getUpdcard";
 
 import logoSky from "../icons/logoSky.svg";
+
+//
+const useAuthorized = async () => {
+	try {
+		const answ = await getAuthorized();
+		return Promise.resolve(answ);
+	}
+	catch (err) {
+		return Promise.reject(err);
+	}
+}
 
 //
 const useContact = async (host, nick) => {
@@ -42,6 +54,8 @@ const useUpdcard = async (text) => {
 		throw new Error("new error")
 	}
 }
+
+//
 
 //return function
 function HyperCardWrapper (props) {
@@ -85,6 +99,7 @@ function HyperCardWrapper (props) {
 	}
 
 	const addToFriend = () => {
+		if(!authorized()) window.location.href = "/";
 		const list = JSON.parse(JSON.stringify(props.card.list));
 		const host = props.card.head.host;
 		const nick = props.card.data.nick;
@@ -123,6 +138,19 @@ function HyperCardWrapper (props) {
 			setAfterClick(true);
 		}
 	}
+
+	//authorized
+	const [authorized, setAuthorized] = createSignal(false);
+
+	useAuthorized()
+		.then(res => {
+			setAuthorized(res);
+		})
+		.catch(err => console.log(err));
+
+	createEffect(() => { if(!authorized()) console.log('auth' + true); });
+	
+	
 	return (
 		<div
 			class = {page_style.HyperCardWrapper} 
@@ -152,10 +180,33 @@ function HyperCardWrapper (props) {
 			</div>
 			<div class = {page_style.Child}>
 				{ responsed() }
-				<div class = {page_style.FootPhrase}>
-					<p>нажми дважды</p> 
-					<p innerHTML = {footPhrase} />
-				</div>
+				<Show when = {authorized()} fallback = {
+					<div 
+						class = {page_style.CommePhrase}
+						onclick = {e => {
+							const host = props.card.head.host;
+							const code = props.card.pack[4];
+							getIsfree(host, code)
+								.then(res => {
+									if (res) window.location.href = '/r/' + props.card.pack[4];
+									else window.location.href = '/';
+								})
+								.catch(err => {
+									console.log(err);
+									window.location.href = '/';
+								});
+						}}
+					>
+						<div>
+						 	создай себе такую же <span>здесь</span>
+						</div>
+					</div>
+				}>
+					<div class = {page_style.FootPhrase}>
+						<p>нажми дважды</p> 
+						<p innerHTML = {footPhrase} />
+					</div>
+				</Show>
 				<div class = {page_style.FootCopyright}>
 					<a href = '/'><img src = {logoSky} /></a> <span>skytact.online &#169; 2022</span>
 				</div>

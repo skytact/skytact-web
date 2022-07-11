@@ -101,6 +101,56 @@
 		font-size: 12px;
 	}
 }
+
+.CommePhrase {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 7px;
+	text-align: center;
+	padding-bottom: 21px;
+
+	>div {
+		box-sizing: border-box;
+		width: 300px;
+		margin: auto;
+		height: 40px;
+		background: #f9f9f9;
+		border-radius: 20px;
+		box-shadow: 0px 0px 10px #00000020;
+		position: relative;
+		top: 0;
+		left: 0;
+		padding: 8px 10px;
+		text-align: center;
+
+		span {
+			font-size: 14px;
+			cursor: pointer;
+			border: 1px solid #F23827;
+			padding: 1px 7px 3px;
+			margin-left: 3px;
+			border-radius: 5px;
+			color: #F23827;
+		}
+		
+
+		&::before {
+			display: block;
+			content: "👋";
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			//background: #00000020;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			padding: 0;
+			font-size: 14px;
+			color: fff;
+		}
+	}
+}
+
 @media (max-width: 720px) {
 	.Child {
 		width: 96%;

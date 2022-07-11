@@ -71,9 +71,49 @@
 	}
 }
 
+//info about app
+.Texture {
+	padding: 10px 10px 16px;
+	margin: 60px auto;
+	border: 3px dotted #00000080;
+	color: #606060;
+	max-width: 480px;
+	width: 70%;
+	font-size: 16px;
+	background: #f9f9f9A0;
+	border-radius: 10px;
+	line-height: 18px;
+	text-align: center;
+
+	h3 {
+		padding: 0;
+		margin: 0;
+		margin-top: 3px;
+		margin-bottom: 12px;
+		font-size: 20px;
+	}
+
+	span {
+		font-size: 12px;
+		border: 1px solid red;
+		padding: 2px 3px;
+		border-radius: 3px;
+		margin: 0px 6px 0px 0px;
+		color: red;
+	}
+
+	a {
+		display: block;
+		color: #00000060;
+		//text-align: center;
+		width: 100%;
+		color: #29A7D9;
+	}
+}
+
 //sign
 .Signature {
-	margin-top: 200px;
+	margin-top: 80px;
 	margin-bottom: 80px;
 	text-align: center;
 	padding: 10px;
@@ -82,6 +122,24 @@
 	a {
 		text-decoration: none;
 		color: #29A7D9;
+	}
+}
+
+//github link
+.GitHubLink {
+	position: absolute;
+	top: 18px;
+	right: 14px;
+	a {
+		display: block;
+		width: 36px;
+		height: 36px;
+		background: none;
+
+		img {
+			width: 36px;
+			opacity: 0.5;
+		}
 	}
 }
 

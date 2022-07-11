@@ -204,6 +204,11 @@
 		color: #000;
 		animation-name: qrhead;
 		animation-duration: .6s;
+
+		-moz-user-select: text;
+		-webkit-user-select: text;
+		user-select: text;
+
 	}
 }
 

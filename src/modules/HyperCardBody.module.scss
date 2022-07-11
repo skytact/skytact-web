@@ -70,6 +70,15 @@
 		}
 	}
 
+	&::after {
+		box-sizing: border-box;
+		position: absolute;
+		top: 100%;
+		left: 10px;
+		content: "нажми и удерживай, чтобы переместить";
+		font-size: 11px;
+		color: #00000060;
+	}
 	
 }
 

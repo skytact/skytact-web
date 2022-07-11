@@ -204,7 +204,7 @@ function HyperCardTop ({
 				style = {qropen() ? "opacity: 1;" : "display: none;"}
 			>
 				<div class = {page_style.QRbox}>
-					<h1>#{card.data.nick}</h1>
+					<h1 onclick = {e => e}>#{card.data.nick}</h1>
 					<div class = {page_style.QR} innerHTML = {qr_img} />
 					<div>QR by <a href="https://www.npmjs.com/package/qrcode-svg">qrcode-svg</a></div>
 				</div>

@@ -436,7 +436,6 @@ function HyperCardBody ({
 								linkUrl 
 								? note.line.replace(linkUrl, "<b>" + linkUrl + "</b>")
 								: note.line;
-							console.log(noteline);
 							
 							return (
 								<div 
@@ -456,7 +455,7 @@ function HyperCardBody ({
 											style = { displayMode() == "view" && "moz-user-select: text; -webkit-user-select: text; user-select: text;"}
 											class = { page_styles.NoteLink }
 											onclick = {e => {
-												isLink(note.line) ?	window.open(note.line, '_blank') : false;						
+												linkUrl ? window.open(linkUrl, '_blank') : false;						
 											}}
 										>
 											<span 

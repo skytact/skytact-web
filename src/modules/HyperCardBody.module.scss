@@ -312,13 +312,17 @@
 	word-wrap: break-word;
 	overflow: hidden;
 	cursor: pointer;
-	span {
+	>span {
 		width: 100%;
 		display: inline-block;
 		word-wrap: break-word;
 	}
+	b {
+		font-weight: normal;
+		text-decoration: underline;
+	}
 }
-
+//#0485E2
 .NoteFaviIcon {
 	box-sizing: border-box;
 	position: absolute;

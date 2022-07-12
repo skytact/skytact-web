@@ -7,6 +7,7 @@ import QRcode from "../libs/qrcode-svg";
 import defaultImage from "../icons/default.svg";
 import qrcode from "../icons/qr.svg";
 import more from "../icons/more.svg";
+import view from "../icons/view.svg";
 
 //
 import getUpdcard from "../fetch/getUpdcard";
@@ -157,6 +158,17 @@ function HyperCardTop ({
 		background: "#fff",
 	});
 	const qr_img = qr.svg();
+
+	//view calc
+	const getViews = () => {
+		const views = card.head.views;
+		const viewK = Math.floor(views/1000);
+		const viewM = Math.floor(viewK/1000);
+		const viewStr = viewM > 0 
+			? (viewM + '.' + Math.floor(viewK%1000/100) + 'M')
+			: (viewK > 0 ? (viewK + '.' + Math.floor(views%1000/100) + 'K') : (views));
+		return viewStr;
+	}
 	
 	//JSX OBJECT
 	return (
@@ -168,6 +180,12 @@ function HyperCardTop ({
 				</button>
 			</div>
 			}
+			<div class = {page_style.StatBlock}>
+				<div>
+					<img src={view} />
+					<span>{ getViews() }</span> 
+				</div>
+			</div>
 			<div class = {page_style.ImageBlock}>
 				<button>
 					<img 

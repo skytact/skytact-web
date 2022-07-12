@@ -24,8 +24,8 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="10.999022"
-     inkscape:cx="-10.955519"
-     inkscape:cy="5.4550302"
+     inkscape:cx="-10.864602"
+     inkscape:cy="5.4550305"
      inkscape:window-width="1920"
      inkscape:window-height="1029"
      inkscape:window-x="0"
@@ -35,5 +35,5 @@
   <path
      d="M.2 10a11 11 0 0 1 19.6 0A11 11 0 0 1 .2 10zm9.8 4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"
      id="path2"
-     style="fill:#b0b0b0;fill-opacity:1" />
+     style="fill:#000000;fill-opacity:0.50196081" />
 </svg>

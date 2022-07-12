@@ -104,8 +104,8 @@ function HyperCardBody ({
 		const patternLink = 
 		/(ftp|ssh|http|https):\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)/;
 		//
-		
-		return parseLine.match(patternLink);
+		const answ = parseLine.match(patternLink);
+		return Array.isArray(answ) ? answ[0] : false;
 	}
 
 	const updateStyles = el => {
@@ -429,53 +429,62 @@ function HyperCardBody ({
 				<For each = { notes() } fallback= { <div></div> }>
 					{
 						
-						(note, index) => (
-							<div 
-								style = { 
-									"top: " + (index() * commonHeightOfNote)*1 + "px;" +
-									"height: " + commonHeightOfNote + "px;"
-								}
-								class = { page_styles.NoteItem }							
-								onmousedown = { StartMove }
-								ontouchstart = { StartMove }
-							>
-								<div style = {displayMode() == "view" && "pointer-events: auto;"} class = { page_styles.NoteBox }>
-									<p class = { page_styles.NoteDescription }>
-										{note.text}
-									</p>
-									<p 
-										style = { displayMode() == "view" && "moz-user-select: text; -webkit-user-select: text; user-select: text;"}
-										class = { page_styles.NoteLink }
-										onclick = {e => {
-											isLink(note.line) ?	window.open(note.line, '_blank') : false;						
-										}}
-									>
-										<span 
-											style = {{
-												"text-decoration": isLink(note.line) ? "underline" : "none",
-												"user-select": displayMode() == "view" ? "text" : "none",
-												"-moz-user-select": displayMode() == "view" ? "text" : "none",
-												"-webkit-user-select": displayMode() == "view" ? "text" : "none"
+						(note, index) => {
+							//
+							const linkUrl = isLink(note.line);
+							const noteline = 
+								linkUrl 
+								? note.line.replace(linkUrl, "<b>" + linkUrl + "</b>")
+								: note.line;
+							console.log(noteline);
+							
+							return (
+								<div 
+									style = { 
+										"top: " + (index() * commonHeightOfNote)*1 + "px;" +
+										"height: " + commonHeightOfNote + "px;"
+									}
+									class = { page_styles.NoteItem }							
+									onmousedown = { StartMove }
+									ontouchstart = { StartMove }
+								>
+									<div style = {displayMode() == "view" && "pointer-events: auto;"} class = { page_styles.NoteBox }>
+										<p class = { page_styles.NoteDescription }>
+											{note.text}
+										</p>
+										<p 
+											style = { displayMode() == "view" && "moz-user-select: text; -webkit-user-select: text; user-select: text;"}
+											class = { page_styles.NoteLink }
+											onclick = {e => {
+												isLink(note.line) ?	window.open(note.line, '_blank') : false;						
 											}}
 										>
-											{note.line}
-										</span>
-									</p>
-									{isLink(note.line) && 
-									<div class = {page_styles.NoteFaviIcon}> 
-										<img 
-											src = {faviconSrc(note.line)} 
-											onerror = {e => { e.target.src = global_link; }}
-										/>
-									</div>}
-									{displayMode() == "edit" && note.lock &&
-									<div class = {page_styles.NoteLockIcon}>
-										<img src = {lock} />
+											<span 
+												style = {{
+													"text-decoration": isLink(note.line) ? "none" : "none",
+													"user-select": displayMode() == "view" ? "text" : "none",
+													"-moz-user-select": displayMode() == "view" ? "text" : "none",
+													"-webkit-user-select": displayMode() == "view" ? "text" : "none"
+												}}
+												innerHTML = {noteline}
+											/>
+										</p>
+										{linkUrl && 
+										<div class = {page_styles.NoteFaviIcon}> 
+											<img 
+												src = {faviconSrc(linkUrl)} 
+												onerror = {e => { e.target.src = global_link; }}
+											/>
+										</div>}
+										{displayMode() == "edit" && note.lock &&
+										<div class = {page_styles.NoteLockIcon}>
+											<img src = {lock} />
+										</div>
+										}
 									</div>
-									}
 								</div>
-							</div>
-						)
+							)
+						}
 					}
 				</For>
 			</div>

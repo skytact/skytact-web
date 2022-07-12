@@ -38,7 +38,7 @@ function HyperCardList ({
 	return (
 		<div class={page_styles.List}>
 			<div>
-				<h3 class = {page_styles.ListHeading}>здесь были</h3>
+				{ list().length && <h3 class = {page_styles.ListHeading}>здесь были</h3> }
 				<For each = {list()} fallback = {<div></div>}>
 					{
 						(user, i) => {	

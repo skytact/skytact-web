@@ -38,7 +38,7 @@ function LoginForm ({error, data, onInputData, onSubmit}) {
 					>
 						Войти
 					</DigestButton>
-					<DigestButton style = "border: none;" 
+					<DigestButton
 						onSet = { e => {	
 								e.preventDefault();
 								window.location.href = "/v";

@@ -94,6 +94,8 @@ function HyperCardTop ({
 	console.log(disabledValue);
 
 	//ACTIONS
+	//open activity bar
+	const [activityBar, setActivityBar] = createSignal(false);
 	//avatar
 	const [verticalImg, setVerticalImg] = createSignal(false);
 	const onChangePhoto = (e) => {
@@ -173,13 +175,17 @@ function HyperCardTop ({
 	//JSX OBJECT
 	return (
 		<div class = { page_style.HyperCardTop }>
-			{displayMode() == "edit" && 
-			<div class = {page_style.MoreButtonBlock}>
-				<button onclick = {e => window.location.href = '/s'}>
-					<img src = {more} />
-				</button>
-			</div>
-			}
+			<Show when = {displayMode() == "edit"} fallback = {
+				<div>
+					
+				</div>
+			}>
+				<div class = {page_style.MoreButtonBlock}>
+					<button onclick = {e => setActivityBar(true)}>
+						<img src = {more} />
+					</button>
+				</div>
+			</Show>
 			<div class = {page_style.StatBlock}>
 				<div>
 					<img src={view} />
@@ -245,6 +251,19 @@ function HyperCardTop ({
 					</textarea>
 				</Show>
 			</div>
+			<Show when = {displayMode() == "edit" && activityBar()} fallback = {<div></div>}>
+				<div class = {page_style.ActivityBar}>
+					<button onclick = {e => setActivityBar(false)}>
+						<span>❌</span>
+					</button>
+					<button onclick = {e => window.location.href = '/c'}>
+						<span>🔎</span>
+					</button>
+					<button onclick = {e => window.location.href = '/s'}>
+						<span>🧑‍🔧</span>
+					</button>
+				</div>
+			</Show>
 		</div>
 	)
 }

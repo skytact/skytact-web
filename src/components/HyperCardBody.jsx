@@ -7,6 +7,7 @@ import page_styles from "../modules/HyperCardBody.module.scss";
 
 import addnote from "../icons/addnote.svg";
 import lock from "../icons/lock.svg";
+import moving from "../icons/moving.svg";
 import global_link from "../icons/link.svg";
 
 //hypercard body
@@ -34,7 +35,7 @@ function HyperCardBody ({
 		onChangeCard({...card, data})
 	}
 	//moving mode
-	//const [moving, setMoving] = createSignal(false);
+	
 	//draggable element
 	const [position, setPosition] = createSignal(false);
 	const [drag, setDraggable] = createSignal(false);
@@ -108,6 +109,19 @@ function HyperCardBody ({
 		return Array.isArray(answ) ? answ[0] : false;
 	}
 
+	//check for phone number pattern
+	const isPhoneNumber = (line) => {
+		const parseLine = line;
+		const patternPhone = 
+		/(\+{0,})(\d{0,})([(]{1}\d{1,3}[)]{0,}){0,}(\s?\d+|\+\d{2,3}\s{1}\d+|\d+){1}[\s|-]?\d+([\s|-]?\d+){1,2}(\s){0,}/gm
+		//
+		const answ = parseLine.match(patternPhone);
+		console.log(line);
+		console.log(answ);
+		return Array.isArray(answ) ? answ[0] : false;
+		
+	}
+
 	const updateStyles = el => {
 		if (el.style.zIndex == '7') {
 			//set default
@@ -161,9 +175,6 @@ function HyperCardBody ({
 			//set moving mode
 			setMoving(true);
 
-			//inform user
-			console.log('start');
-
 			//create dragging element
 			updateStyles(e.target);
 			setDraggable(e.target);
@@ -199,10 +210,7 @@ function HyperCardBody ({
 	function OnMove (e) {
 		e.preventDefault();
 		//get coordinates
-
-		//
-		console.log('moving');
-
+		
 		//change element position
 		const draggable = drag();
 
@@ -297,13 +305,14 @@ function HyperCardBody ({
 		document.onmousemove = null;
 		document.ontouchmove = null;
 	}
+	
 	//
 	const faviconSrc = link => {
 		const url = new URL(link);
 		return 'http://www.google.com/s2/favicons?domain=' + url.hostname;
 	}
+
 	
-	//notes().length && console.log('notes' + notes()[1].lock);
 	return (
 		<div 
 			class = {page_styles.HyperCardBody} 
@@ -432,10 +441,13 @@ function HyperCardBody ({
 						(note, index) => {
 							//
 							const linkUrl = isLink(note.line);
+							const phoneNumber = isPhoneNumber(note.line);
 							const noteline = 
 								linkUrl 
-								? note.line.replace(linkUrl, "<b>" + linkUrl + "</b>")
-								: note.line;
+								? note.line.replace(linkUrl, "<u>" + linkUrl + "</u>")
+								: phoneNumber
+									? note.line.replace(phoneNumber, "<i>" + phoneNumber + "</i>")
+									: note.line;
 							
 							return (
 								<div 
@@ -455,12 +467,19 @@ function HyperCardBody ({
 											style = { displayMode() == "view" && "moz-user-select: text; -webkit-user-select: text; user-select: text;"}
 											class = { page_styles.NoteLink }
 											onclick = {e => {
-												linkUrl ? window.open(linkUrl, '_blank') : false;						
+												//detect mobile device
+												const isMobile = navigator.userAgent.toLowerCase().match(/mobile/i);
+												//open link in new tab or open phone number or empty action
+												linkUrl 
+													? window.open(linkUrl, '_blank') 
+													: phoneNumber && isMobile
+														? window.open('tel:' + phoneNumber)
+														: false;				
 											}}
 										>
 											<span 
 												style = {{
-													"text-decoration": isLink(note.line) ? "none" : "none",
+													"text-decoration": "none",
 													"user-select": displayMode() == "view" ? "text" : "none",
 													"-moz-user-select": displayMode() == "view" ? "text" : "none",
 													"-webkit-user-select": displayMode() == "view" ? "text" : "none"
@@ -478,6 +497,11 @@ function HyperCardBody ({
 										{displayMode() == "edit" && note.lock &&
 										<div class = {page_styles.NoteLockIcon}>
 											<img src = {lock} />
+										</div>
+										}
+										{displayMode() == "edit" &&
+										<div class = {page_styles.NoteMovingIcon}>
+											<img src = {moving} />
 										</div>
 										}
 									</div>

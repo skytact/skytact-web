@@ -294,7 +294,7 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	width: 100%;
+	width: calc(100% - 30px);
 	color: #FFFFFFA0;
 	font-size: 12px;
 	overflow: hidden;
@@ -308,18 +308,20 @@
 	padding: 0;
 	width: 100%;
 	color: #f9f9f9;
-	font-size: 18px;
+	font-size: 16px;
 	word-wrap: break-word;
 	overflow: hidden;
 	cursor: pointer;
 	>span {
-		width: 100%;
+		width: calc(100% - 30px);
 		display: inline-block;
 		word-wrap: break-word;
 	}
-	b {
-		font-weight: normal;
-		text-decoration: underline;
+
+	i:before {
+		text-decoration: none;
+		font-style: normal;
+		content: "👉 ";
 	}
 }
 //#0485E2
@@ -344,8 +346,18 @@
 .NoteLockIcon {
 	box-sizing: border-box;
 	position: absolute;
-	bottom: 7px;
-	right: 20px;
+	bottom: 4px;
+	right: 18px;
+	img {
+		width: 12px;
+	}
+}
+
+.NoteMovingIcon {
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 30px;
+	right: 18px;
 	img {
 		width: 12px;
 	}

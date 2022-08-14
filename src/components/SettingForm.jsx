@@ -156,7 +156,7 @@ function SettingForm ({
 					/>
 					<DigestSubmit>
 						<DigestButton 
-							style = "color: red; border: 1px solid #F23827;"
+							style = "color: #F23827; border: 1px solid #F23827;"
 							onSet = { onSubmit }
 						>
 							Изменить
@@ -181,7 +181,7 @@ function SettingForm ({
 					<DigestSubmit>
 						<span>Выход из аккаунта</span>
 						<DigestButton 
-							style = "color: red; border: 1px solid #F23827;"
+							style = "color: #F23827; border: 1px solid #F23827;"
 							onSet = { onExit }
 						>
 							Выйти

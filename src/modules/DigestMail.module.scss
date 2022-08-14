@@ -10,8 +10,8 @@
 		height: 40px;
 		padding: 7px;
 		border: none;
-		background: #00000020;
-		font-size: 18px;
+		background: #00000010;
+		font-size: 16px;
 		border-radius: 10px;
 		color: #00000080;
 
@@ -21,8 +21,8 @@
 
 		&::placeholder {
 			color: #00000080;
-			font-size: 18px;
-			line-height: 18px;
+			font-size: 16px;
+			line-height: 12px;
 		}
 	}
 }

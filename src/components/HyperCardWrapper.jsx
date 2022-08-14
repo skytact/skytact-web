@@ -13,6 +13,8 @@ import getIsfree from "../fetch/getIsfree";
 import getUpdcard from "../fetch/getUpdcard";
 
 import logoSky from "../icons/logoSky.svg";
+import waveHello from "../icons/waveHello.gif";
+import firework from "../icons/firework.gif";
 
 //
 const useAuthorized = async () => {
@@ -59,21 +61,24 @@ const useUpdcard = async (text) => {
 
 //return function
 function HyperCardWrapper (props) {
-	//
-	const footPhrase = props.displayMode() == "edit" 
-		? "чтобы изменить ТЕМУ"
-		: props.permission == "guest" 
-			? "чтобы отправить <span style='color: #000'>👋</span> Привет!"
-			: "чтобы ВЫЙТИ";
 		
 	//VALUE
 	//array of bg colors
-	const colorList = ["#CA2132", "#F7960B", "#F9F9F9", "#83DCFA", "#404040"];
-	const background = props.card.style || "#CA2132";
+	const colorList = ["#FFBF00", "#BDDB00", "#B5BAFF", "#83DCFA", "#404040"]; // ["#CA2132", "#F7960B", "#F9F9F9", "#83DCFA", "#404040"];
+	const background = props.card.style || "#83DCFA";
 	const responsed = children(() => props.children);
 
 	const [afterClick, setAfterClick] = createSignal(false);
 	const [bgRound, setBgRound] = createSignal({x: false, y: false});
+	const [guest, setGuest] = createSignal(props.permission == "guest");
+	const [added, setAdded] = createSignal(false);
+
+	//depend values
+	const footPhrase = props.displayMode() == "edit" 
+		? "чтобы изменить ТЕМУ"
+		: guest() != "guest" 
+			? "чтобы отправить <span style='color: #000'>👋</span> Привет!"
+			: "чтобы ВЫЙТИ";
 
 	//set bg color index
 	let indexOfColor = 0;
@@ -112,6 +117,11 @@ function HyperCardWrapper (props) {
 			.then(res => {
 				list.unshift({key: res, ref: link});
 				props.onChangeCard({...props.card, list});
+				setGuest(false);
+				setAdded(true);
+				setTimeout(e => {
+					setAdded(false);
+				}, 1800)
 			})
 			.catch(err => {
 				console.log(err);
@@ -130,7 +140,7 @@ function HyperCardWrapper (props) {
 			e.preventDefault();
 			props.displayMode() == "edit" 
 				? changeBg(e) 
-				: props.permission == "guest" ? addToFriend() : exitFromGuest();
+				: guest() ? addToFriend() : exitFromGuest();
 			setAfterClick(false);
 		} else {
 			//
@@ -161,10 +171,8 @@ function HyperCardWrapper (props) {
 			}}
 			onclick = {dbClick}
 		>
-			<div 
-				class = {page_style.BgBox}
-			>
 			{bgRound().x && bgRound().y &&
+			<div class = {page_style.BgBox}>
 				<div 
 					style = {{
 						"top": bgRound().y + "px",
@@ -176,8 +184,9 @@ function HyperCardWrapper (props) {
 					class = {page_style.BgRound}
 				>
 				</div>
-			}
 			</div>
+			}
+			
 			<div class = {page_style.Child}>
 				{ responsed() }
 				<Show when = {authorized()} fallback = {
@@ -211,6 +220,13 @@ function HyperCardWrapper (props) {
 					<a href = '/'><img src = {logoSky} /></a> <span>skytact.online &#169; 2022</span>
 				</div>
 			</div>
+			{added() && 
+			<div class = {page_style.BgFirework}>
+				<img class = {page_style.WaveHello} src = {waveHello} />
+				<img class = {page_style.FireworkLeft} src = {firework} />
+				<img class = {page_style.FireworkRight} src = {firework} />
+			</div>
+			}
 		</div>	
 	);
 }

@@ -254,13 +254,13 @@ function HyperCardTop ({
 			<Show when = {displayMode() == "edit" && activityBar()} fallback = {<div></div>}>
 				<div class = {page_style.ActivityBar}>
 					<button onclick = {e => setActivityBar(false)}>
-						<span>❌</span>
+						❌
 					</button>
 					<button onclick = {e => window.location.href = '/c'}>
-						<span>🔎</span>
+						🔎
 					</button>
 					<button onclick = {e => window.location.href = '/s'}>
-						<span>🧑‍🔧</span>
+						🧑‍🔧
 					</button>
 				</div>
 			</Show>

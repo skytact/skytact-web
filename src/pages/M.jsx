@@ -11,7 +11,6 @@ import FootCard from "../components/FootCard.jsx";
 //modules
 import page_styles from "../modules/M.module.scss";
 //content
-import anatomy from "../icons/anatomy.svg";
 import lock from "../icons/iconBar/lock.svg";
 import link from "../icons/iconBar/link.svg";
 

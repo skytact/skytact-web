@@ -13,8 +13,6 @@ import DigestSpec from "../components/DigestSpec";
 import page_styles from "../modules/R.module.scss";
 //content
 import firstStep from "../icons/scanImg.svg";
-import secondStep from "../icons/linkImg.svg";
-import frigthStep from "../icons/enterData.svg";
 import skytacts_icon from "../icons/logoSky.svg";
 
 function __R$ () {

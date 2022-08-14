@@ -10,13 +10,18 @@ import DigestButton from "./DigestButton";
 import DigestCaptcha from "./DigestCaptcha";
 import MarketingText from "./MarketingText";
 import DigestSpec from "./DigestSpec";
+import CloudPhrase from "./CloudPhrase";
 import useContactData from "../libs/useContactData";
 
 //import getAddcard from "../fetch/getAddcard";
 
 function RegistrationForm ({error, data, onInput, onOverlap, onSubmit = f => f}) {
+
+	//cloud phrase
+	const greeting = "Ура! Мы тебя уже долго ждём! Скорее создавай Гиперкарту - это такая универсальная интернет визитка!";
 	//
 	return (
+		<>
 		<DigestForm
 			profil = "отмена"
 			href = "/"
@@ -76,6 +81,8 @@ function RegistrationForm ({error, data, onInput, onOverlap, onSubmit = f => f})
 			</DigestSubmit>
 			</DigestSpec>
 		</DigestForm>
+		<CloudPhrase message={greeting} />
+		</>
 	);
 }
 

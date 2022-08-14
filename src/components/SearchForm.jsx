@@ -4,13 +4,17 @@ import DigestSubmit from "./DigestSubmit";
 import DigestButton from "./DigestButton";
 import DigestSpec from "./DigestSpec";
 
+import CloudPhrase from "./CloudPhrase";
+
 function SearchForm ({error, input, setInput, onSubmit}) {
+	const greeting = "Привет! Здесь можно найти пользователя. Введи нужное тебе имя, например вот такое: #republichenko!"
 	return (
+		<>
 		<DigestForm
 			profil = "отмена"
 			href = "/"
 			error = {error}
-			heading = "Поиск аккаунта"
+			heading = "Поиск гиперкарты"
 			onSubmit = {onSubmit}
 		>
 			<DigestSpec>
@@ -30,6 +34,8 @@ function SearchForm ({error, input, setInput, onSubmit}) {
 				</DigestSubmit>
 			</DigestSpec>
 		</DigestForm>
+		<CloudPhrase message={greeting} />
+		</>
 	)
 }
 

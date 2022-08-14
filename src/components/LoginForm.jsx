@@ -7,9 +7,12 @@ import DigestSubmit from "./DigestSubmit";
 import DigestButton from "./DigestButton";
 import DigestLine from "./DigestLine";
 import DigestSpec from "./DigestSpec";
+import CloudPhrase from "./CloudPhrase";
 
 function LoginForm ({error, data, onInputData, onSubmit}) {
+	const greeting = "Привет! Введи имя и пароль, чтобы войти в свой аккаунт. Если вдруг забыл пароль, нажми - \"не помню\"!";
 	return (
+		<>
 		<DigestForm
 			profil = "отмена"
 			href = "/"
@@ -51,6 +54,8 @@ function LoginForm ({error, data, onInputData, onSubmit}) {
 				</DigestLine>
 			</DigestSpec>
 		</DigestForm>
+		<CloudPhrase message={greeting} />
+		</>
 	)
 }
 

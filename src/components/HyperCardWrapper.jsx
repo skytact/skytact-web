@@ -74,11 +74,13 @@ function HyperCardWrapper (props) {
 	const [added, setAdded] = createSignal(false);
 
 	//depend values
-	const footPhrase = props.displayMode() == "edit" 
+	const localPhrase = props.displayMode() == "edit" 
 		? "чтобы изменить ТЕМУ"
-		: guest() != "guest" 
+		: guest()
 			? "чтобы отправить <span style='color: #000'>👋</span> Привет!"
 			: "чтобы ВЫЙТИ";
+			
+	const [footPhrase, setFootPhrase] = createSignal(localPhrase);
 
 	//set bg color index
 	let indexOfColor = 0;
@@ -119,6 +121,7 @@ function HyperCardWrapper (props) {
 				props.onChangeCard({...props.card, list});
 				setGuest(false);
 				setAdded(true);
+				setFootPhrase("чтобы ВЫЙТИ");
 				setTimeout(e => {
 					setAdded(false);
 				}, 1800)
@@ -213,7 +216,7 @@ function HyperCardWrapper (props) {
 				}>
 					<div class = {page_style.FootPhrase}>
 						<p>нажми дважды</p> 
-						<p innerHTML = {footPhrase} />
+						<p innerHTML = {footPhrase()} />
 					</div>
 				</Show>
 				<div class = {page_style.FootCopyright}>

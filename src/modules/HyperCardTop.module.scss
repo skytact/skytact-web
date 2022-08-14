@@ -34,9 +34,7 @@
 	width: 50px;
 	height: 160px;
 	background-color: #f9f9f9;
-
 	border-radius: 13px;
-
 	padding: 5px;
 
 	>button {
@@ -45,10 +43,12 @@
 		box-sizing: border-box;
 		width: 40px;
 		height: 50px;
-		padding-top: 6px;
+		padding: 6px 8px;
 		text-align: center;
 		cursor: pointer;
 		span {
+			text-align: center;
+			width: 24px;
 			font-size: 24px;
 		}
 	}

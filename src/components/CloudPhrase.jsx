@@ -10,6 +10,10 @@ function CloudPhrase({message}) {
 	const [phrase, setPhrase] = createSignal("");
 	const [throat, setThroat] = createSignal(true);
 	const [count, setCount] = createSignal(0);
+
+	//current style
+	const [opacity, setOpacity] = createSignal(1);
+	const [display, setDisplay] = createSignal(true);
 	
 	//timer interval
 	setTimeout(() => {
@@ -24,22 +28,27 @@ function CloudPhrase({message}) {
 	}, 2000);
 	
 	return (
-		<div class = {page_styles.Box}>
-			<div>
-				<div class = {page_styles.MessageBox}>
-						<span>
-							{phrase()}
-						</span>
+		<Show when = {display()} fallback = {<div></div>}>
+			<div style = {`opacity: ${opacity()};`} class = {page_styles.Box} onclick = {e => {
+				setOpacity(0);
+				setTimeout(() => setDisplay(false), 400);
+			}}>
+				<div>
+					<div class = {page_styles.MessageBox}>
+							<span>
+								{phrase()}
+							</span>
+					</div>
+					<div class = {page_styles.ImageBox}>
+						<Show when = {throat()} fallback = {
+							<img src = {cloudo} />
+						}>
+							<img src = {cloudc} />
+						</Show>
+					</div>
 				</div>
-				<div class = {page_styles.ImageBox}>
-					<Show when = {throat()} fallback = {
-						<img src = {cloudo} />
-					}>
-						<img src = {cloudc} />
-					</Show>
-				</div>
-			</div>
-		</div>	
+			</div>	
+		</Show>
 	);
 }
 
